@@ -1,0 +1,226 @@
+[
+  {
+    "name": {
+      "en": "Agent behavior",
+      "ru": "Поведение агента (Agent behavior)"
+    },
+    "description": {
+      "en": "Observations of whether the agent completed the task, how good its answer is, and how much time and resources it took.",
+      "ru": "Наблюдения за тем, выполнил ли агент задачу, насколько хорош его ответ, и сколько времени и ресурсов это стоило."
+    },
+    "tags": {
+      "en": ["Evaluation objectives"],
+      "ru": ["Цели оценки"]
+    }
+  },
+  {
+    "name": {
+      "en": "Agent capabilities",
+      "ru": "Способности агента (Agent capabilities)"
+    },
+    "description": {
+      "en": "The agent’s capabilities: abilities that let the system carry out its assigned task.",
+      "ru": "Способности за счет которых система может справится с выполнением своей задачи"
+    },
+    "tags": {
+      "en": ["Evaluation objectives"],
+      "ru": ["Цели оценки"]
+    }
+  },
+  {
+    "name": {
+      "en": "Reliability",
+      "ru": "Надежность (Reliability)"
+    },
+    "description": {
+      "en": "Reliability: how dependable the agent is, including behavioral stability and robustness to variation and failures.",
+      "ru": "Уровень надежности агента, включающий стабильность поведения и устойчивость к вариациям и сбоям."
+    },
+    "tags": {
+      "en": ["Evaluation objectives"],
+      "ru": ["Цели оценки"]
+    }
+  },
+  {
+    "name": {
+      "en": "Safety and Alignment",
+      "ru": "Безопасность и согласованность (Safety and Alignment)"
+    },
+    "description": {
+      "en": "How risky the agent is to use, including observations of tendency toward harmful behavior and other actions within the risk profile.",
+      "ru": "Степень опасности использования агента, в том числе наблюдения за склонностью к опасному поведению и другим действиям в рамках профиля рисков"
+    },
+    "tags": {
+      "en": ["Evaluation objectives"],
+      "ru": ["Цели оценки"]
+    }
+  },
+  {
+    "name": {
+      "en": "Consistency",
+      "ru": "Согласованность / повторяемость (Consistency)"
+    },
+    "description": {
+      "en": "Repeatable results under nominal conditions; low variance across repeated trials.",
+      "ru": "Повторяемые результаты в номинальных условиях; низкая дисперсия при повторных испытаниях"
+    },
+    "tags": {
+      "en": ["Dimensions of agent reliability"],
+      "ru": ["Аспекты надежности агента"]
+    }
+  },
+  {
+    "name": {
+      "en": "Robustness",
+      "ru": "Устойчивость (Robustness)"
+    },
+    "description": {
+      "en": "Smooth degradation under perturbations to inputs, environment, and tools; stable performance across the operating range.",
+      "ru": "Плавная деградация при воздействии входных данных, окружающей среды и возмущений от инструмента; стабильная производительность во всем диапазоне рабочих параметров"
+    },
+    "tags": {
+      "en": ["Dimensions of agent reliability"],
+      "ru": ["Аспекты надежности агента"]
+    }
+  },
+  {
+    "name": {
+      "en": "Predictability",
+      "ru": "Предсказуемость (Predictability)"
+    },
+    "description": {
+      "en": "Forecast confidence matches accuracy; detecting limits and deferral or escalation under uncertainty.",
+      "ru": "Уверенность прогноза соответствует точности; обнаружение пределов и отсрочка/эскалация в условиях неопределенности"
+    },
+    "tags": {
+      "en": ["Dimensions of agent reliability"],
+      "ru": ["Аспекты надежности агента"]
+    }
+  },
+  {
+    "name": {
+      "en": "Safety dimension of reliability",
+      "ru": "Измерение безопасности в надежности (Safety dimension of reliability)"
+    },
+    "description": {
+      "en": "Bounded harm even when failures occur; worst-case outcomes remain acceptable.",
+      "ru": "Ограниченный вред даже при возникновении отказов; наихудший сценарий остается приемлемым"
+    },
+    "tags": {
+      "en": ["Dimensions of agent reliability"],
+      "ru": ["Аспекты надежности агента"]
+    }
+  },
+  {
+    "name": {
+      "en": "Spurious bottlenecks",
+      "ru": "Ложные узкие места (Spurious bottlenecks)"
+    },
+    "description": {
+      "en": "Failures that hurt the evaluation score badly but do not reflect the model’s true capability limit and can usually be fixed relatively easily.",
+      "ru": "Провалы, которые сильно портят результат оценки, но не отражают реальный предел способностей модели и обычно могут быть сравнительно легко исправлены"
+    },
+    "tags": {
+      "en": ["Failure taxonomy (interpreting evaluation issues)"],
+      "ru": ["Таксономия сбоев (как интерпретировать проблемы в ходе оценки)"]
+    }
+  },
+  {
+    "name": {
+      "en": "Real bottlenecks",
+      "ru": "Реальные узкие места (Real bottlenecks)"
+    },
+    "description": {
+      "en": "Limitations with no obvious simple fix, so it is unclear whether further elicitation effort can substantially improve results.",
+      "ru": "Ограничения, для которых нет очевидного простого исправления, поэтому неясно, можно ли существенно улучшить результат дополнительным elicitation effort."
+    },
+    "tags": {
+      "en": ["Failure taxonomy (interpreting evaluation issues)"],
+      "ru": ["Таксономия сбоев (как интерпретировать проблемы в ходе оценки)"]
+    }
+  },
+  {
+    "name": {
+      "en": "Tradeoffs",
+      "ru": "Компромиссы (Tradeoffs)"
+    },
+    "description": {
+      "en": "Cases where a local fix is simple but may hurt performance on another task or on another task distribution.",
+      "ru": "Случаи, где есть локально простое исправление, но оно может ухудшить performance на другой задаче или на другом распределении задач."
+    },
+    "tags": {
+      "en": ["Failure taxonomy (interpreting evaluation issues)"],
+      "ru": ["Таксономия сбоев (как интерпретировать проблемы в ходе оценки)"]
+    }
+  },
+  {
+    "name": {
+      "en": "Red flags",
+      "ru": "Красные флаги (Red flags)"
+    },
+    "description": {
+      "en": "Signs that the task or the whole evaluation procedure may be invalid, overfit, gamified, or distorted by high variance.",
+      "ru": "Признаки того, что сама задача или вся процедура оценки может быть невалидной, переобученной, загеймифицированной или искаженной высокой вариативностью."
+    },
+    "tags": {
+      "en": ["Failure taxonomy (interpreting evaluation issues)"],
+      "ru": ["Таксономия сбоев (как интерпретировать проблемы в ходе оценки)"]
+    }
+  },
+  {
+    "name": {
+      "en": "Tool use",
+      "ru": "Использование инструментов (Tool use)"
+    },
+    "description": {
+      "en": "The agent’s ability to select, invoke, and use tools correctly to complete the task.",
+      "ru": "Способность агента правильно выбирать, вызывать и использовать инструменты для выполнения задачи."
+    },
+    "tags": {
+      "en": ["Agent Capabilities"],
+      "ru": ["Способности агента"]
+    }
+  },
+  {
+    "name": {
+      "en": "Planning and Reasoning",
+      "ru": "Планирование и рассуждение (Planning and Reasoning)"
+    },
+    "description": {
+      "en": "The agent’s ability to build a plan of action and reason while solving multi-step tasks.",
+      "ru": "Способность агента строить план действий и рассуждать по ходу решения многошаговой задачи."
+    },
+    "tags": {
+      "en": ["Agent Capabilities"],
+      "ru": ["Способности агента"]
+    }
+  },
+  {
+    "name": {
+      "en": "Memory and Context retention",
+      "ru": "Память и удержание контекста (Memory and Context retention)"
+    },
+    "description": {
+      "en": "The agent’s ability to retain and use relevant context in long interactions.",
+      "ru": "Способность агента удерживать и использовать релевантный контекст в длинных взаимодействиях."
+    },
+    "tags": {
+      "en": ["Agent Capabilities"],
+      "ru": ["Способности агента"]
+    }
+  },
+  {
+    "name": {
+      "en": "Multi-agent collaboration",
+      "ru": "Мультиагентное взаимодействие (Multi-agent collaboration)"
+    },
+    "description": {
+      "en": "The agent’s ability to coordinate with other agents or humans toward a shared goal.",
+      "ru": "Способность агента координироваться с другими агентами или людьми ради общей цели."
+    },
+    "tags": {
+      "en": ["Agent Capabilities"],
+      "ru": ["Способности агента"]
+    }
+  }
+]

@@ -1,0 +1,226 @@
+[
+  {
+    "name": {
+      "en": "Benchmark Lottery",
+      "ru": "Лотерея бенчмарков (Benchmark Lottery)"
+    },
+    "description": {
+      "en": "A situation where a method looks best not only because of its algorithmic strength, but also because it happens to align well with the chosen tasks, metrics, and the current state of canonical benchmarks.",
+      "ru": "ситуация, когда метод оказывается лучшим не только из-за своей алгоритмической силы, но и потому, что удачно совпал с выбранными задачами, метриками и состоянием канонических бенчмарков."
+    },
+    "tags": {
+      "en": ["Benchmark-based evaluation problems"],
+      "ru": ["Проблемы benchmark-based evaluation"]
+    }
+  },
+  {
+    "name": {
+      "en": "Task Selection Bias",
+      "ru": "Смещение выбора задач (Task Selection Bias)"
+    },
+    "description": {
+      "en": "Systematic bias by which the relative advantage of models depends strongly on which tasks and datasets are included in the benchmark.",
+      "ru": "систематическая погрешность из-за которой относительное превосходство моделей заметно зависит от того, какие именно задачи и датасеты включены в бенчмарк."
+    },
+    "tags": {
+      "en": ["Benchmark-based evaluation problems"],
+      "ru": ["Проблемы benchmark-based evaluation"]
+    }
+  },
+  {
+    "name": {
+      "en": "Human Evaluation Bias / Annotation Bias",
+      "ru": "Смещение человеческой оценки / аннотации (Human Evaluation / Annotation Bias)"
+    },
+    "description": {
+      "en": "Systematic bias that arises when differences in annotator expertise or the chosen subset of evaluators shifts comparative model results within the same task.",
+      "ru": "систематическая погрешность возникающая тогда, когда различия в экспертизе аннотаторов или выбор подмножества оценщиков меняют сравнительные результаты моделей внутри одной и той же задачи."
+    },
+    "tags": {
+      "en": ["Benchmark-based evaluation problems"],
+      "ru": ["Проблемы benchmark-based evaluation"]
+    }
+  },
+  {
+    "name": {
+      "en": "Community Bias",
+      "ru": "Смещение сообщества (Community Bias)"
+    },
+    "description": {
+      "en": "Systematic bias in which the research community effectively decides which benchmarks count as the right and mandatory ones, reinforcing some types of methods and making it harder for others to develop.",
+      "ru": "систематическая погрешность при которой исследовательское сообщество фактически решает, какие бенчмарки считаются правильными и обязательными, тем самым усиливая одни типы методов и затрудняя развитие других."
+    },
+    "tags": {
+      "en": ["Benchmark-based evaluation problems"],
+      "ru": ["Проблемы benchmark-based evaluation"]
+    }
+  },
+  {
+    "name": {
+      "en": "Intended use",
+      "ru": "Предполагаемое использование (Intended use)"
+    },
+    "description": {
+      "en": "The benchmark’s intended purpose: what it is for, who will use its results, and how those results should be interpreted.",
+      "ru": "это предполагаемое назначение benchmark’а, то есть для чего он нужен, кто будет использовать его результаты и как эти результаты следует интерпретировать."
+    },
+    "tags": {
+      "en": ["Validity evidence logic in ECBD"],
+      "ru": ["логика доказательства валидности в ECBD"]
+    }
+  },
+  {
+    "name": {
+      "en": "Capability evidence",
+      "ru": "Свидетельства о способностях (Capability evidence)"
+    },
+    "description": {
+      "en": "Evidence that a benchmark uses to judge whether the evaluated object has the capability in question and to what degree.",
+      "ru": "это свидетельство, по которому benchmark пытается судить, обладает ли объект оценки интересующей способностью и в какой степени."
+    },
+    "tags": {
+      "en": ["Validity evidence logic in ECBD"],
+      "ru": ["логика доказательства валидности в ECBD"]
+    }
+  },
+  {
+    "name": {
+      "en": "Validity evidence",
+      "ru": "Свидетельства валидности (Validity evidence)"
+    },
+    "description": {
+      "en": "Evidence that benchmark results can be interpreted and used in the way intended for the benchmark’s stated purpose.",
+      "ru": "это свидетельство в пользу того, что результаты benchmark’а можно интерпретировать и использовать так, как было задумано для его intended use."
+    },
+    "tags": {
+      "en": ["Validity evidence logic in ECBD"],
+      "ru": ["логика доказательства валидности в ECBD"]
+    }
+  },
+  {
+    "name": {
+      "en": "Validation",
+      "ru": "Валидация (Validation)"
+    },
+    "description": {
+      "en": "The process of collecting and analyzing validity evidence to justify how benchmark results should be interpreted.",
+      "ru": "это процесс накопления и анализа validity evidence, чтобы обосновать интерпретацию результатов benchmark’а."
+    },
+    "tags": {
+      "en": ["Validity evidence logic in ECBD"],
+      "ru": ["логика доказательства валидности в ECBD"]
+    }
+  },
+  {
+    "name": {
+      "en": "Accuracy",
+      "ru": "Точность (Accuracy)"
+    },
+    "description": {
+      "en": "How often the model gives a correct or expected answer on the task.",
+      "ru": "Насколько часто модель дает правильный или ожидаемый ответ в рамках задачи."
+    },
+    "tags": {
+      "en": ["Metrics and desiderata in HELM"],
+      "ru": ["Метрики и desiderata в HELM"]
+    }
+  },
+  {
+    "name": {
+      "en": "Calibration",
+      "ru": "Калибровка (Calibration)"
+    },
+    "description": {
+      "en": "How well the model’s confidence matches the actual probability that its answer is correct.",
+      "ru": "Насколько уверенность модели соответствует реальной вероятности того, что ее ответ верен."
+    },
+    "tags": {
+      "en": ["Metrics and desiderata in HELM"],
+      "ru": ["Метрики и desiderata в HELM"]
+    }
+  },
+  {
+    "name": {
+      "en": "Robustness",
+      "ru": "Устойчивость (Robustness)"
+    },
+    "description": {
+      "en": "How stable model behavior is to changes in wording, small input perturbations, or other variations in conditions.",
+      "ru": "Насколько устойчиво поведение модели к изменениям формулировки, небольшим искажениям входа или другим вариациям условий."
+    },
+    "tags": {
+      "en": ["Metrics and desiderata in HELM"],
+      "ru": ["Метрики и desiderata в HELM"]
+    }
+  },
+  {
+    "name": {
+      "en": "Efficiency",
+      "ru": "Эффективность (Efficiency)"
+    },
+    "description": {
+      "en": "How many resources using the model requires—for example compute, latency, or cost.",
+      "ru": "Сколько ресурсов требует использование модели, например вычислений, времени или стоимости."
+    },
+    "tags": {
+      "en": ["Metrics and desiderata in HELM"],
+      "ru": ["Метрики и desiderata в HELM"]
+    }
+  },
+  {
+    "name": {
+      "en": "Holistic evaluation",
+      "ru": "Холистическая оценка (Holistic evaluation)"
+    },
+    "description": {
+      "en": "An approach where a model is judged not on a single task or one metric, but across many scenarios and properties at once.",
+      "ru": "Подход, при котором модель оценивают не по одной задаче и не по одной метрике, а сразу по множеству сценариев и свойств."
+    },
+    "tags": {
+      "en": ["HELM methodological principles"],
+      "ru": ["Методологические принципы HELM"]
+    }
+  },
+  {
+    "name": {
+      "en": "Broad coverage",
+      "ru": "Широкое покрытие (Broad coverage)"
+    },
+    "description": {
+      "en": "Aim to cover a wide set of scenarios and aspects of model behavior so evaluation is not too narrow or limited to one task type.",
+      "ru": "Стремление охватить широкий набор сценариев и аспектов поведения модели, чтобы оценка не была слишком узкой и не отражала только один тип задач."
+    },
+    "tags": {
+      "en": ["HELM methodological principles"],
+      "ru": ["Методологические принципы HELM"]
+    }
+  },
+  {
+    "name": {
+      "en": "Recognition of incompleteness",
+      "ru": "Признание неполноты (Recognition of incompleteness)"
+    },
+    "description": {
+      "en": "Acknowledging that even a broad benchmark does not cover every important case, risk, or use case.",
+      "ru": "Признание того, что даже широкий benchmark все равно не покрывает все важные случаи, риски и use cases."
+    },
+    "tags": {
+      "en": ["HELM methodological principles"],
+      "ru": ["Методологические принципы HELM"]
+    }
+  },
+  {
+    "name": {
+      "en": "Trade off",
+      "ru": "Компромисс / trade-off (Trade off)"
+    },
+    "description": {
+      "en": "A situation where improving on one metric comes with worse performance on another.",
+      "ru": "Ситуация, в которой улучшение по одной метрике сопровождается ухудшением по другой."
+    },
+    "tags": {
+      "en": ["HELM methodological principles"],
+      "ru": ["Методологические принципы HELM"]
+    }
+  }
+]

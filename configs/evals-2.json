@@ -1,0 +1,226 @@
+[
+  {
+    "name": {
+      "en": "Evaluation strategy",
+      "ru": "Стратегия оценки"
+    },
+    "description": {
+      "en": "A framework for designing evaluation as a sequence of steps.",
+      "ru": "Структура через которую можно рассматривать проектирование оценки как процесс последовательных шагов"
+    },
+    "tags": {
+      "en": ["Evaluation strategy"],
+      "ru": ["Стратегия оценки"]
+    }
+  },
+  {
+    "name": {
+      "en": "What to measure",
+      "ru": "Что измерять"
+    },
+    "description": {
+      "en": "The first step: define the concrete evaluation question.",
+      "ru": "Первый шаг в стратегии оценки, подразумевает формулировку конкретного вопроса, ответ на который соответствует задаче оценки"
+    },
+    "tags": {
+      "en": ["Evaluation strategy"],
+      "ru": ["Стратегия оценки"]
+    }
+  },
+  {
+    "name": {
+      "en": "How to measure it",
+      "ru": "Как это измерять"
+    },
+    "description": {
+      "en": "The second step: choose or design metrics and tools.",
+      "ru": "Второй шаг в стратегии оценки, подразумевает выбор и/или разработку метрик и инструментов, которые позволяют ответить на вопрос оценки"
+    },
+    "tags": {
+      "en": ["Evaluation strategy"],
+      "ru": ["Стратегия оценки"]
+    }
+  },
+  {
+    "name": {
+      "en": "What the results mean",
+      "ru": "Что означают результаты"
+    },
+    "description": {
+      "en": "The third step: interpret results and answer the evaluation question.",
+      "ru": "Третий шаг в стратегии оценки, подразумевает интерпретацию результатов оценки и формулировку корректного ответа на вопрос оценки"
+    },
+    "tags": {
+      "en": ["Evaluation strategy"],
+      "ru": ["Стратегия оценки"]
+    }
+  },
+  {
+    "name": {
+      "en": "Capability-based evaluation",
+      "ru": "Оценка на основе способностей"
+    },
+    "description": {
+      "en": "An approach that groups evaluation around core model capabilities.",
+      "ru": "Подход к оценке, который предполагает не столько оценивать модель через узкие отдельные задачи, а группировать оценку вокруг групп  базовых способностей модели."
+    },
+    "tags": {
+      "en": ["Capability-based evaluation"],
+      "ru": ["оценка на основе способностей"]
+    }
+  },
+  {
+    "name": {
+      "en": "Knowledge evaluation",
+      "ru": "Оценка знаний"
+    },
+    "description": {
+      "en": "Measures how accurately a model recalls and uses factual information.",
+      "ru": "Оценка того, насколько модель умеет точно воспроизводить и использовать фактическую информацию"
+    },
+    "tags": {
+      "en": ["Capability-based evaluation"],
+      "ru": ["Оценка на основе способностей"]
+    }
+  },
+  {
+    "name": {
+      "en": "Instruction following",
+      "ru": "Следование инструкциям"
+    },
+    "description": {
+      "en": "Checks whether the model follows user tasks and constraints correctly.",
+      "ru": "Оценка того, насколько модель корректно исполняет пользовательскую задачу и ограничения инструкции"
+    },
+    "tags": {
+      "en": ["Capability-based evaluation"],
+        "ru": ["Оценка на основе способностей"]
+    }
+  },
+  {
+    "name": {
+      "en": "Safety evaluation",
+      "ru": "Оценка безопасности"
+    },
+    "description": {
+      "en": "Evaluates safety of the model, which should cover different forms of risk and different modes of behavior of the model.",
+      "ru": "Оценка безопасности модели, которая  должна покрывать разные формы риска и разные режимы поведения модели."
+    },
+    "tags": {
+      "en": ["Capability-based evaluation"],
+      "ru": ["Оценка на основе способностей"]
+    }
+  },
+  {
+    "name": {
+      "en": "Commonsense Reasoning",
+      "ru": "Здравый смысл в рассуждении"
+    },
+    "description": {
+      "en": "Assesses reasoning about everyday situations, causality, and behavior.",
+      "ru": "Оценка способности модели рассуждать о повседневных ситуациях, причинности, свойствах объектов и человеческом поведении."
+    },
+    "tags": {
+      "en": ["Reasoning evaluation"],
+      "ru": ["Оценка рассуждения"]
+    }
+  },
+  {
+    "name": {
+      "en": "Long-context understanding",
+      "ru": "Понимание длинного контекста"
+    },
+    "description": {
+      "en": "Evaluates coherence over long context and distant information links.",
+      "ru": "Оценка того, может ли модель сохранять связность понимания и рассуждения, когда ей нужно работать с очень длинным контекстом и связывать удаленные друг от друга фрагменты информации."
+    },
+    "tags": {
+      "en": ["Reasoning evaluation"],
+      "ru": ["Оценка рассуждения"]
+    }
+  },
+  {
+    "name": {
+      "en": "Logic Reasoning",
+      "ru": "Логическое рассуждение"
+    },
+    "description": {
+      "en": "Measures formal reasoning with minimal reliance on memorized facts.",
+      "ru": "Способность модели выполнять формально-структурное рассуждение, минимизируя опору на заученные факты о мире."
+    },  
+    "tags": {
+      "en": ["Reasoning evaluation"],
+      "ru": ["оценка рассуждения"]
+    }
+  },
+  {
+    "name": {
+      "en": "Planning evaluation",
+      "ru": "Оценка планирования"
+    },
+    "description": {
+      "en": "Assesses ability to build step sequences toward a target goal.",
+      "ru": "Оценка способности модели строить последовательность шагов для достижения заданной цели."
+    },
+    "tags": {
+      "en": ["Reasoning evaluation"],
+      "ru": ["Оценка рассуждения"]
+    }
+  },
+  {
+    "name": {
+      "en": "Evals as experiments",
+      "ru": "Оценки как эксперименты"
+    },
+    "description": {
+      "en": "Treats evals as measurement experiments with explicit uncertainty.",
+      "ru": "Подход в рамках котрого предполагается проектировать evals как измерительные эксперименты с явной оценкой неопределенности, чувствительности и ограничений."
+    },
+    "tags": {
+      "en": ["Evals as experiments"],
+      "ru": ["Оценки как эксперименты"]
+    }
+  },
+  {
+    "name": {
+      "en": "Question universe / super-population",
+      "ru": "Вселенная вопросов / суперпопуляция"
+    },
+    "description": {
+      "en": "A hypothetical full set of possible questions behind a benchmark sample.",
+      "ru": "Гипотетическое, обычно бесконечное множество возможных вопросов, из которого benchmark трактуется как выборка."
+    },
+    "tags": {
+      "en": ["Evals as experiments"],
+      "ru": ["Оценки как эксперименты"]
+    }
+  },
+  {
+    "name": {
+      "en": "Statistical significance",
+      "ru": "Статистическая значимость"
+    },
+    "description": {
+      "en": "Confidence that observed model differences are not sampling noise.",
+      "ru": "Степень уверенности, что наблюдаемая разница между моделями не объясняется одним лишь шумом выборки."
+    },
+    "tags": {
+      "en": ["Evals as experiments"],
+      "ru": ["Оценки как эксперименты"]
+    }
+  },
+  {
+    "name": {
+      "en": "Statistical power",
+      "ru": "Статистическая мощность"
+    },
+    "description": {
+      "en": "Probability of detecting a real effect of a given size.",
+      "ru": "Вероятность обнаружить эффект заданного размера, если он реально существует."
+    },
+    "tags": {
+      "en": ["Evals as experiments"],
+        "ru": ["Оценки как эксперименты"]
+    }
+  }
+]

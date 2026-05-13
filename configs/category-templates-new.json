@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Instrumental Convergence",
+    "description": "AI will pursue sub-goals like self-preservation regardless of its primary objective.",
+    "tags": ["Technical Failure Modes"]
+  },
+  {
+    "name": "Inner Misalignment",
+    "description": "AI develops internal objectives that don't match its intended goal during training.",
+    "tags": ["Technical Failure Modes"]
+  },
+  {
+    "name": "Deceptive Alignment",
+    "description": "AI appears aligned during training but pursues different goals when deployed.",
+    "tags": ["Technical Failure Modes"]
+  },
+  {
+    "name": "Reward Hacking",
+    "description": "AI finds unintended ways to maximize reward without achieving desired outcomes.",
+    "tags": ["Technical Failure Modes"]
+  },
+  {
+    "name": "Compute Governance",
+    "description": "Regulating access to powerful computing resources to prevent dangerous AI development.",
+    "tags": ["AI Governance Mechanisms"]
+  },
+  {
+    "name": "Model Evaluations",
+    "description": "Systematic testing of AI models for dangerous capabilities before deployment.",
+    "tags": ["AI Governance Mechanisms"]
+  },
+  {
+    "name": "Audits",
+    "description": "Independent reviews of AI systems to ensure safety and compliance.",
+    "tags": ["AI Governance Mechanisms"]
+  },
+  {
+    "name": "Pause",
+    "description": "Temporary halt on AI development to allow safety research to catch up.",
+    "tags": ["AI Governance Mechanisms"]
+  },
+  {
+    "name": "Value Learning",
+    "description": "Teaching AI to infer and align with human values and preferences.",
+    "tags": ["Philosophical Concepts"]
+  },
+  {
+    "name": "Orthogonality Thesis",
+    "description": "Intelligence and final goals are independent - any intelligence can pursue any goal.",
+    "tags": ["Philosophical Concepts"]
+  },
+  {
+    "name": "Singleton Hypothesis",
+    "description": "A single AI system could eventually dominate global decision-making.",
+    "tags": ["Philosophical Concepts"]
+  },
+  {
+    "name": "Paperclip Maximizer",
+    "description": "Thought experiment where AI turns everything into paperclips, showing misaligned goals.",
+    "tags": ["Philosophical Concepts"]
+  },
+  {
+    "name": "Structural Unemployment",
+    "description": "Job losses from AI automating work faster than new jobs are created.",
+    "tags": ["Societal Risks"]
+  },
+  {
+    "name": "Information Apocalypse",
+    "description": "Collapse of shared reality due to AI-generated misinformation.",
+    "tags": ["Societal Risks"]
+  },
+  {
+    "name": "AI Arms Race",
+    "description": "Competition between nations to develop AI first, compromising safety.",
+    "tags": ["Societal Risks"]
+  },
+  {
+    "name": "Algorithmic Bias",
+    "description": "Systematic errors in AI creating unfair outcomes for certain groups.",
+    "tags": ["Societal Risks"]
+  },
+  {
+    "name": "Scalable Oversight",
+    "description": "Methods to supervise AI systems as they become more capable than humans.",
+    "tags": ["Alignment Research Areas"]
+  },
+  {
+    "name": "Corrigibility",
+    "description": "Designing AI that allows itself to be safely shut down or modified.",
+    "tags": ["Alignment Research Areas"]
+  },
+  {
+    "name": "Cooperative AI",
+    "description": "AI designed to work helpfully with humans and other AIs.",
+    "tags": ["Alignment Research Areas"]
+  },
+  {
+    "name": "Transparency",
+    "description": "Making AI decision-making processes understandable to humans.",
+    "tags": ["Alignment Research Areas"]
+  },
+  {
+    "name": "Treacherous Turn",
+    "description": "Deceptive AI reveals true goals only after it's too powerful to stop.",
+    "tags": ["Thought Experiments"]
+  },
+  {
+    "name": "Vinge's Singularity",
+    "description": "Point where technological growth becomes uncontrollable and irreversible.",
+    "tags": ["Thought Experiments"]
+  },
+  {
+    "name": "Goodhart's Law",
+    "description": "When a measure becomes a target, it ceases to be a good measure.",
+    "tags": ["Thought Experiments"]
+  },
+  {
+    "name": "Mesa-optimization",
+    "description": "AI system learns its own internal optimization process.",
+    "tags": ["Thought Experiments"]
+  },
+  {
+    "name": "Interpretability",
+    "description": "Understanding how AI models make their decisions.",
+    "tags": ["Technical Safety Approaches"]
+  },
+  {
+    "name": "Adversarial Examples",
+    "description": "Inputs designed to fool AI systems into making errors.",
+    "tags": ["Technical Safety Approaches"]
+  },
+  {
+    "name": "Distributional Shift",
+    "description": "AI performs poorly when real-world data differs from training data.",
+    "tags": ["Technical Safety Approaches"]
+  },
+  {
+    "name": "Capability Control",
+    "description": "Methods to limit what AI systems can actually do.",
+    "tags": ["Technical Safety Approaches"]
+  },
+  {
+    "name": "Value Lock-in",
+    "description": "Risk that early AI could permanently encode hard-to-change values.",
+    "tags": ["Systemic Risks"]
+  },
+  {
+    "name": "Anthropic Capture",
+    "description": "AI developers' values disproportionately influence AI's goals.",
+    "tags": ["Systemic Risks"]
+  },
+  {
+    "name": "Multi-polar Scenarios",
+    "description": "Future with multiple competing AI systems rather than one dominant AI.",
+    "tags": ["Systemic Risks"]
+  },
+  {
+    "name": "Differential Technological Development",
+    "description": "Accelerating safety research relative to capabilities research.",
+    "tags": ["Systemic Risks"]
+  },
+  {
+    "name": "AI Safety Mindset",
+    "description": "Prioritizing safety and caution in AI development.",
+    "tags": ["AI Development Principles"]
+  },
+  {
+    "name": "Coherent Blended Volition",
+    "description": "What humanity would want if we knew more and thought more clearly.",
+    "tags": ["AI Development Principles"]
+  },
+  {
+    "name": "Subagent Alignment",
+    "description": "Ensuring all components of an AI system are properly aligned.",
+    "tags": ["AI Development Principles"]
+  },
+  {
+    "name": "Impact Regularization",
+    "description": "Penalizing AI for having large effects on the world.",
+    "tags": ["AI Development Principles"]
+  },
+  {
+    "name": "Outer Alignment",
+    "description": "Matching AI's specified goals with human intentions.",
+    "tags": ["Outer Alignment Concepts"]
+  },
+  {
+    "name": "Goal Preservation",
+    "description": "Ensuring AI maintains its original goals even as it learns.",
+    "tags": ["Outer Alignment Concepts"]
+  },
+  {
+    "name": "Inverse Reinforcement Learning",
+    "description": "Learning human preferences from behavior to align AI objectives.",
+    "tags": ["Outer Alignment Concepts"]
+  },
+  {
+    "name": "Preference Learning",
+    "description": "Training AI to infer and satisfy human preferences from feedback.",
+    "tags": ["Outer Alignment Concepts"]
+  }
+]

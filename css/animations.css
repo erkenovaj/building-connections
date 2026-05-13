@@ -1,0 +1,215 @@
+/* Dog Animations */
+.dog-container {
+    position: fixed;
+    pointer-events: none;
+    width: 112px;
+    height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--lab-line, #d8d8d0);
+    border-radius: 8px;
+    background:
+        radial-gradient(circle at 1px 1px, rgba(21, 21, 21, 0.1) 1px, transparent 0),
+        rgba(255, 255, 255, 0.9);
+    background-size: 18px 18px;
+    box-shadow: var(--lab-shadow, 0 10px 30px rgba(22, 22, 18, 0.08));
+    z-index: 60;
+}
+
+.dog {
+    width: 92px;
+    height: 92px;
+    position: relative;
+    transition: all 0.3s ease;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.18));
+}
+
+/* Ensure all animations are properly defined and applied */
+.dog.happy { 
+    animation: bounce 2s infinite ease-in-out !important; 
+}
+
+.dog.worried { 
+    animation: shake 1s infinite ease-in-out !important; 
+}
+
+.dog.sad { 
+    animation: droop 3s infinite ease-in-out !important; 
+}
+
+.dog.celebrating { 
+    animation: celebrate 2s infinite ease-in-out !important; 
+}
+
+.dog.excited { 
+    animation: wiggle 0.5s infinite ease-in-out !important; 
+}
+
+.dog.concerned {
+    animation: pulse 2s infinite ease-in-out !important;
+}
+
+.dog.sleeping {
+    animation: snore 3s infinite ease-in-out !important;
+    opacity: 0.8;
+}
+
+/* Animation Definitions */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-8px) scale(1.04); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0) rotate(0); }
+    25% { transform: translateX(-8px) rotate(-5deg); }
+    75% { transform: translateX(8px) rotate(5deg); }
+}
+
+@keyframes droop {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(10px) scale(0.95); }
+}
+
+@keyframes celebrate {
+    0%, 100% { transform: scale(1.03) rotate(0); }
+    25% { transform: scale(1.08) rotate(8deg); }
+    50% { transform: scale(1.12) rotate(0); }
+    75% { transform: scale(1.08) rotate(-8deg); }
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(8deg); }
+    75% { transform: rotate(-8deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1.02); }
+    50% { transform: scale(1.07); }
+}
+
+@keyframes snore {
+    0%, 100% { 
+        transform: scale(1) rotate(0); 
+        opacity: 1;
+    }
+    25% { 
+        transform: scale(1.05) rotate(1deg); 
+        opacity: 0.9;
+    }
+    50% { 
+        transform: scale(1) rotate(0);
+        opacity: 0.8; 
+    }
+    75% { 
+        transform: scale(0.95) rotate(-1deg); 
+        opacity: 0.9;
+    }
+}
+
+@keyframes floatAcross {
+    0% { transform: translateX(-150px) translateY(0) scale(1.1); }
+    50% { transform: translateX(calc(100vw + 150px)) translateY(-50px) scale(1.1); }
+    100% { transform: translateX(calc(100vw + 150px)) translateY(0) scale(1.1); }
+}
+
+/* Make other elements more visible too */
+.bone, .paw-print, .confetti {
+    position: fixed;
+    z-index: 9998;
+    pointer-events: none;
+    font-size: 28px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.bone {
+    animation: boneFall 3s linear forwards !important;
+}
+
+.paw-print {
+    animation: pawTrail 2s ease-out forwards !important;
+}
+
+.confetti {
+    animation: confettiFall 3s ease-in forwards !important;
+    font-size: 32px;
+}
+
+@keyframes boneFall {
+    0% { 
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% { 
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes pawTrail {
+    0% { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+    100% { 
+        opacity: 0; 
+        transform: scale(0.5); 
+    }
+}
+
+@keyframes confettiFall {
+    0% { 
+        transform: translateY(-100px) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    100% { 
+        transform: translateY(100vh) rotate(360deg) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Hint toggle styles */
+.hints-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.hints-toggle-btn.on {
+    background: #27ae60 !important;
+}
+
+.hints-toggle-btn.off {
+    background: #e74c3c !important;
+}
+
+.hints-toggle-btn span {
+    font-size: 12px;
+}
+
+@media (max-width: 900px) {
+    .dog-container {
+        width: 84px;
+        height: 84px;
+        right: 10px !important;
+        bottom: 10px !important;
+    }
+
+    .dog {
+        width: 70px;
+        height: 70px;
+    }
+}

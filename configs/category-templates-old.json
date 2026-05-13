@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Technical Failure Modes",
+        "members": ["Instrumental Convergence", "Inner Misalignment", "Deceptive Alignment", "Reward Hacking"]
+    },
+    {
+        "name": "AI Governance Mechanisms",
+        "members": ["Compute Governance", "Model Evaluations", "Audits", "Pause"]
+    },
+    {
+        "name": "Philosophical Concepts",
+        "members": ["Value Learning", "Orthogonality Thesis", "Singleton Hypothesis", "Paperclip Maximizer"]
+    },
+    {
+        "name": "Societal Risks",
+        "members": ["Structural Unemployment", "Information Apocalypse", "AI Arms Race", "Algorithmic Bias"]
+    },
+    {
+        "name": "Alignment Research Areas",
+        "members": ["Scalable Oversight", "Corrigibility", "Transparency", "Cooperative AI"]
+    },
+    {
+        "name": "Thought Experiments",
+        "members": ["Treacherous Turn", "Vinge's Singularity", "Goodhart's Law", "Mesa-optimization"]
+    },
+    {
+        "name": "Technical Safety Approaches",
+        "members": ["Interpretability", "Adversarial Examples", "Distributional Shift", "Capability Control"]
+    },
+    {
+        "name": "Systemic Risks",
+        "members": ["Value Lock-in", "Anthropic Capture", "Multi-polar Scenarios", "Differential Technological Development"]
+    },
+    {
+        "name": "AI Development Principles",
+        "members": ["AI Safety Mindset", "Coherent Blended Volition", "Subagent Alignment", "Impact Regularization"]
+    },
+    {
+        "name": "Outer Alignment Concepts",
+        "members": ["Outer Alignment", "Goal Preservation", "Inverse Reinforcement Learning", "Preference Learning"]
+    }
+]

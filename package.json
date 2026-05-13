@@ -1,0 +1,12 @@
+{
+  "name": "ai-safety-connections",
+  "version": "2.0.0",
+  "description": "Connections game for combinatorial reasoning and evals with solo and lobby multiplayer",
+  "type": "module",
+  "scripts": {
+    "start": "npx vercel dev --yes"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.14.0"
+  }
+}

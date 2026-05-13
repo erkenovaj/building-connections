@@ -1,0 +1,2 @@
+ollamafreeapi
+ortools>=9.15,<10

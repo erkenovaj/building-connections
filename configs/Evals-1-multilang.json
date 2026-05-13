@@ -1,0 +1,82 @@
+[
+  {
+    "name": {"en": "Mechanistic-interpretability-based evaluation", "ru": "Оценка на основе механистической интерпретируемости (Mechanistic-interpretability-based evaluation)"},
+    "description": {"en": "An evaluation approach that uses mechanistic interpretability to assess a model through its internal computations rather than only through its observable behavior.", "ru": "Подход к оценке модели, который использует механистическую интерпретируемость для анализа внутренних вычислений модели, а не только ее наблюдаемого поведения."},
+    "tags": {"en": ["understanding based evaluation approaches"], "ru": ["подходы к evals, основанные на понимании"]}
+  },
+  {
+    "name": {"en": "Causal scrubbing", "ru": "Каузальный скраббинг (Causal scrubbing)"},
+    "description": {"en": "An approach for evaluating a mechanistic explanation by testing whether the proposed explanation is sufficient to reproduce the behavior of a model under carefully constructed interventions.", "ru": "Метод проверки механистического объяснения, при котором тестируется, достаточно ли предложенного объяснения, чтобы воспроизвести поведение модели при специально сконструированных интервенциях."},
+    "tags": {"en": ["understanding based evaluation approaches"], "ru": ["подходы к evals, основанные на понимании"]}
+  },
+  {
+    "name": {"en": "Auditing games", "ru": "Аудит-игры (Auditing games)"},
+    "description": {"en": "An approach for evaluating interpretability tools by testing whether they can distinguish between models and identify meaningful differences across them.", "ru": "Техника оценки инструментов evals или интерпретируемости, при которой проверяется, могут ли они различать модели и выявлять между ними содержательные различия."},
+    "tags": {"en": ["understanding based evaluation approaches"], "ru": ["подходы к evals, основанные на понимании"]}
+  },
+  {
+    "name": {"en": "Prediction-based evaluation", "ru": "Оценка на основе предсказания (Prediction-based evaluation)"},
+    "description": {"en": "An evaluation approach that gauges understanding by measuring how well one can predict a model’s future generalization behavior in advance.", "ru": "Подход к оценке, который измеряет понимание модели через способность заранее предсказывать ее будущее поведение при обобщении."},
+    "tags": {"en": ["understanding based evaluation approaches"], "ru": ["подходы к evals, основанные на понимании"]}
+  },
+  {
+    "name": {"en": "Establish lower bounds on capabilities", "ru": "Устанавливать нижние границы способностей модели"},
+    "description": {"en": "Using evaluations to show that an AI system can in fact perform some task, thereby establishing a demonstrated minimum level of capability.", "ru": "Использование evals для того, чтобы показать, что система ИИ действительно может выполнять некоторую задачу, тем самым устанавливая продемонстрированный минимальный уровень способности."},
+    "tags": {"en": ["What AI evaluations can do"], "ru": ["что evals могут делать"]}
+  },
+  {
+    "name": {"en": "Assess misuse risk for current models", "ru": "Оценивать риск злоупотребления текущими моделями"},
+    "description": {"en": "Using evaluations to estimate whether existing AI systems could be exploited for harmful use cases, provided evaluators can identify and test the relevant threat vectors thoroughly enough.", "ru": "Использование evaluations для оценки того, могут ли существующие ИИ-системы быть использованы во вредоносных целях, при условии что исследователи сумели выявить и протестировать релевантные векторы угроз."},
+    "tags": {"en": ["What AI evaluations can do"], "ru": ["что evals могут делать"]}
+  },
+  {
+    "name": {"en": "Contribute to the basic science of AI", "ru": "Вносить вклад в базовую науку об ИИ"},
+    "description": {"en": "Using evaluations to improve scientific understanding of AI systems by revealing how capabilities develop and how model behavior depends on factors such as scale, architecture, training data, and algorithms.", "ru": "Evals могут улучшать научное понимание ИИ-систем, показывая, как развиваются способности моделей и как их поведение зависит от таких факторов, как масштаб, архитектура, обучающие данные и алгоритмы."},
+    "tags": {"en": ["What AI evaluations can do"], "ru": ["что evals могут делать"]}
+  },
+  {
+    "name": {"en": "Provide early warning about some AI impacts on society", "ru": "Давать раннее оповещение о некоторых аспектах влияния ИИ на общество"},
+    "description": {"en": "Using evaluations to anticipate some societal effects of AI, such as likely automation of tasks, plausible misuse cases, and concentrations of power enabled by increasingly capable systems.", "ru": "Evals могут помогать заранее замечать некоторые социальные эффекты ИИ, такие как вероятная автоматизация задач, возможные сценарии злоупотребления и концентрация власти, связанная с ростом способностей систем."},
+    "tags": {"en": ["What AI evaluations can do"], "ru": ["что evals могут делать"]}
+  },
+  {
+    "name": {"en": "Establish upper bounds on capabilities", "ru": "Устанавливать верхние границы способностей моделт"},
+    "description": {"en": "Something evaluations cannot do reliably, because failure to elicit a capability does not provide strong evidence that the model lacks that capability.", "ru": "То, что evals не могут делать надежно, потому что неудача в выявлении некоторой способности не дает сильных оснований считать, что у модели этой способности нет."},
+    "tags": {"en": ["What AI evaluations cannot do"], "ru": ["что evals не могут делать"]}
+  },
+  {
+    "name": {"en": "Robustly forecast future model capabilities", "ru": "Надежно прогнозировать будущие способности моделей"},
+    "description": {"en": "Something evaluations cannot currently do reliably, because forecasting future capabilities depends on strong assumptions about measurable precursors, warning time, and predictable capability development.", "ru": "То, что evals не могут делать надежно, потому что прогнозирование будущих способностей зависит от сильных предпосылок о измеримых свидетельствах в рамках какой-либо теории, запасе времени на предупреждение и предсказуемости развития способностей."},
+    "tags": {"en": ["What AI evaluations cannot do"], "ru": ["что evals не могут делать"]}
+  },
+  {
+    "name": {"en": "Robustly assess misalignment and model autonomy risks", "ru": "Надежно оценивать риски misalignment и автономии моделей"},
+    "description": {"en": "Something evaluations cannot do robustly, because autonomous systems may use capabilities evaluators fail to elicit, may sandbag during testing, and may possess harmful propensities that are not revealed in standard evaluations.", "ru": "То, что evals не могут делать надежно, потому что автономные системы могут использовать способности, которые исследователи не смогли выявить, могут намеренно занижать результаты на тестах, и могут обладать опасными склонностями, не проявляющимися в стандартных тестах."},
+    "tags": {"en": ["What AI evaluations cannot do"], "ru": ["что evals не могут делать"]}
+  },
+  {
+    "name": {"en": "Predict discontinuous progress", "ru": "Предсказывать скачкообразный прогресс"},
+    "description": {"en": "Something evaluations cannot do reliably, because breakthroughs in algorithms, elicitation, or other factors may produce sudden capability jumps that bypass expected precursor stages.", "ru": "То, что evals не могут делать надежно, потому что прорывы в алгоритмах, способах elicitation или других факторах могут вызывать резкие скачки способностей, минуя ожидаемые промежуточные стадии."},
+    "tags": {"en": ["What AI evaluations cannot do"], "ru": ["что evals не могут делать"]}
+  },
+  {
+    "name": {"en": "LLM steering", "ru": "Управление поведением LLM (LLM steering)"},
+    "description": {"en": "The ability to get an LLM to do specific things and elicit the properties or behaviors one wants to examine.", "ru": "Способность добиваться от LLM нужных действий и извлекать те свойства или формы поведения, которые исследователь хочет изучить."},
+    "tags": {"en": ["Skills for evals"], "ru": ["навыки специалиста по evals"]}
+  },
+  {
+    "name": {"en": "Prompting", "ru": "Промптинг (Prompting)"},
+    "description": {"en": "The skill of designing prompts that efficiently get a model to produce desired behaviors or reveal relevant properties.", "ru": "Навык конструирования промптов, которые эффективно побуждают модель демонстрировать желаемое поведение или раскрывать релевантные свойства."},
+    "tags": {"en": ["Skills for evals"], "ru": ["навыки специалиста по evals"]}
+  },
+  {
+    "name": {"en": "Empirical research experience", "ru": "Опыт эмпирических исследований"},
+    "description": {"en": "Practical experience of learning science by doing science: designing experiments, tracking confounders, testing alternative hypotheses, and building evidence through research projects.", "ru": "Практический опыт научной работы через непосредственную исследовательскую деятельность: постановку экспериментов, отслеживание конфаундеров, проверку альтернативных гипотез и накопление свидетельств в ходе исследовательских проектов."},
+    "tags": {"en": ["Skills for evals"], "ru": ["навыки специалиста по evals"]}
+  },
+  {
+    "name": {"en": "Jailbreaking", "ru": "Джейлбрейкинг (Jailbreaking)"},
+    "description": {"en": "The practice of trying to bypass a model’s safeguards or standard refusal behavior in order to expose hidden capabilities, limitations of fine-tuning, or behaviors not reachable with ordinary prompting.", "ru": "Практика попыток обойти защитные механизмы модели или ее стандартные отказы, чтобы выявить скрытые способности, ограничения fine-tuning или формы поведения, недоступные при обычном промптинге."},
+    "tags": {"en": ["Skills for evals"], "ru": ["навыки специалиста по evals"]}
+  }
+]

@@ -1,0 +1,169 @@
+[  
+  {    
+    "name": "Algorithm",    
+    "description": "A step-by-step procedure for solving a problem or performing a computation",    
+    "tags": ["Программирование"]
+  },
+  {
+    "name": "Function",
+    "description": "A reusable block of code that performs a specific task / A mathematical relation between sets where each input has exactly one output",
+    "tags": ["Программирование", "Математика"]
+  },
+  {
+    "name": "Loop",
+    "description": "A programming construct that repeats a block of code / A repeated section of music",
+    "tags": ["Программирование", "Музыка"]
+  },
+  {
+    "name": "Array",
+    "description": "A data structure that stores a collection of elements in contiguous memory locations",
+    "tags": ["Программирование"]
+  },
+  {
+    "name": "String",
+    "description": "A sequence of characters in programming / A vibrating element on musical instruments",
+    "tags": ["Программирование", "Музыка"]
+  },
+  {
+    "name": "Class",
+    "description": "A blueprint for creating objects in object-oriented programming",
+    "tags": ["Программирование"]
+  },
+  {
+    "name": "Method",
+    "description": "A function that is associated with an object or class in programming",
+    "tags": ["Программирование"]
+  },
+  {
+    "name": "Derivative",
+    "description": "A measure of how a function changes as its input changes; the rate of change",
+    "tags": ["Математика"]
+  },
+  {
+    "name": "Integral",
+    "description": "A mathematical concept representing the area under a curve or the accumulation of quantities",
+    "tags": ["Математика"]
+  },
+  {
+    "name": "Theorem",
+    "description": "A mathematical statement that has been proven based on previously established statements",
+    "tags": ["Математика"]
+  },
+  {
+    "name": "Axiom",
+    "description": "A statement or proposition that is accepted as self-evidently true without proof",
+    "tags": ["Математика"]
+  },
+  {
+    "name": "Proof",
+    "description": "A logical argument demonstrating the truth of a mathematical statement",
+    "tags": ["Математика"]
+  },
+  {
+    "name": "Limit",
+    "description": "A value that a function or sequence approaches as the input approaches some value",
+    "tags": ["Математика"]
+  },
+  {
+    "name": "Tangent",
+    "description": "A line that touches a curve at a single point without crossing it / A trigonometric function",
+    "tags": ["Математика"]
+  },
+  {
+    "name": "Chord",
+    "description": "A group of notes played simultaneously in music / A line segment joining two points on a curve",
+    "tags": ["Музыка", "Математика"]
+  },
+  {
+    "name": "Scale",
+    "description": "A series of notes ordered by pitch in music / A system of measurement or proportion",
+    "tags": ["Музыка", "Математика"]
+  },
+  {
+    "name": "Sequence",
+    "description": "A series of musical phrases or a pattern in music production / An ordered list of elements in mathematics",
+    "tags": ["Музыка", "Математика"]
+  },
+  {
+    "name": "Bridge",
+    "description": "A contrasting section in a song / A structure that spans physical obstacles",
+    "tags": ["Музыка", "Архитектура"]
+  },
+  {
+    "name": "Organ",
+    "description": "A keyboard musical instrument / A group of tissues performing specific biological functions",
+    "tags": ["Музыка", "Анатомия"]
+  },
+  {
+    "name": "Nerve",
+    "description": "A bundle of fibers that transmits signals between the brain and body parts",
+    "tags": ["Анатомия"]
+  },
+  {
+    "name": "Tissue",
+    "description": "A group of cells that work together to perform a specific function in organisms",
+    "tags": ["Анатомия"]
+  },
+  {
+    "name": "Cell",
+    "description": "The basic structural and functional unit of living organisms / A basic unit of data storage in spreadsheets or arrays",
+    "tags": ["Анатомия", "Программирование"]
+  },
+  {
+    "name": "Membrane",
+    "description": "A thin layer of tissue that covers or lines parts of the body",
+    "tags": ["Анатомия"]
+  },
+  {
+    "name": "Vessel",
+    "description": "A tube that carries blood or lymph through the body",
+    "tags": ["Анатомия"]
+  },
+  {
+    "name": "Spine",
+    "description": "The vertebral column in anatomy / A main load-bearing element in architecture",
+    "tags": ["Анатомия", "Архитектура"]
+  },
+  {
+    "name": "Beam",
+    "description": "A structural element that resists loads applied to its axis",
+    "tags": ["Архитектура"]
+  },
+  {
+    "name": "Column",
+    "description": "A vertical structural element that transmits weight to the foundation / A vertical division in a table or database",
+    "tags": ["Архитектура", "Программирование"]
+  },
+  {
+    "name": "Arch",
+    "description": "A curved structural element that spans an opening",
+    "tags": ["Архитектура"]
+  },
+  {
+    "name": "Foundation",
+    "description": "The lowest load-bearing part of a building / The base or basis of a mathematical system",
+    "tags": ["Архитектура", "Математика"]
+  },
+  {
+    "name": "Frame",
+    "description": "The load-bearing skeleton of a building structure / A data structure or single unit of data transmission in programming",
+    "tags": ["Архитектура", "Программирование"]
+  },
+  {    "name": "Tempo",    "description": "The speed or pace at which a musical piece is played",    "tags": ["Музыка"]
+  },
+  {
+    "name": "Harmony",
+    "description": "The combination of simultaneously sounded musical notes to produce chords and chord progressions",
+    "tags": ["Музыка"]
+  },
+  {
+    "name": "Melody",
+    "description": "A sequence of single notes that is musically satisfying; the main tune of a musical piece",
+    "tags": ["Музыка"]
+  },
+  {
+    "name": "Rhythm",
+    "description": "A pattern of regular or irregular pulses in music created by the occurrence of strong and weak beats",
+    "tags": ["Музыка"]
+  }
+]
