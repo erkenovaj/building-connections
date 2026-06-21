@@ -47,6 +47,35 @@ def extract_json(text):
     return None
 
 
+def normalize_one_guess(parsed, remaining):
+    remaining_set = set(remaining)
+    guess = None
+    if isinstance(parsed, dict):
+        candidate = parsed.get("guess")
+        if isinstance(candidate, dict):
+            guess = candidate
+        elif isinstance(parsed.get("items"), list):
+            guess = parsed
+    if not isinstance(guess, dict):
+        return None
+    raw_items = guess.get("items")
+    if not isinstance(raw_items, list):
+        raw_items = guess.get("words")
+    if not isinstance(raw_items, list):
+        return None
+    items = []
+    for item in raw_items:
+        term = str(item or "").strip()
+        if term and term in remaining_set and term not in items:
+            items.append(term)
+        if len(items) == 4:
+            break
+    if len(items) != 4:
+        return None
+    label = str(guess.get("label") or guess.get("category") or "Guess")[:80]
+    return {"label": label, "items": items}
+
+
 def normalize_guesses(parsed, board, max_guesses):
     board_set = set(board)
     source = []
