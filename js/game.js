@@ -710,6 +710,14 @@ class AISafetyGame {
       });
   }
 
+  startAgentGame() {
+    const select = document.getElementById("agent-model-input");
+    this.agentModel =
+      (select && select.value && select.value.trim()) || "llama3.2:3b";
+    this.pendingAgentRun = true;
+    this.startSolo();
+  }
+
   startSolo() {
     const active = document.querySelector(".welcome-mode-btn.active");
     this.gameMode = active ? active.dataset.mode : this.gameMode || "basic";
@@ -748,6 +756,10 @@ class AISafetyGame {
         await this.startNewGame();
       } finally {
         this.hideLoading();
+        if (this.pendingAgentRun) {
+          this.pendingAgentRun = false;
+          this.runLlmAgent();
+        }
       }
     });
   }
@@ -905,6 +917,12 @@ class AISafetyGame {
     const llmRefreshBtn = document.getElementById("llm-refresh-btn");
     if (llmRefreshBtn)
       llmRefreshBtn.addEventListener("click", () => this.loadLlmModels());
+    const llmAgentBtn = document.getElementById("llm-agent-btn");
+    if (llmAgentBtn)
+      llmAgentBtn.addEventListener("click", () => this.runLlmAgent());
+    const welcomeAgentBtn = document.getElementById("welcome-agent");
+    if (welcomeAgentBtn)
+      welcomeAgentBtn.addEventListener("click", () => this.startAgentGame());
     document
       .querySelector(".dictionary-btn")
       .addEventListener("click", () => this.showDictionary());
@@ -1676,6 +1694,11 @@ class AISafetyGame {
         input.value = currentValue;
       } else if (data.defaultModel && models.includes(data.defaultModel)) {
         input.value = data.defaultModel;
+      }
+      const agentInput = document.getElementById("agent-model-input");
+      if (agentInput) {
+        agentInput.innerHTML = input.innerHTML;
+        agentInput.value = input.value;
       }
       if (models.length > 0) {
         this.setLlmStatus(`${models.length} models`, "ready");

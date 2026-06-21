@@ -1,210 +1,367 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Connections, Reasoning &amp; Evals</title>
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=5">
-    <link rel="stylesheet" href="css/animations.css?v=2">
-</head>
-<body>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css?v=5" />
+    <link rel="stylesheet" href="css/animations.css?v=2" />
+  </head>
+  <body>
     <div class="app-loading" id="app-loading" aria-live="polite">
-        <div class="app-loading-spinner"></div>
-        <span class="app-loading-text">Loading…</span>
+      <div class="app-loading-spinner"></div>
+      <span class="app-loading-text">Loading…</span>
     </div>
     <!-- Global language toggle (visible on all screens) -->
     <button type="button" id="lang-toggle" class="lang-toggle">EN / RU</button>
     <!-- Welcome: choose Solo or Lobby -->
     <div class="welcome-screen" id="welcome-screen">
-        <div class="welcome-card">
-            <h1>Connections</h1>
-            <p class="lab-kicker">Reasoning &amp; Evals</p>
-            <p class="welcome-desc">Create groups of four that share a common theme. Choose how you want to play:</p>
+      <div class="welcome-card">
+        <h1>Connections</h1>
+        <p class="lab-kicker">Reasoning &amp; Evals</p>
+        <p class="welcome-desc">
+          Create groups of four that share a common theme. Choose how you want
+          to play:
+        </p>
 
-            <div class="welcome-layout">
-                <div class="welcome-left">
-                    <div class="welcome-settings">
-                        <div class="welcome-option-group">
-                            <label>Mode:</label>
-                            <div class="welcome-mode-toggle">
-                                <button type="button" class="welcome-mode-btn" data-mode="easy">Easy (4 categories)</button>
-                                <button type="button" class="welcome-mode-btn active" data-mode="basic">Basic (4 categories)</button>
-                                <button type="button" class="welcome-mode-btn" data-mode="advanced">Advanced (3 categories)</button>
-                            </div>
-                        </div>
-
-                        <div class="welcome-option-group">
-                            <label for="solo-templates-file">Category templates (optional):</label>
-                            <div class="templates-box">
-                                <input type="file" id="solo-templates-file" accept=".json" style="display: none;">
-                                <button type="button" class="welcome-file-btn" id="solo-templates-btn">Choose file</button>
-                                <span id="solo-templates-name" class="welcome-file-name"></span>
-                                <p class="welcome-hint" style="margin-top: 6px;">
-                                    Use a JSON file or paste JSON below. Example:
-                                    <br>
-                                    <code>[{ "name": "Instrumental Convergence", "description": "Short definition...", "tags": ["Technical Failure Modes"] }]</code>
-                                    <br>
-                                    Each <code>name</code> is a term, and each string in <code>tags</code> is a category name.
-                                </p>
-                                <textarea id="templates-textarea" rows="5" class="templates-textarea" placeholder='Or paste JSON here (same format as above).'></textarea>
-                                <button type="button" class="welcome-file-btn templates-apply-btn" id="templates-apply-btn">Use pasted JSON</button>
-                            </div>
-                        </div>
-                    </div>
+        <div class="welcome-layout">
+          <div class="welcome-left">
+            <div class="welcome-settings">
+              <div class="welcome-option-group">
+                <label>Mode:</label>
+                <div class="welcome-mode-toggle">
+                  <button
+                    type="button"
+                    class="welcome-mode-btn"
+                    data-mode="easy"
+                  >
+                    Easy (4 categories)
+                  </button>
+                  <button
+                    type="button"
+                    class="welcome-mode-btn active"
+                    data-mode="basic"
+                  >
+                    Basic (4 categories)
+                  </button>
+                  <button
+                    type="button"
+                    class="welcome-mode-btn"
+                    data-mode="advanced"
+                  >
+                    Advanced (3 categories)
+                  </button>
                 </div>
+              </div>
 
-                <div class="welcome-right">
-                    <div class="welcome-actions-panel solo-panel">
-                        <h3 class="welcome-panel-title">Solo game</h3>
-                        <button type="button" class="welcome-btn welcome-solo" id="welcome-solo">Start solo game</button>
-                    </div>
-
-                    <div class="welcome-actions-panel room-panel">
-                        <h3 class="welcome-panel-title">Room (multiplayer)</h3>
-                        <div class="welcome-lobby-controls">
-                            <label for="lobby-rounds">Number of rounds (1-10)</label>
-                            <div class="welcome-rounds-row">
-                                <input type="range" id="lobby-rounds" min="1" max="10" value="1" class="welcome-rounds-slider">
-                                <span id="lobby-rounds-value" class="welcome-rounds-value">1</span>
-                            </div>
-                            <button type="button" class="welcome-btn welcome-lobby-create" id="welcome-lobby-create">Create room</button>
-                        </div>
-                    </div>
+              <div class="welcome-option-group">
+                <label for="solo-templates-file"
+                  >Category templates (optional):</label
+                >
+                <div class="templates-box">
+                  <input
+                    type="file"
+                    id="solo-templates-file"
+                    accept=".json"
+                    style="display: none"
+                  />
+                  <button
+                    type="button"
+                    class="welcome-file-btn"
+                    id="solo-templates-btn"
+                  >
+                    Choose file
+                  </button>
+                  <span
+                    id="solo-templates-name"
+                    class="welcome-file-name"
+                  ></span>
+                  <p class="welcome-hint" style="margin-top: 6px">
+                    Use a JSON file or paste JSON below. Example:
+                    <br />
+                    <code
+                      >[{ "name": "Instrumental Convergence", "description":
+                      "Short definition...", "tags": ["Technical Failure Modes"]
+                      }]</code
+                    >
+                    <br />
+                    Each <code>name</code> is a term, and each string in
+                    <code>tags</code> is a category name.
+                  </p>
+                  <textarea
+                    id="templates-textarea"
+                    rows="5"
+                    class="templates-textarea"
+                    placeholder="Or paste JSON here (same format as above)."
+                  ></textarea>
+                  <button
+                    type="button"
+                    class="welcome-file-btn templates-apply-btn"
+                    id="templates-apply-btn"
+                  >
+                    Use pasted JSON
+                  </button>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="welcome-right">
+            <div class="welcome-actions-panel solo-panel">
+              <h3 class="welcome-panel-title">Solo game</h3>
+              <button
+                type="button"
+                class="welcome-btn welcome-solo"
+                id="welcome-solo"
+              >
+                Start solo game
+              </button>
             </div>
 
-            <div class="welcome-join">
-                <label for="welcome-room-link">Already have a room link?</label>
-                <div class="welcome-join-row">
-                    <input type="text" id="welcome-room-link" placeholder="https://...?room=abc12345">
-                    <button type="button" class="welcome-join-btn" id="welcome-join-btn">Join</button>
+            <div class="welcome-actions-panel room-panel">
+              <h3 class="welcome-panel-title">Room (multiplayer)</h3>
+              <div class="welcome-lobby-controls">
+                <label for="lobby-rounds">Number of rounds (1-10)</label>
+                <div class="welcome-rounds-row">
+                  <input
+                    type="range"
+                    id="lobby-rounds"
+                    min="1"
+                    max="10"
+                    value="1"
+                    class="welcome-rounds-slider"
+                  />
+                  <span id="lobby-rounds-value" class="welcome-rounds-value"
+                    >1</span
+                  >
                 </div>
-                <p class="welcome-hint">Solo: play on your own. Room: same puzzle for everyone, room leaderboard and download.</p>
+                <button
+                  type="button"
+                  class="welcome-btn welcome-lobby-create"
+                  id="welcome-lobby-create"
+                >
+                  Create room
+                </button>
+              </div>
             </div>
+
+            <div class="welcome-actions-panel agent-panel">
+              <h3 class="welcome-panel-title">Agent (model plays)</h3>
+              <div class="welcome-agent-controls">
+                <label for="agent-model-input">Model</label>
+                <select id="agent-model-input">
+                  <option value="llama3.2:3b">llama3.2:3b</option>
+                </select>
+                <button
+                  type="button"
+                  class="welcome-btn welcome-agent"
+                  id="welcome-agent"
+                >
+                  Start agent game
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="welcome-join">
+          <label for="welcome-room-link">Already have a room link?</label>
+          <div class="welcome-join-row">
+            <input
+              type="text"
+              id="welcome-room-link"
+              placeholder="https://...?room=abc12345"
+            />
+            <button
+              type="button"
+              class="welcome-join-btn"
+              id="welcome-join-btn"
+            >
+              Join
+            </button>
+          </div>
+          <p class="welcome-hint">
+            Solo: play on your own. Room: same puzzle for everyone, room
+            leaderboard and download.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div class="container" id="game-container" style="display: none;">
-        <div class="header">
-            <div class="lobby-bar" id="lobby-bar" style="display: none;">
-                <span class="lobby-label">Room:</span>
-                <input type="text" readonly class="lobby-link" id="lobby-link" value="">
-                <button type="button" class="lobby-copy-btn" id="lobby-copy-btn">Copy link</button>
-                <button type="button" class="lobby-leaderboard-btn" id="lobby-leaderboard-btn">Leaderboard</button>
-                <button type="button" class="lobby-download-btn" id="lobby-download-btn">Download results</button>
-            </div>
-            <h1>Connections</h1>
-            <p class="lab-kicker">Reasoning &amp; Evals</p>
-            <button type="button" class="home-btn" id="home-btn">Back to home</button>
-            <p class="header-desc">Create four groups of four that share a common theme. Many concepts fit multiple categories. The dog is watching...</p>
-            <div class="mode-toggle">
-                <button class="mode-btn" data-mode="easy">Easy (4 categories)</button>
-                <button class="mode-btn active" data-mode="basic">Basic (4 categories)</button>
-                <button class="mode-btn" data-mode="advanced">Advanced (3 categories)</button>
-            </div>
+    <div class="container" id="game-container" style="display: none">
+      <div class="header">
+        <div class="lobby-bar" id="lobby-bar" style="display: none">
+          <span class="lobby-label">Room:</span>
+          <input
+            type="text"
+            readonly
+            class="lobby-link"
+            id="lobby-link"
+            value=""
+          />
+          <button type="button" class="lobby-copy-btn" id="lobby-copy-btn">
+            Copy link
+          </button>
+          <button
+            type="button"
+            class="lobby-leaderboard-btn"
+            id="lobby-leaderboard-btn"
+          >
+            Leaderboard
+          </button>
+          <button
+            type="button"
+            class="lobby-download-btn"
+            id="lobby-download-btn"
+          >
+            Download results
+          </button>
         </div>
-
-        <div class="game-info">
-            <div class="game-stats">
-                <div class="timer-display" id="timer-display" title="Elapsed time">0:00</div>
-                <div class="score-display" id="score-display" title="Score this game">Score: —</div>
-            </div>
-            <div class="mistakes">
-                <div class="mistake-dot"></div>
-                <div class="mistake-dot"></div>
-                <div class="mistake-dot"></div>
-                <div class="mistake-dot"></div>
-            </div>
-            <div class="game-controls">
-                <button class="hints-toggle-btn">📖 DEFS: ON</button>
-                <button class="category-hints-toggle-btn">💡 Hint (4)</button>
-                <button class="dictionary-btn">Dictionary</button>
-                <button class="guide-btn">Guide</button>
-                <button class="leaderboard-btn" style="display: none;">Leaderboard</button>
-            </div>
+        <h1>Connections</h1>
+        <p class="lab-kicker">Reasoning &amp; Evals</p>
+        <button type="button" class="home-btn" id="home-btn">
+          Back to home
+        </button>
+        <p class="header-desc">
+          Create four groups of four that share a common theme. Many concepts
+          fit multiple categories. The dog is watching...
+        </p>
+        <div class="mode-toggle">
+          <button class="mode-btn" data-mode="easy">Easy (4 categories)</button>
+          <button class="mode-btn active" data-mode="basic">
+            Basic (4 categories)
+          </button>
+          <button class="mode-btn" data-mode="advanced">
+            Advanced (3 categories)
+          </button>
         </div>
+      </div>
 
-        <div class="round-display" id="round-display" style="display: none;"></div>
-
-        <div class="game-main">
-            <div class="game-left">
-                <div class="game-board" id="game-board">
-                    <!-- 16 concepts will be inserted here by JavaScript -->
-                </div>
-                <div class="controls">
-                    <button class="submit-btn" id="submit-btn" disabled>Submit</button>
-                    <button class="deselect-btn" id="deselect-btn">Deselect All</button>
-                    <button class="new-game-btn" id="new-game-btn">New Game</button>
-                </div>
-            </div>
-            <div class="game-right">
-                <div class="category-slots slots-4" id="category-slots">
-                    <div class="category-slot" data-difficulty="easy">
-                        <div class="category-name">Category 1</div>
-                        <div class="category-concepts"></div>
-                    </div>
-                    <div class="category-slot" data-difficulty="medium">
-                        <div class="category-name">Category 2</div>
-                        <div class="category-concepts"></div>
-                    </div>
-                    <div class="category-slot" data-difficulty="hard">
-                        <div class="category-name">Category 3</div>
-                        <div class="category-concepts"></div>
-                    </div>
-                    <div class="category-slot category-slot-4th" data-difficulty="harder">
-                        <div class="category-name">Category 4</div>
-                        <div class="category-concepts"></div>
-                    </div>
-                </div>
-
-                <details class="llm-bench-panel" id="llm-bench-panel">
-                    <summary class="llm-bench-summary">
-                        <span>
-                            <span class="mono-label">LLM Benchmarking</span>
-                            <strong>Model Playtest</strong>
-                        </span>
-                        <span class="llm-status-pill" id="llm-status-pill">Idle</span>
-                    </summary>
-                    <div class="llm-bench-body" aria-live="polite">
-                        <div class="llm-controls">
-                            <label for="llm-model-input">Model</label>
-                            <div class="llm-run-row">
-                                <select id="llm-model-input">
-                                    <option value="llama3.2:3b">llama3.2:3b</option>
-                                </select>
-                                <button type="button" id="llm-refresh-btn" class="llm-refresh-btn" title="Refresh model list">Models</button>
-                                <button type="button" id="llm-run-btn" class="llm-run-btn">Run</button>
-                            </div>
-                        </div>
-                        <div class="llm-metrics-grid">
-                            <div>
-                                <span class="mono-label">Model score</span>
-                                <strong id="llm-score-value">—</strong>
-                            </div>
-                            <div>
-                                <span class="mono-label">Matches</span>
-                                <strong id="llm-match-value">—</strong>
-                            </div>
-                            <div>
-                                <span class="mono-label">Human score</span>
-                                <strong id="llm-human-score-value">—</strong>
-                            </div>
-                            <div>
-                                <span class="mono-label">Delta</span>
-                                <strong id="llm-delta-value">—</strong>
-                            </div>
-                        </div>
-                        <div class="llm-trace" id="llm-trace">
-                            <p>No model run yet.</p>
-                        </div>
-                    </div>
-                </details>
-            </div>
+      <div class="game-info">
+        <div class="game-stats">
+          <div class="timer-display" id="timer-display" title="Elapsed time">
+            0:00
+          </div>
+          <div class="score-display" id="score-display" title="Score this game">
+            Score: —
+          </div>
         </div>
+        <div class="mistakes">
+          <div class="mistake-dot"></div>
+          <div class="mistake-dot"></div>
+          <div class="mistake-dot"></div>
+          <div class="mistake-dot"></div>
+        </div>
+        <div class="game-controls">
+          <button class="hints-toggle-btn">📖 DEFS: ON</button>
+          <button class="category-hints-toggle-btn">💡 Hint (4)</button>
+          <button class="dictionary-btn">Dictionary</button>
+          <button class="guide-btn">Guide</button>
+          <button class="leaderboard-btn" style="display: none">
+            Leaderboard
+          </button>
+        </div>
+      </div>
+
+      <div class="round-display" id="round-display" style="display: none"></div>
+
+      <div class="game-main">
+        <div class="game-left">
+          <div class="game-board" id="game-board">
+            <!-- 16 concepts will be inserted here by JavaScript -->
+          </div>
+          <div class="controls">
+            <button class="submit-btn" id="submit-btn" disabled>Submit</button>
+            <button class="deselect-btn" id="deselect-btn">Deselect All</button>
+            <button class="new-game-btn" id="new-game-btn">New Game</button>
+          </div>
+        </div>
+        <div class="game-right">
+          <div class="category-slots slots-4" id="category-slots">
+            <div class="category-slot" data-difficulty="easy">
+              <div class="category-name">Category 1</div>
+              <div class="category-concepts"></div>
+            </div>
+            <div class="category-slot" data-difficulty="medium">
+              <div class="category-name">Category 2</div>
+              <div class="category-concepts"></div>
+            </div>
+            <div class="category-slot" data-difficulty="hard">
+              <div class="category-name">Category 3</div>
+              <div class="category-concepts"></div>
+            </div>
+            <div
+              class="category-slot category-slot-4th"
+              data-difficulty="harder"
+            >
+              <div class="category-name">Category 4</div>
+              <div class="category-concepts"></div>
+            </div>
+          </div>
+
+          <details class="llm-bench-panel" id="llm-bench-panel">
+            <summary class="llm-bench-summary">
+              <span>
+                <span class="mono-label">LLM Benchmarking</span>
+                <strong>Model Playtest</strong>
+              </span>
+              <span class="llm-status-pill" id="llm-status-pill">Idle</span>
+            </summary>
+            <div class="llm-bench-body" aria-live="polite">
+              <div class="llm-controls">
+                <label for="llm-model-input">Model</label>
+                <div class="llm-run-row">
+                  <select id="llm-model-input">
+                    <option value="llama3.2:3b">llama3.2:3b</option>
+                  </select>
+                  <button
+                    type="button"
+                    id="llm-refresh-btn"
+                    class="llm-refresh-btn"
+                    title="Refresh model list"
+                  >
+                    Models
+                  </button>
+                  <button type="button" id="llm-run-btn" class="llm-run-btn">
+                    Run
+                  </button>
+                  <button type="button" id="llm-agent-btn" class="llm-run-btn">
+                    Agent
+                  </button>
+                </div>
+              </div>
+              <div class="llm-metrics-grid">
+                <div>
+                  <span class="mono-label">Model score</span>
+                  <strong id="llm-score-value">—</strong>
+                </div>
+                <div>
+                  <span class="mono-label">Matches</span>
+                  <strong id="llm-match-value">—</strong>
+                </div>
+                <div>
+                  <span class="mono-label">Human score</span>
+                  <strong id="llm-human-score-value">—</strong>
+                </div>
+                <div>
+                  <span class="mono-label">Delta</span>
+                  <strong id="llm-delta-value">—</strong>
+                </div>
+              </div>
+              <div class="llm-trace" id="llm-trace">
+                <p>No model run yet.</p>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
     </div>
 
     <!-- Tooltip element -->
@@ -212,133 +369,221 @@
 
     <!-- Modal: enter name when joining a room -->
     <div class="modal" id="room-name-modal">
-        <div class="modal-content">
-            <h2>Join room</h2>
-            <p>Enter your name to appear on the room leaderboard:</p>
-            <label for="room-player-name">Your name</label>
-            <input type="text" id="room-player-name" maxlength="50" placeholder="Your name" class="room-name-input">
-            <button type="button" class="new-game-btn" id="room-name-start-btn">Start</button>
-        </div>
+      <div class="modal-content">
+        <h2>Join room</h2>
+        <p>Enter your name to appear on the room leaderboard:</p>
+        <label for="room-player-name">Your name</label>
+        <input
+          type="text"
+          id="room-player-name"
+          maxlength="50"
+          placeholder="Your name"
+          class="room-name-input"
+        />
+        <button type="button" class="new-game-btn" id="room-name-start-btn">
+          Start
+        </button>
+      </div>
     </div>
 
     <!-- Modals -->
     <div class="modal" id="win-modal">
-        <div class="modal-content">
-            <h2>🎉 Puzzle Complete!</h2>
-            <p class="win-stats" id="win-stats"></p>
-            <p>You've successfully grouped all the AI safety concepts! The dog is very proud! 🐕</p>
-            <div class="win-name-prompt" id="win-name-prompt" style="display: none;">
-                <label for="player-name">Name for leaderboard (optional):</label>
-                <input type="text" id="player-name" maxlength="20" placeholder="Your name">
-            </div>
-            <div class="win-round-info" id="win-round-info" style="display: none;"></div>
-            <button class="new-game-btn" id="win-save-btn">Save &amp; Play Again</button>
-            <button class="new-game-btn" id="win-next-btn" style="display: none;">Next Game</button>
+      <div class="modal-content">
+        <h2>🎉 Puzzle Complete!</h2>
+        <p class="win-stats" id="win-stats"></p>
+        <p>
+          You've successfully grouped all the AI safety concepts! The dog is
+          very proud! 🐕
+        </p>
+        <div class="win-name-prompt" id="win-name-prompt" style="display: none">
+          <label for="player-name">Name for leaderboard (optional):</label>
+          <input
+            type="text"
+            id="player-name"
+            maxlength="20"
+            placeholder="Your name"
+          />
         </div>
+        <div
+          class="win-round-info"
+          id="win-round-info"
+          style="display: none"
+        ></div>
+        <button class="new-game-btn" id="win-save-btn">
+          Save &amp; Play Again
+        </button>
+        <button class="new-game-btn" id="win-next-btn" style="display: none">
+          Next Game
+        </button>
+      </div>
     </div>
 
     <div class="modal" id="lose-modal">
-        <div class="modal-content">
-            <h2>Game Over</h2>
-            <p>You've used all your attempts. The dog is disappointed but unharmed.</p>
-            <div id="solution-container"></div>
-            <button class="new-game-btn" onclick="document.getElementById('lose-modal').style.display='none'">Try Again</button>
-        </div>
+      <div class="modal-content">
+        <h2>Game Over</h2>
+        <p>
+          You've used all your attempts. The dog is disappointed but unharmed.
+        </p>
+        <div id="solution-container"></div>
+        <button
+          class="new-game-btn"
+          onclick="document.getElementById('lose-modal').style.display = 'none'"
+        >
+          Try Again
+        </button>
+      </div>
     </div>
 
     <div class="modal" id="dictionary-modal">
-        <div class="modal-content">
-            <h2>AI Safety Dictionary</h2>
-            <p>Definitions of all concepts in the game:</p>
-            <div class="concept-list" id="dictionary-list"></div>
-            <button class="new-game-btn" onclick="document.getElementById('dictionary-modal').style.display='none'" style="margin-top: 20px;">Close</button>
-        </div>
+      <div class="modal-content">
+        <h2>AI Safety Dictionary</h2>
+        <p>Definitions of all concepts in the game:</p>
+        <div class="concept-list" id="dictionary-list"></div>
+        <button
+          class="new-game-btn"
+          onclick="
+            document.getElementById('dictionary-modal').style.display = 'none'
+          "
+          style="margin-top: 20px"
+        >
+          Close
+        </button>
+      </div>
     </div>
 
     <div class="modal" id="guide-modal">
-        <div class="modal-content">
-            <h2>How to Play Connections</h2>
-            <div class="guide-content">
-                <div class="guide-section">
-                    <h3>🎯 Objective</h3>
-                    <p><strong>Basic:</strong> Find 4 groups of 4 concepts. <strong>Advanced:</strong> Find 3 groups of 4 (plus decoys). Each group corresponds to a category with increasing difficulty.</p>
-                </div>
+      <div class="modal-content">
+        <h2>How to Play Connections</h2>
+        <div class="guide-content">
+          <div class="guide-section">
+            <h3>🎯 Objective</h3>
+            <p>
+              <strong>Basic:</strong> Find 4 groups of 4 concepts.
+              <strong>Advanced:</strong> Find 3 groups of 4 (plus decoys). Each
+              group corresponds to a category with increasing difficulty.
+            </p>
+          </div>
 
-                <div class="guide-section">
-                    <h3>🕹️ Gameplay</h3>
-                    <ul>
-                        <li><strong>Select 4 tiles</strong> that you think belong to the same category</li>
-                        <li><strong>Click Submit</strong> to check if your grouping is correct</li>
-                        <li><strong>Be careful!</strong> Many concepts can fit multiple categories</li>
-                        <li><strong>You have 4 attempts</strong> - use them wisely!</li>
-                    </ul>
-                </div>
+          <div class="guide-section">
+            <h3>🕹️ Gameplay</h3>
+            <ul>
+              <li>
+                <strong>Select 4 tiles</strong> that you think belong to the
+                same category
+              </li>
+              <li>
+                <strong>Click Submit</strong> to check if your grouping is
+                correct
+              </li>
+              <li>
+                <strong>Be careful!</strong> Many concepts can fit multiple
+                categories
+              </li>
+              <li><strong>You have 4 attempts</strong> - use them wisely!</li>
+            </ul>
+          </div>
 
-                <div class="guide-section">
-                    <h3>🎨 Difficulty Levels</h3>
-                    <ul>
-                        <li><span class="easy-badge">EASY</span> - More obvious connections</li>
-                        <li><span class="medium-badge">MEDIUM</span> - Requires some AI safety knowledge</li>
-                        <li><span class="hard-badge">HARD</span> - Subtle philosophical connections</li>
-                        <li><span class="harder-badge">HARDER</span> - (Basic mode) Most challenging</li>
-                    </ul>
-                </div>
+          <div class="guide-section">
+            <h3>🎨 Difficulty Levels</h3>
+            <ul>
+              <li>
+                <span class="easy-badge">EASY</span> - More obvious connections
+              </li>
+              <li>
+                <span class="medium-badge">MEDIUM</span> - Requires some AI
+                safety knowledge
+              </li>
+              <li>
+                <span class="hard-badge">HARD</span> - Subtle philosophical
+                connections
+              </li>
+              <li>
+                <span class="harder-badge">HARDER</span> - (Basic mode) Most
+                challenging
+              </li>
+            </ul>
+          </div>
 
-                <div class="guide-section">
-                    <h3>⏱️ Timer &amp; Score</h3>
-                    <ul>
-                        <li>The <strong>timer</strong> runs from the start of each game until you win or lose.</li>
-                        <li><strong>Score</strong> is based on correct categories, mistakes, and time. Higher is better!</li>
-                        <li>Save your name when you win to appear on the <strong>Leaderboard</strong> (saved online when the server is running).</li>
-                    </ul>
-                </div>
+          <div class="guide-section">
+            <h3>⏱️ Timer &amp; Score</h3>
+            <ul>
+              <li>
+                The <strong>timer</strong> runs from the start of each game
+                until you win or lose.
+              </li>
+              <li>
+                <strong>Score</strong> is based on correct categories, mistakes,
+                and time. Higher is better!
+              </li>
+              <li>
+                Save your name when you win to appear on the
+                <strong>Leaderboard</strong> (saved online when the server is
+                running).
+              </li>
+            </ul>
+          </div>
 
-                <div class="guide-section">
-                    <h3>📱 On Phones &amp; Tablets</h3>
-                    <ul>
-                        <li><strong>Tap a tile</strong> once to see its definition (when hints are ON). Tap again to select it for your group.</li>
-                        <li>Use the Dictionary button for all definitions. </li>
-                    </ul>
-                </div>
+          <div class="guide-section">
+            <h3>📱 On Phones &amp; Tablets</h3>
+            <ul>
+              <li>
+                <strong>Tap a tile</strong> once to see its definition (when
+                hints are ON). Tap again to select it for your group.
+              </li>
+              <li>Use the Dictionary button for all definitions.</li>
+            </ul>
+          </div>
 
-                <div class="guide-section">
-                    <h3>🐕 The AI Safety Dog</h3>
-                    <p>Your canine companion reacts to your progress:</p>
-                    <ul>
-                        <li>🐕 <strong>Happy</strong> - When you're doing well</li>
-                        <li>😟 <strong>Worried</strong> - When you make mistakes</li>
-                        <li>🎉 <strong>Celebrating</strong> - When you solve categories</li>
-                        <li>😴 <strong>Sleeping</strong> - When the game ends</li>
-                    </ul>
-                </div>
+          <div class="guide-section">
+            <h3>🐕 The AI Safety Dog</h3>
+            <p>Your canine companion reacts to your progress:</p>
+            <ul>
+              <li>🐕 <strong>Happy</strong> - When you're doing well</li>
+              <li>😟 <strong>Worried</strong> - When you make mistakes</li>
+              <li>
+                🎉 <strong>Celebrating</strong> - When you solve categories
+              </li>
+              <li>😴 <strong>Sleeping</strong> - When the game ends</li>
+            </ul>
+          </div>
 
-                <div class="guide-section">
-                    <h3>💡 Tips</h3>
-                    <ul>
-                        <li>Hover (or tap on mobile) over concepts to see their definitions</li>
-                        <li>Use the Dictionary for quick reference</li>
-                        <li>Look for both technical and thematic connections</li>
-                        <li>Some concepts might fit multiple plausible groups</li>
-                        <li>Think about both the meaning and context of each term</li>
-                    </ul>
-                </div>
-            </div>
-            <button class="new-game-btn guide-close-btn" style="margin-top: 20px;">Start Playing</button>
+          <div class="guide-section">
+            <h3>💡 Tips</h3>
+            <ul>
+              <li>
+                Hover (or tap on mobile) over concepts to see their definitions
+              </li>
+              <li>Use the Dictionary for quick reference</li>
+              <li>Look for both technical and thematic connections</li>
+              <li>Some concepts might fit multiple plausible groups</li>
+              <li>Think about both the meaning and context of each term</li>
+            </ul>
+          </div>
         </div>
+        <button class="new-game-btn guide-close-btn" style="margin-top: 20px">
+          Start Playing
+        </button>
+      </div>
     </div>
 
     <div class="modal" id="leaderboard-modal">
-        <div class="modal-content">
-            <h2>🏆 Leaderboard</h2>
-            <p class="leaderboard-hint" id="leaderboard-hint">Room results</p>
-            <div class="leaderboard-list" id="leaderboard-list"></div>
-            <div class="leaderboard-actions">
-                <button class="new-game-btn" id="leaderboard-download-btn" style="display: none;">Download results</button>
-                <button class="new-game-btn" id="leaderboard-close-btn">Close</button>
-            </div>
+      <div class="modal-content">
+        <h2>🏆 Leaderboard</h2>
+        <p class="leaderboard-hint" id="leaderboard-hint">Room results</p>
+        <div class="leaderboard-list" id="leaderboard-list"></div>
+        <div class="leaderboard-actions">
+          <button
+            class="new-game-btn"
+            id="leaderboard-download-btn"
+            style="display: none"
+          >
+            Download results
+          </button>
+          <button class="new-game-btn" id="leaderboard-close-btn">Close</button>
         </div>
+      </div>
     </div>
 
     <script type="module" src="js/game.js?v=9"></script>
-</body>
+  </body>
 </html>
