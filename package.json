@@ -4,7 +4,8 @@
   "description": "Connections game for combinatorial reasoning and evals with solo and lobby multiplayer",
   "type": "module",
   "scripts": {
-    "start": "npx vercel dev --yes"
+    "start": "npx vercel dev --yes",
+    "dev:local": ".venv/bin/python dev_server.py"
   },
   "dependencies": {
     "@libsql/client": "^0.14.0"

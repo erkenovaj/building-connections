@@ -74,7 +74,8 @@ class handler(BaseHTTPRequestHandler):
                 prompt=prompt,
                 model=model,
                 temperature=float(body.get("temperature") or 0.2),
-                num_predict=400,
+                num_predict=3000,
+                think=True,
             )
             parsed = extract_json(response)
             write_json(
@@ -86,6 +87,7 @@ class handler(BaseHTTPRequestHandler):
                     "notes": str(parsed.get("notes", ""))[:300]
                     if isinstance(parsed, dict)
                     else "",
+                    "thinking": str(getattr(client, "last_thinking", "") or "")[:4000],
                     "raw": str(response),
                 },
             )

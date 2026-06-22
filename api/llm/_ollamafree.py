@@ -1,5 +1,7 @@
 import json
 import os
+import re
+import urllib.request
 
 
 def write_json(handler, status, payload):
@@ -19,7 +21,49 @@ def read_json(handler):
     return json.loads(raw or "{}")
 
 
+class LocalOllama:
+    """Minimal client for a locally running Ollama server (``/api`` endpoints)."""
+
+    def __init__(self, base_url):
+        self.base_url = base_url.rstrip("/")
+
+    def chat(self, prompt, model, temperature=0.2, num_predict=400, think=False):
+        """Run a single non-streaming completion and return the response text.
+
+        When ``think`` is true the model reasons in a separate channel: its
+        chain-of-thought is captured on ``self.last_thinking`` and the returned
+        text holds only the final answer. Give such calls a larger
+        ``num_predict`` so the reasoning does not exhaust the answer budget.
+        """
+        body = json.dumps(
+            {
+                "model": model,
+                "prompt": prompt,
+                "stream": False,
+                "think": think,
+                "options": {"temperature": temperature, "num_predict": num_predict},
+            }
+        ).encode("utf-8")
+        request = urllib.request.Request(
+            f"{self.base_url}/api/generate",
+            data=body,
+            headers={"Content-Type": "application/json"},
+        )
+        with urllib.request.urlopen(request, timeout=180) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+        self.last_thinking = payload.get("thinking", "") or ""
+        return payload.get("response", "")
+
+    def list_models(self):
+        """Return the names of models installed on the local Ollama server."""
+        with urllib.request.urlopen(f"{self.base_url}/api/tags", timeout=10) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+        return [model["name"] for model in payload.get("models", [])]
+
+
 def get_client():
+    if os.getenv("LLM_BACKEND", "free").lower() == "local":
+        return LocalOllama(os.getenv("OLLAMA_BASE_URL", "http://localhost:11434"))
     from ollamafreeapi import OllamaFreeAPI
 
     return OllamaFreeAPI()
@@ -33,6 +77,9 @@ def extract_json(text):
     raw = str(text or "").strip()
     if not raw:
         return None
+    raw = re.sub(r"<think>.*?</think>", "", raw, flags=re.DOTALL).strip()
+    if not raw:
+        return None
     if raw.startswith("```"):
         parts = raw.split("```")
         if len(parts) >= 3:
@@ -43,7 +90,10 @@ def extract_json(text):
         start = raw.find("{")
         end = raw.rfind("}")
         if start >= 0 and end > start:
-            return json.loads(raw[start : end + 1])
+            try:
+                return json.loads(raw[start : end + 1])
+            except json.JSONDecodeError:
+                return None
     return None
 
 

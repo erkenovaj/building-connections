@@ -67,21 +67,6 @@ export async function sampleGame({
   return payload;
 }
 
-export async function runLlmSolver({
-  board,
-  numCategories,
-  model,
-  maxGuesses,
-}) {
-  const res = await fetch(`${getBase()}/api/llm/solve`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ board, numCategories, model, maxGuesses }),
-  });
-  if (!res.ok) throw new Error(await res.text());
-  return res.json();
-}
-
 export async function runLlmGuess({
   remaining,
   numCategories,

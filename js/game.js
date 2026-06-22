@@ -911,9 +911,6 @@ class AISafetyGame {
     document
       .getElementById("new-game-btn")
       .addEventListener("click", () => this.startNewGame());
-    const llmRunBtn = document.getElementById("llm-run-btn");
-    if (llmRunBtn)
-      llmRunBtn.addEventListener("click", () => this.runLlmBenchmark());
     const llmRefreshBtn = document.getElementById("llm-refresh-btn");
     if (llmRefreshBtn)
       llmRefreshBtn.addEventListener("click", () => this.loadLlmModels());
@@ -1622,13 +1619,11 @@ class AISafetyGame {
   resetLlmBenchmarkPanel() {
     const status = document.getElementById("llm-status-pill");
     const trace = document.getElementById("llm-trace");
-    const runBtn = document.getElementById("llm-run-btn");
     if (status) {
       status.textContent = "Idle";
       status.className = "llm-status-pill";
     }
     if (trace) trace.innerHTML = "<p>No model run yet.</p>";
-    if (runBtn) runBtn.disabled = false;
     this.setText("llm-score-value", "—");
     this.setText("llm-match-value", "—");
     this.setText("llm-delta-value", "—");
@@ -1720,110 +1715,8 @@ class AISafetyGame {
       .replace(/'/g, "&#039;");
   }
 
-  scoreModelGuesses(guesses) {
-    const solvedDifficulties = new Set();
-    const rows = [];
-    let mistakes = 0;
-    let solved = 0;
-    let score = 0;
-    let elapsed = 0;
-    const secondsPerGuess = 8;
-
-    for (const guess of guesses) {
-      if (
-        mistakes >= CONFIG.MAX_MISTAKES ||
-        solved >= this.currentPuzzle.numCategories
-      )
-        break;
-      elapsed += secondsPerGuess;
-      const guessSet = new Set(guess.items);
-      let matchedDifficulty = null;
-      let matchedCategory = null;
-
-      for (const [difficulty, category] of Object.entries(
-        this.currentPuzzle.categories,
-      )) {
-        if (solvedDifficulties.has(difficulty)) continue;
-        if (this.setsAreEqual(new Set(category.members), guessSet)) {
-          matchedDifficulty = difficulty;
-          matchedCategory = category;
-          break;
-        }
-      }
-
-      if (matchedCategory) {
-        solvedDifficulties.add(matchedDifficulty);
-        solved++;
-        const rawPoints = 12000 / secondsPerGuess - elapsed;
-        score = Math.max(
-          0,
-          Math.round(score + Math.max(100, Math.round(rawPoints))),
-        );
-        rows.push({
-          ...guess,
-          correct: true,
-          matchedName: matchedCategory.name,
-          difficulty: matchedDifficulty,
-        });
-      } else {
-        mistakes++;
-        score = Math.max(0, Math.round(score - secondsPerGuess));
-        rows.push({
-          ...guess,
-          correct: false,
-          matchedName: null,
-          difficulty: null,
-        });
-      }
-    }
-
-    return {
-      score,
-      solved,
-      mistakes,
-      elapsed,
-      won:
-        solved === this.currentPuzzle.numCategories &&
-        mistakes < CONFIG.MAX_MISTAKES,
-      rows,
-    };
-  }
-
-  renderLlmBenchmark(result, scored) {
-    const trace = document.getElementById("llm-trace");
-    if (!trace) return;
-    const rows = scored.rows
-      .map((row, index) => {
-        const label = this.escapeHtml(row.label || `Guess ${index + 1}`);
-        const verdict = row.correct ? `Matched ${row.matchedName}` : "Miss";
-        const items = this.escapeHtml(row.items.join(", "));
-        return `
-                <div class="llm-guess ${row.correct ? "correct" : "incorrect"}">
-                    <div class="llm-guess-title">${label}<span>${this.escapeHtml(verdict)}</span></div>
-                    <div>${items}</div>
-                </div>
-            `;
-      })
-      .join("");
-    const cadence =
-      '<p class="mono-label">Scored with the live category matcher at 8 seconds per model guess.</p>';
-    trace.innerHTML =
-      rows || "<p>The model returned no valid four-term guesses.</p>";
-    trace.insertAdjacentHTML(
-      "beforeend",
-      cadence + this.renderLlmReasoning(result),
-    );
-  }
-
-  renderLlmReasoning(result) {
-    const reasoning = result.reasoning || result.notes || result.raw || "";
-    if (!reasoning) return "";
-    return `
-            <details class="llm-reasoning-panel" open>
-                <summary>Reasoning / verification trace</summary>
-                <pre>${this.escapeHtml(reasoning)}</pre>
-            </details>
-        `;
+  _sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   renderAgentTrace(rows, mistakes, thinking) {
@@ -1835,10 +1728,19 @@ class AISafetyGame {
         ? `Matched ${this.escapeHtml(row.matchedName)}`
         : "Miss";
       const items = this.escapeHtml((row.items || []).join(", "));
+      const notes = row.notes
+        ? `<div class="llm-guess-notes">${this.escapeHtml(row.notes)}</div>`
+        : "";
+      const reasoning = row.thinking || row.raw || "";
+      const thinkingBlock = reasoning
+        ? `<details class="llm-guess-thinking"><summary>reasoning</summary><pre>${this.escapeHtml(reasoning)}</pre></details>`
+        : "";
       return `
         <div class="llm-guess ${row.correct ? "correct" : "incorrect"}">
           <div class="llm-guess-title">${label}<span>${verdict}</span></div>
           <div>${items}</div>
+          ${notes}
+          ${thinkingBlock}
         </div>
       `;
     });
@@ -1856,16 +1758,23 @@ class AISafetyGame {
     const panel = document.getElementById("llm-bench-panel");
     if (panel) panel.open = true;
     const agentBtn = document.getElementById("llm-agent-btn");
-    const runBtn = document.getElementById("llm-run-btn");
     const modelInput = document.getElementById("llm-model-input");
     const model =
       this.agentModel ||
       (modelInput && modelInput.value && modelInput.value.trim()) ||
       "llama3.2:3b";
+    if (modelInput && model) {
+      if (!Array.from(modelInput.options).some((opt) => opt.value === model)) {
+        const opt = document.createElement("option");
+        opt.value = model;
+        opt.textContent = model;
+        modelInput.appendChild(opt);
+      }
+      modelInput.value = model;
+    }
 
     this.isLlmRunning = true;
     if (agentBtn) agentBtn.disabled = true;
-    if (runBtn) runBtn.disabled = true;
 
     const numCategories = this.currentPuzzle.numCategories;
     const solvedDifficulties = new Set();
@@ -1887,6 +1796,9 @@ class AISafetyGame {
           solvedDifficulties,
         );
         let guess = null;
+        let thinking = "";
+        let notes = "";
+        let raw = "";
         try {
           const res = await api.runLlmGuess({
             remaining,
@@ -1895,6 +1807,9 @@ class AISafetyGame {
             model,
           });
           guess = res && res.guess ? res.guess : null;
+          thinking = res && res.thinking ? res.thinking : "";
+          notes = res && res.notes ? res.notes : "";
+          raw = res && res.raw ? res.raw : "";
         } catch (_) {
           guess = null;
         }
@@ -1908,10 +1823,20 @@ class AISafetyGame {
             items: guess && Array.isArray(guess.items) ? guess.items : [],
             correct: false,
             matchedName: null,
+            thinking,
+            notes,
+            raw,
           });
           this.renderAgentTrace(rows, mistakes, false);
           continue;
         }
+
+        // Show the model's pick on the real board before revealing the verdict.
+        const guessedCards = guess.items.map((item) =>
+          this.findCardByConcept(item),
+        );
+        guessedCards.forEach((card) => card && card.classList.add("selected"));
+        await this._sleep(700);
 
         const verdict = evaluateGuess(this.currentPuzzle, guess.items);
         if (verdict.correct) {
@@ -1922,22 +1847,33 @@ class AISafetyGame {
             0,
             Math.round(score + Math.max(100, Math.round(rawPoints))),
           );
+          this.markGroupAsCorrect(guess.items);
+          this.fillCategorySlot(verdict.matchedCategory, verdict.difficulty);
           rows.push({
             label: guess.label || verdict.matchedCategory.name,
             items: guess.items,
             correct: true,
             matchedName: verdict.matchedCategory.name,
+            thinking,
+            notes,
           });
         } else {
           mistakes++;
           history.push({ items: guess.items });
           score = Math.max(0, Math.round(score - secondsPerGuess));
+          this.markGroupAsIncorrect(guess.items);
           rows.push({
             label: guess.label || "Guess",
             items: guess.items,
             correct: false,
             matchedName: null,
+            thinking,
+            notes,
           });
+          await this._sleep(900);
+          guessedCards.forEach(
+            (card) => card && card.classList.remove("selected", "incorrect"),
+          );
         }
         this.renderAgentTrace(rows, mistakes, false);
       }
@@ -1954,58 +1890,7 @@ class AISafetyGame {
     } finally {
       this.isLlmRunning = false;
       if (agentBtn) agentBtn.disabled = false;
-      if (runBtn) runBtn.disabled = false;
       this.agentModel = null;
-    }
-  }
-
-  async runLlmBenchmark() {
-    if (!this.currentPuzzle || this.isLlmRunning) return;
-    const runBtn = document.getElementById("llm-run-btn");
-    const modelInput = document.getElementById("llm-model-input");
-    const model =
-      (modelInput && modelInput.value && modelInput.value.trim()) ||
-      "llama3.2:3b";
-    this.isLlmRunning = true;
-    if (runBtn) runBtn.disabled = true;
-    this.setLlmStatus("Running", "running");
-    const trace = document.getElementById("llm-trace");
-    if (trace)
-      trace.innerHTML = "<p>Sending the current board to the model solver…</p>";
-    const panel = document.getElementById("llm-bench-panel");
-    if (panel) panel.open = true;
-
-    try {
-      const result = await api.runLlmSolver({
-        board: this.currentPuzzle.board,
-        numCategories: this.currentPuzzle.numCategories,
-        model,
-        maxGuesses: Math.max(
-          6,
-          this.currentPuzzle.numCategories + CONFIG.MAX_MISTAKES,
-        ),
-      });
-      const scored = this.scoreModelGuesses(result.guesses || []);
-      this.llmBenchmark = scored;
-      this.setText("llm-score-value", String(scored.score));
-      this.setText(
-        "llm-match-value",
-        `${scored.solved}/${this.currentPuzzle.numCategories}`,
-      );
-      this.updateLlmHumanScore();
-      this.renderLlmBenchmark(result, scored);
-      this.setLlmStatus(scored.won ? "Solved" : "Scored", "ready");
-    } catch (error) {
-      let message = error.message || "Model solver failed.";
-      try {
-        const parsed = JSON.parse(message);
-        message = parsed.error || parsed.setup || message;
-      } catch (_) {}
-      if (trace) trace.innerHTML = `<p>${this.escapeHtml(message)}</p>`;
-      this.setLlmStatus("Error", "error");
-    } finally {
-      this.isLlmRunning = false;
-      if (runBtn) runBtn.disabled = false;
     }
   }
 
