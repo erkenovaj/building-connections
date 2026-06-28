@@ -108,7 +108,7 @@ def main() -> None:
     dataset = build_dataset(args.num_boards, args.seed_start)
 
     cuda = torch.cuda.is_available()
-    use_bf16 = cuda and torch.cuda.is_bf16_supported()
+    use_bf16 = cuda and torch.cuda.get_device_capability()[0] >= 8
 
     config = GRPOConfig(
         output_dir=args.output,
