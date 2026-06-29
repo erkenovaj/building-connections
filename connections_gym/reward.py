@@ -12,7 +12,9 @@ from typing import Any, Iterable, Mapping, Optional, Sequence
 
 from .rules import CONCEPTS_PER_GROUP
 
-_REWARD_BY_K = {4: 1.0, 3: 0.25, 2: 0.10}
+# k=2 overlap is a cheap, stable local optimum (the policy camps there and the
+# intra-group reward variance collapses); only k>=3 now earns positive reward.
+_REWARD_BY_K = {4: 1.0, 3: 0.25}
 _LOW_OVERLAP_REWARD = -0.5
 _INVALID_REWARD = -1.0
 
