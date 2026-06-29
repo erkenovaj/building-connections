@@ -57,8 +57,12 @@ def load_policy(model_id: str, adapter: str | None, device: str):
     return model, tokenizer
 
 
-def generate_guess_text(model, tokenizer, prompt: str, device: str, max_new_tokens: int) -> str:
-    """Greedily decode the model's response to a single board-state prompt."""
+def generate_guess_text(model, tokenizer, prompt: str, device: str, max_new_tokens: int) -> tuple[str, int]:
+    """Greedily decode the model's response to a single board-state prompt.
+
+    Returns the decoded text and the count of newly generated tokens (a proxy
+    for whether the model is hitting the ``max_new_tokens`` cap).
+    """
     inputs = tokenizer.apply_chat_template(
         [{"role": "user", "content": prompt}],
         add_generation_prompt=True,
@@ -73,7 +77,7 @@ def generate_guess_text(model, tokenizer, prompt: str, device: str, max_new_toke
             pad_token_id=tokenizer.pad_token_id,
         )
     new_tokens = output[0][inputs["input_ids"].shape[1]:]
-    return tokenizer.decode(new_tokens, skip_special_tokens=True)
+    return tokenizer.decode(new_tokens, skip_special_tokens=True), int(new_tokens.shape[0])
 
 
 def play_episode(model, tokenizer, env, seed, device, max_steps, max_new_tokens) -> dict:
@@ -82,9 +86,11 @@ def play_episode(model, tokenizer, env, seed, device, max_steps, max_new_tokens)
     done = False
     steps = invalid = 0
     total_reward = 0.0
+    gen_tokens = 0
     info: dict = {"status": "playing", "mistakes": 0, "solved_keys": []}
     while not done and steps < max_steps:
-        text = generate_guess_text(model, tokenizer, obs["prompt"], device, max_new_tokens)
+        text, n_new = generate_guess_text(model, tokenizer, obs["prompt"], device, max_new_tokens)
+        gen_tokens += n_new
         guess = parse_guess(text, obs["remaining"])
         items = guess["items"] if guess else []
         obs, reward_value, done, info = env.step(items)
@@ -99,6 +105,7 @@ def play_episode(model, tokenizer, env, seed, device, max_steps, max_new_tokens)
         "steps": steps,
         "invalid": invalid,
         "total_reward": total_reward,
+        "gen_tokens": gen_tokens,
     }
 
 
@@ -132,11 +139,17 @@ def main() -> None:
     env = ConnectionsEnv(sampling_params=_SAMPLING_PARAMS)
 
     episodes = []
-    for seed in range(args.eval_seed_start, args.eval_seed_start + args.num_seeds):
-        episodes.append(
-            play_episode(
-                model, tokenizer, env, seed, device, args.max_steps, args.max_new_tokens
-            )
+    for i, seed in enumerate(range(args.eval_seed_start, args.eval_seed_start + args.num_seeds), start=1):
+        ep = play_episode(
+            model, tokenizer, env, seed, device, args.max_steps, args.max_new_tokens
+        )
+        episodes.append(ep)
+        print(
+            f"  [{i}/{args.num_seeds}] seed {seed}: groups {ep['groups_solved']} "
+            f"mistakes {ep['mistakes']} steps {ep['steps']} invalid {ep['invalid']} "
+            f"tok/step {ep['gen_tokens'] / max(ep['steps'], 1):.0f}",
+            file=sys.stderr,
+            flush=True,
         )
 
     summary = aggregate(episodes)
