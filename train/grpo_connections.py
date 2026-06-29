@@ -21,6 +21,10 @@ import time
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+# Reduce allocator fragmentation on small GPUs (e.g. Kaggle T4); must be set
+# before torch initializes its CUDA caching allocator.
+os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
+
 import torch
 from datasets import Dataset
 from peft import LoraConfig
@@ -189,6 +193,8 @@ def main() -> None:
         report_to="none",
         bf16=use_bf16,
         fp16=cuda and not use_bf16,
+        gradient_checkpointing=True,
+        gradient_checkpointing_kwargs={"use_reentrant": False},
         use_vllm=args.use_vllm,
     )
 
