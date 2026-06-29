@@ -119,10 +119,11 @@ class CompactLogCallback(TrainerCallback):
     """
 
     def on_train_begin(self, args, state, control, **kwargs):
-        """Record the start time and print the column header."""
+        """Record the start time, reset the reward EMA, and print the header."""
         self._t0 = time.time()
+        self._ema = None
         print(
-            "   step   |      reward       |  completions  |  grad    loss    ent |    lr    | pace",
+            "   step   |      reward       |     ema     |  completions  |  grad    loss    ent |    lr    | pace",
             flush=True,
         )
 
@@ -141,6 +142,9 @@ class CompactLogCallback(TrainerCallback):
         step, total = state.global_step, state.max_steps
         rew = logs.get("reward", float("nan"))
         rstd = logs.get("reward_std", 0.0)
+        if rew == rew:  # update the smoothed reward only on real (non-NaN) values
+            self._ema = rew if self._ema is None else 0.1 * rew + 0.9 * self._ema
+        ema = self._ema if self._ema is not None else float("nan")
         clip = logs.get("completions/clipped_ratio", 0.0) * 100
         mlen = logs.get("completions/mean_length", 0.0)
         grad = logs.get("grad_norm", 0.0)
@@ -151,7 +155,7 @@ class CompactLogCallback(TrainerCallback):
         eta = _fmt_eta(sit * (total - step))
         flag = "  zero-grad" if not grad else ""
         print(
-            f"  {step:>3}/{total:<3} | {rew:>7.3f} +/- {rstd:<5.3f} | "
+            f"  {step:>3}/{total:<3} | {rew:>7.3f} +/- {rstd:<5.3f} | ema {ema:>7.3f} | "
             f"clip{clip:>4.0f}% l{mlen:>4.0f} | {grad:>6.3f} {loss:>7.4f} {ent:>5.2f} | "
             f"{lr:>8.2e} | {sit:>4.1f}s eta {eta}{flag}",
             flush=True,
