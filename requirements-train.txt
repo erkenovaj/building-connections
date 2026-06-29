@@ -1,6 +1,10 @@
 # Training-only ML stack. Install into a dedicated venv (e.g. .venv-train);
 # do NOT add these to pyproject.toml — that is the serverless deploy manifest
 # and these multi-GB deps would bloat the Vercel bundle.
+#
+# The trainer imports the app code (connections_sampler -> ortools), so pull in
+# the app runtime manifest too; this file is the single install target on Kaggle.
+-r requirements.txt
 torch==2.10.0
 transformers>=5.12.0
 trl>=1.7.0
