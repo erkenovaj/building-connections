@@ -17,12 +17,15 @@ import argparse
 import json
 import os
 import sys
+import time
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import torch
 from datasets import Dataset
 from peft import LoraConfig
+from transformers import TrainerCallback
+from transformers.trainer_callback import PrinterCallback, ProgressCallback
 from trl import GRPOConfig, GRPOTrainer
 
 from connections_gym.env import ConnectionsEnv
@@ -89,6 +92,68 @@ def connections_reward(
     return rewards
 
 
+def _fmt_eta(seconds: float) -> str:
+    """Format a seconds duration compactly as ``HhMMm`` / ``MmSSs`` / ``Ss``."""
+    seconds = int(seconds)
+    h, rem = divmod(seconds, 3600)
+    m, s = divmod(rem, 60)
+    if h:
+        return f"{h}h{m:02d}m"
+    if m:
+        return f"{m}m{s:02d}s"
+    return f"{s}s"
+
+
+class CompactLogCallback(TrainerCallback):
+    """Print one tidy line per GRPO step instead of TRL's raw metrics dict.
+
+    Surfaces only the fields that matter for this reward setup (reward
+    mean/std, completion clip ratio and length, grad/loss/entropy, lr) plus a
+    self-computed ETA, and flags ``zero-grad`` steps where the whole group tied
+    so nothing was learned. Registered in place of the default progress/printer
+    callbacks.
+    """
+
+    def on_train_begin(self, args, state, control, **kwargs):
+        """Record the start time and print the column header."""
+        self._t0 = time.time()
+        print(
+            "   step   |      reward       |  completions  |  grad    loss    ent |    lr    | pace",
+            flush=True,
+        )
+
+    def on_log(self, args, state, control, logs=None, **kwargs):
+        """Format one training-step (or the final summary) log line."""
+        if not logs:
+            return
+        if "train_runtime" in logs:
+            print(
+                f"  done: {state.global_step} steps in {_fmt_eta(logs['train_runtime'])}",
+                flush=True,
+            )
+            return
+        if "reward" not in logs and "loss" not in logs:
+            return
+        step, total = state.global_step, state.max_steps
+        rew = logs.get("reward", float("nan"))
+        rstd = logs.get("reward_std", 0.0)
+        clip = logs.get("completions/clipped_ratio", 0.0) * 100
+        mlen = logs.get("completions/mean_length", 0.0)
+        grad = logs.get("grad_norm", 0.0)
+        loss = logs.get("loss", 0.0)
+        ent = logs.get("entropy", float("nan"))
+        lr = logs.get("learning_rate", 0.0)
+        sit = (time.time() - self._t0) / max(step, 1)
+        eta = _fmt_eta(sit * (total - step))
+        flag = "  zero-grad" if not grad else ""
+        print(
+            f"  {step:>3}/{total:<3} | {rew:>7.3f} +/- {rstd:<5.3f} | "
+            f"clip{clip:>4.0f}% l{mlen:>4.0f} | {grad:>6.3f} {loss:>7.4f} {ent:>5.2f} | "
+            f"{lr:>8.2e} | {sit:>4.1f}s eta {eta}{flag}",
+            flush=True,
+        )
+
+
 def main() -> None:
     """Parse arguments and run the GRPO training loop."""
     parser = argparse.ArgumentParser(description=__doc__)
@@ -143,6 +208,9 @@ def main() -> None:
         train_dataset=dataset,
         peft_config=peft_config,
     )
+    for _callback in (ProgressCallback, PrinterCallback):
+        trainer.remove_callback(_callback)
+    trainer.add_callback(CompactLogCallback())
     trainer.train()
     trainer.save_model(args.output)
 
