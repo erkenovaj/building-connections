@@ -174,6 +174,7 @@ def main() -> None:
     parser.add_argument("--lr", type=float, default=1e-5)
     parser.add_argument("--max-completion-length", type=int, default=512)
     parser.add_argument("--temperature", type=float, default=1.0)
+    parser.add_argument("--lr-scheduler", default="linear")
     parser.add_argument("--use-vllm", action="store_true")
     parser.add_argument("--output", default="outputs/grpo-connections")
     args = parser.parse_args()
@@ -190,6 +191,7 @@ def main() -> None:
         max_completion_length=args.max_completion_length,
         temperature=args.temperature,
         learning_rate=args.lr,
+        lr_scheduler_type=args.lr_scheduler,
         max_steps=args.max_steps,
         logging_steps=1,
         save_strategy="steps",

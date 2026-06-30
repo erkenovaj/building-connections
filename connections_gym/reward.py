@@ -12,9 +12,12 @@ from typing import Any, Iterable, Mapping, Optional, Sequence
 
 from .rules import CONCEPTS_PER_GROUP
 
-# k=2 overlap is a cheap, stable local optimum (the policy camps there and the
-# intra-group reward variance collapses); only k>=3 now earns positive reward.
-_REWARD_BY_K = {4: 1.0, 3: 0.25}
+# Partial overlap is a local optimum: when every sampled guess ties on the same
+# k the intra-group advantage collapses to zero and learning stalls. k=2 earns
+# nothing (the policy camped there first); k=3 keeps only a small nudge so the
+# full k=4 solve stays the dominant target and the policy is pushed off the k=3
+# plateau instead of settling on it.
+_REWARD_BY_K = {4: 1.0, 3: 0.1}
 _LOW_OVERLAP_REWARD = -0.5
 _INVALID_REWARD = -1.0
 
