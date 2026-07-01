@@ -1,0 +1,510 @@
+[
+  {
+    "name": "Trumpet",
+    "description": "A valved brass instrument with a bright, piercing tone, common in jazz and classical music.",
+    "tags": [
+      "MADE OF BRASS",
+      "JAZZ COMBO"
+    ]
+  },
+  {
+    "name": "Trombone",
+    "description": "A brass instrument distinguished by its telescoping slide, used to vary the pitch.",
+    "tags": [
+      "MADE OF BRASS",
+      "JAZZ COMBO"
+    ]
+  },
+  {
+    "name": "Tuba",
+    "description": "The largest and lowest-pitched brass instrument, serving as the bass of the orchestral brass section.",
+    "tags": [
+      "MADE OF BRASS"
+    ]
+  },
+  {
+    "name": "French Horn",
+    "description": "A coiled brass instrument known for its wide range and mellow, rich tone.",
+    "tags": [
+      "MADE OF BRASS"
+    ]
+  },
+  {
+    "name": "Cornet",
+    "description": "A brass instrument similar to the trumpet but with a more conical bore, giving it a mellower tone.",
+    "tags": [
+      "MADE OF BRASS"
+    ]
+  },
+  {
+    "name": "Euphonium",
+    "description": "A medium-sized, conical-bore brass instrument with a tenor voice, often found in concert bands.",
+    "tags": [
+      "MADE OF BRASS"
+    ]
+  },
+  {
+    "name": "Sousaphone",
+    "description": "A type of tuba designed to be worn and carried, commonly used in marching bands.",
+    "tags": [
+      "MADE OF BRASS"
+    ]
+  },
+  {
+    "name": "Flugelhorn",
+    "description": "A valved brass instrument resembling a trumpet but with a wider, more conical bore, popular in jazz.",
+    "tags": [
+      "MADE OF BRASS",
+      "JAZZ COMBO"
+    ]
+  },
+  {
+    "name": "Flute",
+    "description": "A high-pitched woodwind instrument that produces sound from the flow of air across an opening.",
+    "tags": [
+      "WOODWINDS"
+    ]
+  },
+  {
+    "name": "Clarinet",
+    "description": "A single-reed woodwind instrument with a cylindrical tube and a versatile, expressive tone.",
+    "tags": [
+      "WOODWINDS",
+      "JAZZ COMBO"
+    ]
+  },
+  {
+    "name": "Saxophone",
+    "description": "A single-reed instrument made of brass but classified as a woodwind, iconic in jazz music.",
+    "tags": [
+      "WOODWINDS",
+      "JAZZ COMBO"
+    ]
+  },
+  {
+    "name": "Oboe",
+    "description": "A double-reed woodwind instrument known for its penetrating and distinctive pastoral tone.",
+    "tags": [
+      "WOODWINDS"
+    ]
+  },
+  {
+    "name": "Bassoon",
+    "description": "A large, double-reed woodwind instrument that serves as the bass of the woodwind family.",
+    "tags": [
+      "WOODWINDS"
+    ]
+  },
+  {
+    "name": "Piccolo",
+    "description": "A small flute sounding an octave higher than the standard concert flute.",
+    "tags": [
+      "WOODWINDS"
+    ]
+  },
+  {
+    "name": "English Horn",
+    "description": "A double-reed woodwind instrument in the oboe family, pitched a fifth lower than an oboe.",
+    "tags": [
+      "WOODWINDS"
+    ]
+  },
+  {
+    "name": "Recorder",
+    "description": "A simple woodwind instrument with a fipple mouthpiece, popular in early music and for music education.",
+    "tags": [
+      "WOODWINDS"
+    ]
+  },
+  {
+    "name": "Violin",
+    "description": "The highest-pitched bowed string instrument of the orchestra, also known as a fiddle in folk music.",
+    "tags": [
+      "CLASSICAL STRINGS",
+      "FOLK INSTRUMENTS"
+    ]
+  },
+  {
+    "name": "Viola",
+    "description": "A bowed string instrument, slightly larger than a violin, that serves as the alto voice of the string section.",
+    "tags": [
+      "CLASSICAL STRINGS"
+    ]
+  },
+  {
+    "name": "Cello",
+    "description": "A large bowed string instrument with a rich, tenor voice, played while seated.",
+    "tags": [
+      "CLASSICAL STRINGS"
+    ]
+  },
+  {
+    "name": "Double Bass",
+    "description": "The largest and lowest-pitched bowed string instrument in the modern symphony orchestra.",
+    "tags": [
+      "CLASSICAL STRINGS",
+      "JAZZ COMBO",
+      "RHYTHM SECTION"
+    ]
+  },
+  {
+    "name": "Harp",
+    "description": "A large, triangular-framed plucked string instrument with strings running perpendicular to the soundboard.",
+    "tags": [
+      "CLASSICAL STRINGS"
+    ]
+  },
+  {
+    "name": "Lute",
+    "description": "A plucked string instrument with a deep round back, prominent in Renaissance and Baroque music.",
+    "tags": [
+      "CLASSICAL STRINGS"
+    ]
+  },
+  {
+    "name": "Viola da Gamba",
+    "description": "A family of fretted, bowed string instruments from the Renaissance and Baroque periods.",
+    "tags": [
+      "CLASSICAL STRINGS"
+    ]
+  },
+  {
+    "name": "Classical Guitar",
+    "description": "A nylon-stringed acoustic guitar used for playing classical music with a finger-picking style.",
+    "tags": [
+      "CLASSICAL STRINGS",
+      "FOLK INSTRUMENTS"
+    ]
+  },
+  {
+    "name": "Piano",
+    "description": "A versatile keyboard instrument that produces sound by striking strings with hammers.",
+    "tags": [
+      "THINGS WITH KEYS",
+      "JAZZ COMBO",
+      "RHYTHM SECTION"
+    ]
+  },
+  {
+    "name": "Organ",
+    "description": "A keyboard instrument that produces sound by driving pressurized air through pipes or via electronic synthesis.",
+    "tags": [
+      "THINGS WITH KEYS",
+      "ROCK BAND GEAR"
+    ]
+  },
+  {
+    "name": "Synthesizer",
+    "description": "An electronic instrument, often with a keyboard, that generates a wide variety of sounds.",
+    "tags": [
+      "THINGS WITH KEYS",
+      "ROCK BAND GEAR"
+    ]
+  },
+  {
+    "name": "Harpsichord",
+    "description": "A keyboard instrument where strings are plucked by quills, a precursor to the piano.",
+    "tags": [
+      "THINGS WITH KEYS"
+    ]
+  },
+  {
+    "name": "Celesta",
+    "description": "A keyboard instrument where hammers strike steel plates, creating a bell-like, ethereal sound.",
+    "tags": [
+      "THINGS WITH KEYS"
+    ]
+  },
+  {
+    "name": "Accordion",
+    "description": "A portable, bellows-driven free-reed instrument with a keyboard or buttons.",
+    "tags": [
+      "THINGS WITH KEYS",
+      "FOLK INSTRUMENTS"
+    ]
+  },
+  {
+    "name": "Melodica",
+    "description": "A free-reed instrument with a musical keyboard on top, played by blowing air through a mouthpiece.",
+    "tags": [
+      "THINGS WITH KEYS"
+    ]
+  },
+  {
+    "name": "Clavinet",
+    "description": "An electric keyboard instrument that produces a bright, percussive tone by striking strings with small rubber tips.",
+    "tags": [
+      "THINGS WITH KEYS",
+      "RHYTHM SECTION"
+    ]
+  },
+  {
+    "name": "Electric Guitar",
+    "description": "A guitar that uses electromagnetic pickups to convert string vibrations into electrical signals.",
+    "tags": [
+      "ROCK BAND GEAR"
+    ]
+  },
+  {
+    "name": "Bass Guitar",
+    "description": "An electric plucked string instrument that provides the low-end foundation in many popular music genres.",
+    "tags": [
+      "ROCK BAND GEAR",
+      "RHYTHM SECTION"
+    ]
+  },
+  {
+    "name": "Drum Kit",
+    "description": "A collection of drums, cymbals, and percussion instruments played by a single person.",
+    "tags": [
+      "ROCK BAND GEAR",
+      "JAZZ COMBO",
+      "RHYTHM SECTION"
+    ]
+  },
+  {
+    "name": "Microphone",
+    "description": "A transducer that converts sound into an electrical signal, essential for amplifying vocals and instruments.",
+    "tags": [
+      "ROCK BAND GEAR"
+    ]
+  },
+  {
+    "name": "Effects Pedal",
+    "description": "A small electronic unit used to alter the sound of an instrument, such as with distortion or delay.",
+    "tags": [
+      "ROCK BAND GEAR"
+    ]
+  },
+  {
+    "name": "Power Amp",
+    "description": "An amplifier that strengthens a low-power audio signal to a level suitable for driving loudspeakers.",
+    "tags": [
+      "ROCK BAND GEAR"
+    ]
+  },
+  {
+    "name": "Electric Piano",
+    "description": "A keyboard instrument that produces sounds mechanically or electromechanically, like a Rhodes or Wurlitzer.",
+    "tags": [
+      "ROCK BAND GEAR",
+      "THINGS WITH KEYS",
+      "JAZZ COMBO"
+    ]
+  },
+  {
+    "name": "Talk Box",
+    "description": "An effects unit that allows a musician to modify an instrument's sound with their mouth.",
+    "tags": [
+      "ROCK BAND GEAR"
+    ]
+  },
+  {
+    "name": "Vibraphone",
+    "description": "A percussion instrument with metal bars and motor-driven resonators, popular in jazz.",
+    "tags": [
+      "JAZZ COMBO",
+      "RHYTHM SECTION"
+    ]
+  },
+  {
+    "name": "Hollow-body Guitar",
+    "description": "An electric guitar with a fully or semi-hollow body, known for its warm, resonant tone favored in jazz.",
+    "tags": [
+      "JAZZ COMBO"
+    ]
+  },
+  {
+    "name": "Upright Bass",
+    "description": "A large, low-pitched string instrument, often plucked (pizzicato) to provide walking basslines in jazz.",
+    "tags": [
+      "JAZZ COMBO",
+      "CLASSICAL STRINGS",
+      "RHYTHM SECTION"
+    ]
+  },
+  {
+    "name": "Ride Cymbal",
+    "description": "A large, heavy cymbal used to play steady rhythmic patterns, central to the jazz drum sound.",
+    "tags": [
+      "JAZZ COMBO",
+      "RHYTHM SECTION"
+    ]
+  },
+  {
+    "name": "Archtop Guitar",
+    "description": "A steel-string acoustic or semi-acoustic guitar with a distinctive arched top and f-holes.",
+    "tags": [
+      "JAZZ COMBO"
+    ]
+  },
+  {
+    "name": "Muted Trumpet",
+    "description": "A trumpet played with a mute inserted into the bell, creating a softer, often buzzy or nasal tone.",
+    "tags": [
+      "JAZZ COMBO",
+      "MADE OF BRASS"
+    ]
+  },
+  {
+    "name": "Walking Bassline",
+    "description": "A bass part where a note is played on every beat, outlining the chord progression and creating a sense of forward motion.",
+    "tags": [
+      "JAZZ COMBO"
+    ]
+  },
+  {
+    "name": "Swing Rhythm",
+    "description": "The characteristic rhythmic feel of jazz, where pairs of eighth notes are played with an uneven long-short pattern.",
+    "tags": [
+      "JAZZ COMBO"
+    ]
+  },
+  {
+    "name": "Acoustic Guitar",
+    "description": "A guitar that produces sound acoustically by transmitting string vibrations to the air.",
+    "tags": [
+      "FOLK INSTRUMENTS",
+      "ROCK BAND GEAR"
+    ]
+  },
+  {
+    "name": "Banjo",
+    "description": "A stringed instrument with a thin membrane stretched over a frame or cavity, creating a bright, twangy sound.",
+    "tags": [
+      "FOLK INSTRUMENTS"
+    ]
+  },
+  {
+    "name": "Fiddle",
+    "description": "A colloquial term for the violin, especially when used to play traditional or folk music.",
+    "tags": [
+      "FOLK INSTRUMENTS",
+      "CLASSICAL STRINGS"
+    ]
+  },
+  {
+    "name": "Mandolin",
+    "description": "A small, high-pitched string instrument in the lute family, typically plucked with a plectrum.",
+    "tags": [
+      "FOLK INSTRUMENTS",
+      "CLASSICAL STRINGS"
+    ]
+  },
+  {
+    "name": "Ukulele",
+    "description": "A small, four-stringed guitar-like instrument associated with Hawaiian music.",
+    "tags": [
+      "FOLK INSTRUMENTS"
+    ]
+  },
+  {
+    "name": "Harmonica",
+    "description": "A free-reed wind instrument used worldwide in many musical genres, notably in blues and folk.",
+    "tags": [
+      "FOLK INSTRUMENTS"
+    ]
+  },
+  {
+    "name": "Bodhrán",
+    "description": "An Irish frame drum, played with a small, double-headed stick called a tipper.",
+    "tags": [
+      "FOLK INSTRUMENTS",
+      "RHYTHM SECTION"
+    ]
+  },
+  {
+    "name": "Bagpipes",
+    "description": "A wind instrument using enclosed reeds fed from a constant reservoir of air in a bag.",
+    "tags": [
+      "FOLK INSTRUMENTS"
+    ]
+  },
+  {
+    "name": "Dulcimer",
+    "description": "A fretted string instrument of the zither family, typically with three or four strings, used in American folk music.",
+    "tags": [
+      "FOLK INSTRUMENTS"
+    ]
+  },
+  {
+    "name": "Zither",
+    "description": "A class of stringed instruments where strings are stretched across a frame or body.",
+    "tags": [
+      "FOLK INSTRUMENTS"
+    ]
+  },
+  {
+    "name": "Congas",
+    "description": "A pair of tall, narrow, single-headed drums from Cuba, played with the hands.",
+    "tags": [
+      "RHYTHM SECTION"
+    ]
+  },
+  {
+    "name": "Bongos",
+    "description": "A pair of small, open-bottomed hand drums of Afro-Cuban origin, played while held between the knees.",
+    "tags": [
+      "RHYTHM SECTION"
+    ]
+  },
+  {
+    "name": "Shaker",
+    "description": "A percussion instrument consisting of a container partially filled with small, loose objects.",
+    "tags": [
+      "RHYTHM SECTION"
+    ]
+  },
+  {
+    "name": "Tambourine",
+    "description": "A percussion instrument with a frame, often of wood or plastic, with pairs of small metal jingles.",
+    "tags": [
+      "RHYTHM SECTION"
+    ]
+  },
+  {
+    "name": "Cowbell",
+    "description": "A hand percussion instrument derived from the bell worn by free-roaming livestock.",
+    "tags": [
+      "RHYTHM SECTION",
+      "ROCK BAND GEAR"
+    ]
+  },
+  {
+    "name": "Marimba",
+    "description": "A percussion instrument consisting of a set of wooden bars struck with mallets to produce musical tones.",
+    "tags": [
+      "RHYTHM SECTION"
+    ]
+  },
+  {
+    "name": "Xylophone",
+    "description": "A musical instrument in the percussion family that consists of wooden bars struck by mallets.",
+    "tags": [
+      "RHYTHM SECTION"
+    ]
+  },
+  {
+    "name": "Timpani",
+    "description": "Large, tunable kettle drums that are a staple of the orchestral percussion section.",
+    "tags": [
+      "RHYTHM SECTION",
+      "CLASSICAL STRINGS"
+    ]
+  },
+  {
+    "name": "Cajón",
+    "description": "A box-shaped percussion instrument from Peru, played by slapping the front or rear faces with the hands.",
+    "tags": [
+      "RHYTHM SECTION",
+      "FOLK INSTRUMENTS"
+    ]
+  },
+  {
+    "name": "Steelpan",
+    "description": "A pitched percussion instrument originating from Trinidad and Tobago, made from a modified oil drum.",
+    "tags": [
+      "RHYTHM SECTION"
+    ]
+  }
+]

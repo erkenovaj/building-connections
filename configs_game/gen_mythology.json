@@ -1,0 +1,585 @@
+[
+  {
+    "name": "Patroclus",
+    "description": "Achilles' beloved companion whose death in battle spurred the hero back to action.",
+    "tags": [
+      "FOUGHT AT TROY"
+    ]
+  },
+  {
+    "name": "Diomedes",
+    "description": "A valiant Greek hero who, with Athena's help, wounded two gods during the Trojan War.",
+    "tags": [
+      "FOUGHT AT TROY"
+    ]
+  },
+  {
+    "name": "Priam",
+    "description": "The elderly king of Troy who pleaded with Achilles for the return of his son Hector's body.",
+    "tags": [
+      "FOUGHT AT TROY"
+    ]
+  },
+  {
+    "name": "Paris",
+    "description": "The Trojan prince whose abduction of Helen sparked the Trojan War.",
+    "tags": [
+      "FOUGHT AT TROY"
+    ]
+  },
+  {
+    "name": "Menelaus",
+    "description": "The king of Sparta and abandoned husband of Helen, a key leader of the Greek forces.",
+    "tags": [
+      "FOUGHT AT TROY"
+    ]
+  },
+  {
+    "name": "Agamemnon",
+    "description": "The commander-in-chief of the Achaean army and king of Mycenae.",
+    "tags": [
+      "FOUGHT AT TROY"
+    ]
+  },
+  {
+    "name": "Cassandra",
+    "description": "A Trojan princess cursed by Apollo to utter true prophecies that no one would ever believe.",
+    "tags": [
+      "FOUGHT AT TROY"
+    ]
+  },
+  {
+    "name": "Hector",
+    "description": "The greatest warrior of Troy, who was ultimately slain by Achilles.",
+    "tags": [
+      "FOUGHT AT TROY"
+    ]
+  },
+  {
+    "name": "Charon",
+    "description": "The grim ferryman who transported the souls of the dead across the River Styx.",
+    "tags": [
+      "UNDERWORLD DENIZENS"
+    ]
+  },
+  {
+    "name": "Thanatos",
+    "description": "The personification of death, who could be tricked by clever mortals like Sisyphus.",
+    "tags": [
+      "UNDERWORLD DENIZENS"
+    ]
+  },
+  {
+    "name": "Hypnos",
+    "description": "The personification of sleep and twin brother of Thanatos.",
+    "tags": [
+      "UNDERWORLD DENIZENS"
+    ]
+  },
+  {
+    "name": "Minos",
+    "description": "A legendary king of Crete who became one of the three judges of the dead in the afterlife.",
+    "tags": [
+      "UNDERWORLD DENIZENS"
+    ]
+  },
+  {
+    "name": "Rhadamanthus",
+    "description": "A wise king who, after death, became a judge of the dead in the Underworld alongside Minos.",
+    "tags": [
+      "UNDERWORLD DENIZENS"
+    ]
+  },
+  {
+    "name": "Erebus",
+    "description": "The primordial deity of darkness, whose name was often used for the Underworld itself.",
+    "tags": [
+      "UNDERWORLD DENIZENS"
+    ]
+  },
+  {
+    "name": "Nyx",
+    "description": "The primordial goddess of the night, a shadowy figure of exceptional power and beauty.",
+    "tags": [
+      "UNDERWORLD DENIZENS"
+    ]
+  },
+  {
+    "name": "The Furies",
+    "description": "Chthonic deities of vengeance who pursued and punished wrongdoers, especially those guilty of patricide.",
+    "tags": [
+      "UNDERWORLD DENIZENS"
+    ]
+  },
+  {
+    "name": "Niobe",
+    "description": "A queen whose fourteen children were killed by Apollo and Artemis as punishment for her hubris.",
+    "tags": [
+      "VICTIMS OF THE GODS"
+    ]
+  },
+  {
+    "name": "Marsyas",
+    "description": "A satyr who was flayed alive for daring to challenge Apollo to a music contest.",
+    "tags": [
+      "VICTIMS OF THE GODS"
+    ]
+  },
+  {
+    "name": "Actaeon",
+    "description": "A hunter who was turned into a stag by Artemis and killed by his own hounds.",
+    "tags": [
+      "VICTIMS OF THE GODS"
+    ]
+  },
+  {
+    "name": "Pentheus",
+    "description": "A king of Thebes who was torn apart by Maenads for spurning the worship of Dionysus.",
+    "tags": [
+      "VICTIMS OF THE GODS"
+    ]
+  },
+  {
+    "name": "Semele",
+    "description": "A mortal lover of Zeus who was tricked by Hera into being incinerated by his divine form.",
+    "tags": [
+      "VICTIMS OF THE GODS"
+    ]
+  },
+  {
+    "name": "Io",
+    "description": "A priestess of Hera whom Zeus turned into a heifer to hide her from his jealous wife.",
+    "tags": [
+      "VICTIMS OF THE GODS",
+      "SHAPESHIFTERS"
+    ]
+  },
+  {
+    "name": "Callisto",
+    "description": "A nymph of Artemis who was turned into a bear by a jealous Hera or a vengeful Artemis.",
+    "tags": [
+      "VICTIMS OF THE GODS",
+      "SHAPESHIFTERS"
+    ]
+  },
+  {
+    "name": "Tityos",
+    "description": "A giant eternally punished in Tartarus with two vultures eating his liver for assaulting Leto.",
+    "tags": [
+      "VICTIMS OF THE GODS",
+      "UNDERWORLD DENIZENS"
+    ]
+  },
+  {
+    "name": "Bellerophon",
+    "description": "The hero who tamed the winged horse Pegasus and slew the Chimera.",
+    "tags": [
+      "MONSTER SLAYERS"
+    ]
+  },
+  {
+    "name": "Theseus",
+    "description": "The mythical king of Athens who navigated the Labyrinth to kill the Minotaur.",
+    "tags": [
+      "MONSTER SLAYERS"
+    ]
+  },
+  {
+    "name": "Cadmus",
+    "description": "The founder of Thebes, who killed a sacred dragon and sowed its teeth to grow an army.",
+    "tags": [
+      "MONSTER SLAYERS"
+    ]
+  },
+  {
+    "name": "Meleager",
+    "description": "A hero who organized a group of heroes to hunt and kill the Calydonian Boar.",
+    "tags": [
+      "MONSTER SLAYERS"
+    ]
+  },
+  {
+    "name": "Atalanta",
+    "description": "A swift-footed huntress who was the first to draw blood in the Calydonian Boar hunt.",
+    "tags": [
+      "MONSTER SLAYERS"
+    ]
+  },
+  {
+    "name": "Oedipus",
+    "description": "A tragic king of Thebes, famous for solving the riddle of the Sphinx.",
+    "tags": [
+      "MONSTER SLAYERS"
+    ]
+  },
+  {
+    "name": "Jason",
+    "description": "The leader of the Argonauts in the quest for the Golden Fleece.",
+    "tags": [
+      "MONSTER SLAYERS",
+      "SEA-RELATED FIGURES"
+    ]
+  },
+  {
+    "name": "Heracles",
+    "description": "The greatest of Greek heroes, who completed twelve labors and later ascended to godhood.",
+    "tags": [
+      "MONSTER SLAYERS",
+      "OLYMPIAN RULERS"
+    ]
+  },
+  {
+    "name": "Amphitrite",
+    "description": "A sea goddess and wife of Poseidon, often depicted with a trident or in a chariot of sea-horses.",
+    "tags": [
+      "SEA-RELATED FIGURES"
+    ]
+  },
+  {
+    "name": "Triton",
+    "description": "The son of Poseidon and Amphitrite, a merman who used a conch shell as a trumpet.",
+    "tags": [
+      "SEA-RELATED FIGURES"
+    ]
+  },
+  {
+    "name": "Nereus",
+    "description": "The 'Old Man of the Sea,' a Titan god of the sea known for his wisdom and prophetic abilities.",
+    "tags": [
+      "SEA-RELATED FIGURES"
+    ]
+  },
+  {
+    "name": "Thetis",
+    "description": "A sea-nymph, leader of the Nereids, and the mother of the hero Achilles.",
+    "tags": [
+      "SEA-RELATED FIGURES",
+      "PARENTS OF NOTE"
+    ]
+  },
+  {
+    "name": "Galatea",
+    "description": "A beautiful sea-nymph who was loved by the Cyclops Polyphemus.",
+    "tags": [
+      "SEA-RELATED FIGURES"
+    ]
+  },
+  {
+    "name": "Scylla",
+    "description": "A sea monster who lived on one side of a narrow strait, opposite her counterpart Charybdis.",
+    "tags": [
+      "SEA-RELATED FIGURES"
+    ]
+  },
+  {
+    "name": "Charybdis",
+    "description": "A sea monster who took the form of a giant whirlpool, threatening passing ships.",
+    "tags": [
+      "SEA-RELATED FIGURES"
+    ]
+  },
+  {
+    "name": "Odysseus",
+    "description": "The clever king of Ithaca whose ten-year journey home from Troy was fraught with peril.",
+    "tags": [
+      "FOUGHT AT TROY",
+      "MONSTER SLAYERS",
+      "SEA-RELATED FIGURES"
+    ]
+  },
+  {
+    "name": "Daphne",
+    "description": "A nymph who, fleeing from Apollo, was transformed into a laurel tree to escape him.",
+    "tags": [
+      "SHAPESHIFTERS",
+      "VICTIMS OF THE GODS"
+    ]
+  },
+  {
+    "name": "Arachne",
+    "description": "A mortal weaver who was turned into a spider after challenging the goddess Athena.",
+    "tags": [
+      "SHAPESHIFTERS",
+      "VICTIMS OF THE GODS"
+    ]
+  },
+  {
+    "name": "Tiresias",
+    "description": "A blind prophet of Apollo who was transformed into a woman for seven years.",
+    "tags": [
+      "SHAPESHIFTERS"
+    ]
+  },
+  {
+    "name": "Philomela",
+    "description": "A princess who was transformed into a nightingale after suffering a horrific assault.",
+    "tags": [
+      "SHAPESHIFTERS"
+    ]
+  },
+  {
+    "name": "Procne",
+    "description": "A sister of Philomela who was transformed into a swallow after taking revenge on her husband.",
+    "tags": [
+      "SHAPESHIFTERS"
+    ]
+  },
+  {
+    "name": "Lycaon",
+    "description": "A king of Arcadia whom Zeus turned into a wolf as punishment for his wickedness.",
+    "tags": [
+      "SHAPESHIFTERS"
+    ]
+  },
+  {
+    "name": "Ascalaphus",
+    "description": "An underworld daemon who was turned into an owl for revealing Persephone had eaten pomegranate seeds.",
+    "tags": [
+      "SHAPESHIFTERS",
+      "UNDERWORLD DENIZENS"
+    ]
+  },
+  {
+    "name": "Proteus",
+    "description": "A prophetic 'Old Man of the Sea' who could change his shape to avoid answering questions.",
+    "tags": [
+      "SEA-RELATED FIGURES",
+      "SHAPESHIFTERS"
+    ]
+  },
+  {
+    "name": "Leda",
+    "description": "A Spartan queen who was seduced by Zeus in the form of a swan, mothering Helen and Pollux.",
+    "tags": [
+      "PARENTS OF NOTE"
+    ]
+  },
+  {
+    "name": "Danaë",
+    "description": "A princess who was impregnated by Zeus in a shower of gold, giving birth to the hero Perseus.",
+    "tags": [
+      "PARENTS OF NOTE"
+    ]
+  },
+  {
+    "name": "Pasiphaë",
+    "description": "The queen of Crete who, under a divine curse, gave birth to the monstrous Minotaur.",
+    "tags": [
+      "PARENTS OF NOTE"
+    ]
+  },
+  {
+    "name": "Echidna",
+    "description": "A half-woman, half-snake creature known as the 'Mother of All Monsters'.",
+    "tags": [
+      "PARENTS OF NOTE"
+    ]
+  },
+  {
+    "name": "Typhon",
+    "description": "A monstrous giant and the 'Father of All Monsters,' who challenged Zeus for supremacy.",
+    "tags": [
+      "PARENTS OF NOTE"
+    ]
+  },
+  {
+    "name": "Leto",
+    "description": "A Titan goddess who gave birth to the divine twins Apollo and Artemis.",
+    "tags": [
+      "PARENTS OF NOTE"
+    ]
+  },
+  {
+    "name": "Maia",
+    "description": "The eldest of the Pleiades and the mother of the god Hermes by Zeus.",
+    "tags": [
+      "PARENTS OF NOTE"
+    ]
+  },
+  {
+    "name": "Alcmene",
+    "description": "A mortal princess who was tricked by Zeus and became the mother of the hero Heracles.",
+    "tags": [
+      "PARENTS OF NOTE"
+    ]
+  },
+  {
+    "name": "Hestia",
+    "description": "The virgin goddess of the hearth, home, and family, who gave up her Olympian seat for Dionysus.",
+    "tags": [
+      "OLYMPIAN RULERS"
+    ]
+  },
+  {
+    "name": "Hephaestus",
+    "description": "The god of blacksmiths, craftsmen, and fire, known for being lame and married to Aphrodite.",
+    "tags": [
+      "OLYMPIAN RULERS"
+    ]
+  },
+  {
+    "name": "Ares",
+    "description": "The god of war, representing the violent and untamed aspects of battle.",
+    "tags": [
+      "OLYMPIAN RULERS"
+    ]
+  },
+  {
+    "name": "Artemis",
+    "description": "The goddess of the hunt, the wilderness, wild animals, and chastity.",
+    "tags": [
+      "OLYMPIAN RULERS"
+    ]
+  },
+  {
+    "name": "Hermes",
+    "description": "The messenger of the gods, known for his winged sandals and role as a guide to the Underworld.",
+    "tags": [
+      "OLYMPIAN RULERS"
+    ]
+  },
+  {
+    "name": "Demeter",
+    "description": "The goddess of the harvest and agriculture, whose grief for her daughter Persephone creates winter.",
+    "tags": [
+      "OLYMPIAN RULERS",
+      "PARENTS OF NOTE"
+    ]
+  },
+  {
+    "name": "Dionysus",
+    "description": "The god of wine, festivity, and theatre, who was the last god to be accepted on Olympus.",
+    "tags": [
+      "OLYMPIAN RULERS"
+    ]
+  },
+  {
+    "name": "Apollo",
+    "description": "The god of music, arts, knowledge, prophecy, and light, often associated with the Oracle at Delphi.",
+    "tags": [
+      "OLYMPIAN RULERS"
+    ]
+  },
+  {
+    "name": "Zeus",
+    "description": "King of the gods, ruler of the sky, and a serial shapeshifter to pursue his many romantic interests.",
+    "tags": [
+      "OLYMPIAN RULERS",
+      "SHAPESHIFTERS",
+      "PARENTS OF NOTE"
+    ]
+  },
+  {
+    "name": "Hera",
+    "description": "Queen of the gods and goddess of marriage, women, and childbirth, known for her jealousy.",
+    "tags": [
+      "OLYMPIAN RULERS",
+      "PARENTS OF NOTE"
+    ]
+  },
+  {
+    "name": "Poseidon",
+    "description": "God of the sea, earthquakes, and horses, one of the three most powerful Olympian gods.",
+    "tags": [
+      "OLYMPIAN RULERS",
+      "SEA-RELATED FIGURES",
+      "PARENTS OF NOTE"
+    ]
+  },
+  {
+    "name": "Athena",
+    "description": "Goddess of wisdom, courage, and strategic warfare, who sprang fully grown from Zeus's head.",
+    "tags": [
+      "OLYMPIAN RULERS",
+      "FOUGHT AT TROY",
+      "SHAPESHIFTERS"
+    ]
+  },
+  {
+    "name": "Hades",
+    "description": "God of the dead and king of the Underworld, though not technically an Olympian as he did not reside there.",
+    "tags": [
+      "UNDERWORLD DENIZENS",
+      "OLYMPIAN RULERS"
+    ]
+  },
+  {
+    "name": "Persephone",
+    "description": "Queen of the Underworld, who was abducted by Hades and whose return to the surface brings spring.",
+    "tags": [
+      "UNDERWORLD DENIZENS",
+      "VICTIMS OF THE GODS",
+      "OLYMPIAN RULERS"
+    ]
+  },
+  {
+    "name": "Sisyphus",
+    "description": "A king punished in Tartarus to eternally roll a boulder up a hill, only for it to roll down every time.",
+    "tags": [
+      "VICTIMS OF THE GODS",
+      "UNDERWORLD DENIZENS"
+    ]
+  },
+  {
+    "name": "Tantalus",
+    "description": "A king punished in Tartarus to stand in a pool of water beneath a fruit tree, with both receding from his grasp.",
+    "tags": [
+      "VICTIMS OF THE GODS",
+      "UNDERWORLD DENIZENS"
+    ]
+  },
+  {
+    "name": "Perseus",
+    "description": "The hero who slew Medusa and rescued Andromeda from a sea monster.",
+    "tags": [
+      "MONSTER SLAYERS",
+      "PARENTS OF NOTE"
+    ]
+  },
+  {
+    "name": "Achilles",
+    "description": "The greatest Greek warrior at Troy, invulnerable except for his heel.",
+    "tags": [
+      "FOUGHT AT TROY",
+      "MONSTER SLAYERS"
+    ]
+  },
+  {
+    "name": "Medusa",
+    "description": "A Gorgon with snakes for hair who could turn men to stone, once a beautiful priestess.",
+    "tags": [
+      "VICTIMS OF THE GODS",
+      "SHAPESHIFTERS",
+      "PARENTS OF NOTE"
+    ]
+  },
+  {
+    "name": "Helen",
+    "description": "The most beautiful woman in the world, whose abduction by Paris caused the Trojan War.",
+    "tags": [
+      "FOUGHT AT TROY",
+      "PARENTS OF NOTE"
+    ]
+  },
+  {
+    "name": "Prometheus",
+    "description": "A Titan who was punished by Zeus for stealing fire and giving it to mankind.",
+    "tags": [
+      "VICTIMS OF THE GODS"
+    ]
+  },
+  {
+    "name": "Icarus",
+    "description": "The son of the master craftsman Daedalus, who flew too close to the sun with wings of wax and feathers.",
+    "tags": [
+      "VICTIMS OF THE GODS"
+    ]
+  },
+  {
+    "name": "Cerberus",
+    "description": "The multi-headed dog that guarded the gates of the Underworld to prevent the dead from leaving.",
+    "tags": [
+      "UNDERWORLD DENIZENS"
+    ]
+  }
+]

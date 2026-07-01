@@ -1,0 +1,485 @@
+[
+  {
+    "name": "Havana",
+    "description": "The capital city of Cuba, known for its Spanish colonial architecture and classic American cars.",
+    "tags": [
+      "ISLAND CAPITALS"
+    ]
+  },
+  {
+    "name": "Kingston",
+    "description": "The capital and largest city of Jamaica, located on the southeastern coast of the island.",
+    "tags": [
+      "ISLAND CAPITALS"
+    ]
+  },
+  {
+    "name": "Manila",
+    "description": "The capital of the Philippines, a densely populated bayside city on the island of Luzon.",
+    "tags": [
+      "ISLAND CAPITALS"
+    ]
+  },
+  {
+    "name": "Reykjavik",
+    "description": "The capital and largest city of Iceland, and the world's northernmost capital of a sovereign state.",
+    "tags": [
+      "ISLAND CAPITALS"
+    ]
+  },
+  {
+    "name": "Tokyo",
+    "description": "Japan's bustling capital on the island of Honshu, mixing the ultramodern and the traditional.",
+    "tags": [
+      "ISLAND CAPITALS"
+    ]
+  },
+  {
+    "name": "Dublin",
+    "description": "The capital of Ireland, situated on the River Liffey at the mouth of Dublin Bay.",
+    "tags": [
+      "ISLAND CAPITALS",
+      "ON A FAMOUS RIVER"
+    ]
+  },
+  {
+    "name": "Wellington",
+    "description": "The capital of New Zealand, located on the southern tip of the North Island.",
+    "tags": [
+      "ISLAND CAPITALS"
+    ]
+  },
+  {
+    "name": "Taipei",
+    "description": "The capital of Taiwan, a modern metropolis on the Tamsui River on the island's northern tip.",
+    "tags": [
+      "ISLAND CAPITALS",
+      "ON A FAMOUS RIVER"
+    ]
+  },
+  {
+    "name": "Budapest",
+    "description": "Hungary's capital, which is bisected by the Danube River and noted for its thermal baths.",
+    "tags": [
+      "ON A FAMOUS RIVER",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Bangkok",
+    "description": "The capital of Thailand, known for ornate shrines and vibrant street life along the Chao Phraya River.",
+    "tags": [
+      "ON A FAMOUS RIVER"
+    ]
+  },
+  {
+    "name": "Prague",
+    "description": "The capital of the Czech Republic, divided by the Vltava River and nicknamed 'the City of a Hundred Spires'.",
+    "tags": [
+      "ON A FAMOUS RIVER",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Warsaw",
+    "description": "The capital of Poland, a major city on the Vistula River that was extensively rebuilt after WWII.",
+    "tags": [
+      "ON A FAMOUS RIVER"
+    ]
+  },
+  {
+    "name": "London",
+    "description": "The capital of England, a 21st-century city with history stretching back to Roman times on the River Thames.",
+    "tags": [
+      "ON A FAMOUS RIVER",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Paris",
+    "description": "France's capital, a global center for art and culture set on the River Seine.",
+    "tags": [
+      "ON A FAMOUS RIVER",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Cairo",
+    "description": "Egypt’s sprawling capital, set on the Nile River and home to Ottoman mosques and the Egyptian Museum.",
+    "tags": [
+      "ON A FAMOUS RIVER"
+    ]
+  },
+  {
+    "name": "Vienna",
+    "description": "Austria's capital, which lies on the Danube River and is known for its artistic and intellectual legacy.",
+    "tags": [
+      "ON A FAMOUS RIVER",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Victoria Falls",
+    "description": "A spectacular waterfall on the Zambezi River, named in honor of Queen Victoria.",
+    "tags": [
+      "NAMED AFTER A PERSON",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Ho Chi Minh City",
+    "description": "The largest city in Vietnam, formerly known as Saigon, it was renamed for a revolutionary leader.",
+    "tags": [
+      "NAMED AFTER A PERSON"
+    ]
+  },
+  {
+    "name": "Columbus",
+    "description": "The state capital of Ohio, named for the Italian explorer Christopher Columbus.",
+    "tags": [
+      "NAMED AFTER A PERSON"
+    ]
+  },
+  {
+    "name": "Georgetown",
+    "description": "The capital of Guyana, named in 1812 in honor of King George III.",
+    "tags": [
+      "NAMED AFTER A PERSON"
+    ]
+  },
+  {
+    "name": "Washington D.C.",
+    "description": "The U.S. capital on the Potomac River, named for the country's first president.",
+    "tags": [
+      "NAMED AFTER A PERSON",
+      "ON A FAMOUS RIVER"
+    ]
+  },
+  {
+    "name": "Alexandria",
+    "description": "A major port city in Egypt founded by and named for a Macedonian king and conqueror.",
+    "tags": [
+      "NAMED AFTER A PERSON"
+    ]
+  },
+  {
+    "name": "Lincoln",
+    "description": "The state capital of Nebraska, named in honor of the 16th U.S. President.",
+    "tags": [
+      "NAMED AFTER A PERSON"
+    ]
+  },
+  {
+    "name": "Bismarck",
+    "description": "The state capital of North Dakota, named in honor of a German chancellor to attract German investment.",
+    "tags": [
+      "NAMED AFTER A PERSON"
+    ]
+  },
+  {
+    "name": "Angkor Wat",
+    "description": "A massive stone temple complex in Cambodia built by the Khmer King Suryavarman II.",
+    "tags": [
+      "UNESCO WORLD HERITAGE SITE",
+      "BUILT FOR A RULER"
+    ]
+  },
+  {
+    "name": "Serengeti National Park",
+    "description": "A vast ecosystem in Tanzania, famous for its massive annual migration of wildebeest and zebra.",
+    "tags": [
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Galapagos Islands",
+    "description": "A volcanic archipelago in the Pacific Ocean, considered a living museum of evolution.",
+    "tags": [
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Yellowstone National Park",
+    "description": "A nearly 3,500-sq.-mile wilderness recreation area atop a volcanic hot spot in the United States.",
+    "tags": [
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Machu Picchu",
+    "description": "An Incan citadel set high in the Andes Mountains in Peru, renowned for its sophisticated dry-stone walls.",
+    "tags": [
+      "UNESCO WORLD HERITAGE SITE",
+      "HIGH-ALTITUDE CITIES"
+    ]
+  },
+  {
+    "name": "Pyramids of Giza",
+    "description": "Iconic ancient structures near Cairo, Egypt, built as tombs for pharaohs.",
+    "tags": [
+      "UNESCO WORLD HERITAGE SITE",
+      "BUILT FOR A RULER"
+    ]
+  },
+  {
+    "name": "Great Wall of China",
+    "description": "A series of fortifications stretching across the historical northern borders of ancient Chinese states.",
+    "tags": [
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Venice",
+    "description": "A city in northeastern Italy built on more than 100 small islands in a lagoon in the Adriatic Sea.",
+    "tags": [
+      "UNESCO WORLD HERITAGE SITE",
+      "FORMER CAPITALS"
+    ]
+  },
+  {
+    "name": "La Paz",
+    "description": "Bolivia's administrative capital, which rests on the Andes’ Altiplano plateau at more than 3,500m above sea level.",
+    "tags": [
+      "HIGH-ALTITUDE CITIES"
+    ]
+  },
+  {
+    "name": "Quito",
+    "description": "The capital of Ecuador, founded on the ruins of an Inca city at an elevation of 2,850m.",
+    "tags": [
+      "HIGH-ALTITUDE CITIES",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Bogotá",
+    "description": "The sprawling, high-altitude capital of Colombia, located in the Andes mountains at 2,640m.",
+    "tags": [
+      "HIGH-ALTITUDE CITIES"
+    ]
+  },
+  {
+    "name": "Thimphu",
+    "description": "The capital of Bhutan, nestled in the higher ranges of the Himalayas at an elevation of 2,334m.",
+    "tags": [
+      "HIGH-ALTITUDE CITIES"
+    ]
+  },
+  {
+    "name": "Mexico City",
+    "description": "The densely populated, high-altitude capital of Mexico, built on the ruins of the Aztec city of Tenochtitlan.",
+    "tags": [
+      "HIGH-ALTITUDE CITIES",
+      "FORMER CAPITALS"
+    ]
+  },
+  {
+    "name": "Addis Ababa",
+    "description": "Ethiopia’s sprawling capital in the highlands bordering the Great Rift Valley, with an elevation of 2,355m.",
+    "tags": [
+      "HIGH-ALTITUDE CITIES"
+    ]
+  },
+  {
+    "name": "Cusco",
+    "description": "A city in the Peruvian Andes which was once capital of the Inca Empire, sitting at an altitude of 3,399m.",
+    "tags": [
+      "HIGH-ALTITUDE CITIES",
+      "FORMER CAPITALS",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Lhasa",
+    "description": "The religious and administrative capital of Tibet, located at 3,656m and home to the Potala Palace.",
+    "tags": [
+      "HIGH-ALTITUDE CITIES",
+      "FORMER CAPITALS",
+      "BUILT FOR A RULER"
+    ]
+  },
+  {
+    "name": "Yangon",
+    "description": "The largest city in Myanmar, which served as the country's capital until 2006.",
+    "tags": [
+      "FORMER CAPITALS"
+    ]
+  },
+  {
+    "name": "Almaty",
+    "description": "The largest metropolis in Kazakhstan, which served as its capital until 1997.",
+    "tags": [
+      "FORMER CAPITALS"
+    ]
+  },
+  {
+    "name": "Lagos",
+    "description": "The most populous city in Nigeria, which served as the nation's capital until 1991.",
+    "tags": [
+      "FORMER CAPITALS"
+    ]
+  },
+  {
+    "name": "Zomba",
+    "description": "A city in southern Malawi which was the capital of first British Central Africa and then Nyasaland until 1974.",
+    "tags": [
+      "FORMER CAPITALS"
+    ]
+  },
+  {
+    "name": "Kyoto",
+    "description": "Once the imperial capital of Japan, it's famous for its classical Buddhist temples, as well as gardens and palaces.",
+    "tags": [
+      "FORMER CAPITALS",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Rio de Janeiro",
+    "description": "A huge seaside city in Brazil, which served as the nation's capital until 1960.",
+    "tags": [
+      "FORMER CAPITALS",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Istanbul",
+    "description": "A major city in Turkey that was the capital of the Byzantine and Ottoman Empires.",
+    "tags": [
+      "FORMER CAPITALS",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "St. Petersburg",
+    "description": "A Russian port city on the Neva River, founded by and named for a Tsar, which was the imperial capital for 2 centuries.",
+    "tags": [
+      "FORMER CAPITALS",
+      "ON A FAMOUS RIVER",
+      "NAMED AFTER A PERSON",
+      "BUILT FOR A RULER",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "The Grand Canyon",
+    "description": "A massive natural gorge in Arizona, carved by the Colorado River over millions of years.",
+    "tags": [
+      "\"THE...\" LANDMARKS",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "The Matterhorn",
+    "description": "A famous mountain in the Alps, straddling the main watershed and border between Switzerland and Italy.",
+    "tags": [
+      "\"THE...\" LANDMARKS"
+    ]
+  },
+  {
+    "name": "The Louvre",
+    "description": "The world's largest art museum and a historic monument in Paris, France.",
+    "tags": [
+      "\"THE...\" LANDMARKS"
+    ]
+  },
+  {
+    "name": "The Eiffel Tower",
+    "description": "A wrought-iron lattice tower on the Champ de Mars in Paris, France.",
+    "tags": [
+      "\"THE...\" LANDMARKS"
+    ]
+  },
+  {
+    "name": "The Prado Museum",
+    "description": "Spain's main national art museum, located in central Madrid.",
+    "tags": [
+      "\"THE...\" LANDMARKS"
+    ]
+  },
+  {
+    "name": "The Colosseum",
+    "description": "An oval amphitheater in the center of Rome, Italy, built of travertine, tuff, and brick-faced concrete.",
+    "tags": [
+      "\"THE...\" LANDMARKS",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "The Kremlin",
+    "description": "A fortified complex in the center of Moscow, which includes five palaces, four cathedrals, and serves as the official residence of the President of Russia.",
+    "tags": [
+      "\"THE...\" LANDMARKS",
+      "UNESCO WORLD HERITAGE SITE",
+      "BUILT FOR A RULER"
+    ]
+  },
+  {
+    "name": "The Acropolis",
+    "description": "An ancient citadel located on a rocky outcrop above the city of Athens and containing the remains of several ancient buildings of great architectural and historic significance.",
+    "tags": [
+      "\"THE...\" LANDMARKS",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Neuschwanstein Castle",
+    "description": "A 19th-century Romanesque Revival palace in southwest Bavaria, Germany, commissioned by Ludwig II of Bavaria.",
+    "tags": [
+      "BUILT FOR A RULER"
+    ]
+  },
+  {
+    "name": "Winter Palace",
+    "description": "The official residence of the Russian Emperors from 1732 to 1917, located in Saint Petersburg.",
+    "tags": [
+      "BUILT FOR A RULER"
+    ]
+  },
+  {
+    "name": "Catherine Palace",
+    "description": "A Rococo palace located in the town of Tsarskoye Selo, commissioned by Catherine I of Russia.",
+    "tags": [
+      "BUILT FOR A RULER"
+    ]
+  },
+  {
+    "name": "Herodium",
+    "description": "A truncated cone-shaped hill and fortress in the West Bank, built by Herod the Great between 23 and 15 BCE.",
+    "tags": [
+      "BUILT FOR A RULER"
+    ]
+  },
+  {
+    "name": "Taj Mahal",
+    "description": "An ivory-white marble mausoleum on the south bank of the Yamuna river in Agra, India, commissioned by the Mughal emperor Shah Jahan.",
+    "tags": [
+      "BUILT FOR A RULER",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Versailles",
+    "description": "The former principal royal residence of France from 1682, under Louis XIV, until the start of the French Revolution in 1789.",
+    "tags": [
+      "BUILT FOR A RULER",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Forbidden City",
+    "description": "A palace complex in central Beijing, China, that served as the home of emperors and their households for almost 500 years.",
+    "tags": [
+      "BUILT FOR A RULER",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  },
+  {
+    "name": "Alhambra",
+    "description": "A palace and fortress complex of the Nasrid dynasty located in Granada, Andalusia, Spain.",
+    "tags": [
+      "BUILT FOR A RULER",
+      "UNESCO WORLD HERITAGE SITE"
+    ]
+  }
+]
