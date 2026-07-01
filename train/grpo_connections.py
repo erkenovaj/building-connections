@@ -43,14 +43,16 @@ _SAMPLING_PARAMS = {
 }
 
 
-def build_dataset(num_boards: int, seed_start: int) -> Dataset:
+def build_dataset(num_boards: int, seed_start: int, num_categories: int | None = None) -> Dataset:
     """Build a dataset of initial-board prompts (all groups unsolved, plan v1).
 
     Each row carries the conversational ``prompt`` plus JSON side columns
     (``remaining_json``, ``board_groups_json``, ``solved_keys_json``) that the
-    reward function needs to parse and score completions.
+    reward function needs to parse and score completions. ``num_categories``
+    shrinks the board to that many 4-term groups for curriculum training
+    (``None`` = full 4-group game).
     """
-    env = ConnectionsEnv(sampling_params=_SAMPLING_PARAMS)
+    env = ConnectionsEnv(num_categories=num_categories, sampling_params=_SAMPLING_PARAMS)
     rows = []
     for seed in range(seed_start, seed_start + num_boards):
         obs = env.reset(seed)
@@ -166,6 +168,8 @@ def main() -> None:
     """Parse arguments and run the GRPO training loop."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", default="Qwen/Qwen2.5-0.5B-Instruct")
+    parser.add_argument("--num-categories", type=int, default=None,
+                        help="board groups for curriculum (None = full 4-group game)")
     parser.add_argument("--num-boards", type=int, default=64)
     parser.add_argument("--seed-start", type=int, default=0)
     parser.add_argument("--max-steps", type=int, default=50)
@@ -179,7 +183,7 @@ def main() -> None:
     parser.add_argument("--output", default="outputs/grpo-connections")
     args = parser.parse_args()
 
-    dataset = build_dataset(args.num_boards, args.seed_start)
+    dataset = build_dataset(args.num_boards, args.seed_start, args.num_categories)
 
     cuda = torch.cuda.is_available()
     use_bf16 = cuda and torch.cuda.get_device_capability()[0] >= 8

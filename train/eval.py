@@ -128,6 +128,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", default="Qwen/Qwen2.5-0.5B-Instruct")
     parser.add_argument("--adapter", default=None, help="path to a trained LoRA adapter")
+    parser.add_argument("--num-categories", type=int, default=None,
+                        help="board groups for curriculum (None = full 4-group game)")
     parser.add_argument("--num-seeds", type=int, default=100)
     parser.add_argument("--eval-seed-start", type=int, default=1_000_000)
     parser.add_argument("--max-steps", type=int, default=12)
@@ -136,7 +138,7 @@ def main() -> None:
 
     device = _pick_device()
     model, tokenizer = load_policy(args.model, args.adapter, device)
-    env = ConnectionsEnv(sampling_params=_SAMPLING_PARAMS)
+    env = ConnectionsEnv(num_categories=args.num_categories, sampling_params=_SAMPLING_PARAMS)
 
     episodes = []
     for i, seed in enumerate(range(args.eval_seed_start, args.eval_seed_start + args.num_seeds), start=1):

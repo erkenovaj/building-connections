@@ -15,11 +15,11 @@ import json
 from pathlib import Path
 from typing import Any, Mapping, Optional, Sequence
 
-from connections_sampler import GameMode, SamplingParameters, sample_game
+from connections_sampler import GameMode, SamplingParameters, sample_basic_game, sample_game
 
 from .prompt import build_prompt
 from .reward import reward
-from .rules import evaluate_guess, game_status, remaining_terms
+from .rules import CONCEPTS_PER_GROUP, evaluate_guess, game_status, remaining_terms
 
 WIN_BONUS = 2.0
 
@@ -35,14 +35,17 @@ class ConnectionsEnv:
         self,
         config: Optional[Sequence[Mapping[str, Any]]] = None,
         mode: GameMode = GameMode.BASIC,
+        num_categories: Optional[int] = None,
         sampling_params: Optional[Mapping[str, Any]] = None,
     ) -> None:
         """Build the environment.
 
         ``config`` is the category word-pool config passed to ``sample_game``;
-        it defaults to ``configs/category-templates-new.json``. ``sampling_params``
-        are extra :class:`SamplingParameters` fields (excluding ``seed``) merged
-        into every ``reset``.
+        it defaults to ``configs/category-templates-new.json``. ``num_categories``
+        overrides the board to a curriculum size of that many 4-term groups (via
+        ``sample_basic_game``); ``None`` keeps the full ``mode`` game.
+        ``sampling_params`` are extra :class:`SamplingParameters` fields
+        (excluding ``seed``) merged into every ``reset``.
         """
         if config is None:
             with open(_DEFAULT_CONFIG_PATH) as handle:
@@ -50,6 +53,7 @@ class ConnectionsEnv:
             config = loaded
         self.config = config
         self.mode = mode
+        self.sample_num_categories = num_categories
         self.sampling_params = dict(sampling_params or {})
 
         self.board: list[str] = []
@@ -62,7 +66,15 @@ class ConnectionsEnv:
     def reset(self, seed: int) -> dict[str, Any]:
         """Sample a fresh board for ``seed`` and return the initial observation."""
         params = SamplingParameters(seed=seed, **self.sampling_params)
-        result = sample_game(self.config, mode=self.mode, parameters=params)
+        if self.sample_num_categories is not None:
+            result = sample_basic_game(
+                self.config,
+                num_categories=self.sample_num_categories,
+                items_per_category=CONCEPTS_PER_GROUP,
+                parameters=params,
+            )
+        else:
+            result = sample_game(self.config, mode=self.mode, parameters=params)
         if not result.ok or result.game is None:
             raise RuntimeError(f"board sampling failed: {result.reason}")
 

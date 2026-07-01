@@ -126,6 +126,8 @@ def main() -> None:
     """Sample completions over held-out boards and print the pass@k summary JSON."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", default="Qwen/Qwen2.5-1.5B-Instruct")
+    parser.add_argument("--num-categories", type=int, default=None,
+                        help="board groups for curriculum (None = full 4-group game)")
     parser.add_argument("--num-boards", type=int, default=32)
     parser.add_argument("--num-samples", type=int, default=64)
     parser.add_argument("--gen-batch", type=int, default=16, help="completions per generate() call (caps GPU memory)")
@@ -137,7 +139,7 @@ def main() -> None:
 
     device = _pick_device()
     model, tokenizer = load_policy(args.model, device)
-    env = ConnectionsEnv(sampling_params=_SAMPLING_PARAMS)
+    env = ConnectionsEnv(num_categories=args.num_categories, sampling_params=_SAMPLING_PARAMS)
 
     n = args.num_samples
     ks = sorted({k for k in (1, 4, 16, n) if k <= n})
