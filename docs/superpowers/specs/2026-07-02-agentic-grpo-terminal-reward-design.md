@@ -31,8 +31,9 @@ first-guess accuracy.
   was `max_new_tokens=256` truncating Qwen3 mid-`<think>` (commit `0a90d49`).
   Gen configs are usable for training.
 - Mentor feedback incorporated: raise effective batch via gradient
-  accumulation, cosine LR schedule, SFT before RL (STaR), difficulty
-  estimator and Saturn-1.5B comparison deferred to backlog.
+  accumulation, cosine LR schedule, SFT before RL (STaR), board difficulty
+  via empirical win-rate ordering (see below); Saturn-1.5B comparison
+  deferred to backlog.
 
 ## Decisions (locked with user)
 
@@ -45,6 +46,12 @@ first-guess accuracy.
   intact), SFT a LoRA on them, then run GRPO on top of that adapter.
 - **Curriculum:** 2 → 3 → 4 categories via the existing `--num-categories`
   knob; advance when win-rate probe clears a threshold.
+- **Difficulty ordering (mentor's estimator, empirical variant):** the win@k
+  probe records per-board win rate; each GRPO stage trains on the easiest
+  seeds from the probed pool. Difficulty is thus measured directly for the
+  model being trained — no external dataset or learned estimator. This is
+  board _selection_, not in-run ordering (the TRL sampler shuffles rows).
+  A learned estimator on real NYT games stays in backlog.
 - **Gating:** never start a GRPO stage blind — run the win@k probe first; if
   win@k ≈ 0 there is nothing for GRPO to amplify.
 - **Hardware:** Kaggle T4 (fp16), LoRA r=16 all-linear as today; MPS + 0.6B
@@ -107,14 +114,19 @@ Bandit script stays untouched as baseline.
 3. **Multi-turn win@k probe** (`train/probe_wink.py`): N episodes per board ×
    M boards on base model, reports win@k (unbiased estimator, reuse
    `pass_at_k` from `train/probe_passk.py`), mean mistakes, truncation rate.
-   Gate for every later stage.
+   Gate for every later stage. `--out-boards` writes per-board win-rate
+   JSONL consumed by the difficulty ordering.
 4. **STaR SFT** (`train/star_sft.py`): sample base Qwen3-1.7B episodes on
    2-cat boards via the driver, filter to won trajectories, SFT LoRA
    (TRL `SFTTrainer`, loss masked to model tokens via `env_mask`).
 5. **Agentic GRPO** (`train/grpo_agentic.py`): `rollout_func` + `env_mask` +
    terminal reward, starting from the STaR adapter.
-6. **Curriculum**: 2 → 3 → 4 categories; advance on win-rate threshold,
-   re-probe at each size.
+6. **Difficulty ordering** (`train/difficulty.py`):
+   `load_seed_order(path) -> list[int]` sorts probed seeds easiest-first
+   (win rate desc, mean mistakes asc, seed asc); `train/grpo_agentic.py
+--seed-order` builds the training pool from the easiest slice.
+7. **Curriculum**: 2 → 3 → 4 categories; advance on win-rate threshold,
+   re-probe at each size; per-stage pool selected via difficulty ordering.
 
 ## Error handling
 
@@ -140,4 +152,5 @@ Bandit script stays untouched as baseline.
 ## Backlog (out of scope)
 
 - Saturn-1.5B base-model comparison probe.
-- Board difficulty estimator for curriculum ordering.
+- Learned difficulty estimator trained on real NYT games (empirical
+  win-rate ordering covers curriculum needs for now).

@@ -1054,7 +1054,198 @@ git commit -m "feat(train): agentic GRPO with rollout_func"
 
 ---
 
-### Task 6: Curriculum runbook (Kaggle, no code)
+### Task 6: Empirical difficulty ordering
+
+Mentor's difficulty-estimator idea, empirical variant (locked with user):
+difficulty of a board = the model's own win rate from the win@k probe. The
+probe writes per-board stats to JSONL; each GRPO stage trains on the easiest
+seeds from that pool. This is board _selection_, not in-run ordering — the
+TRL sampler shuffles dataset rows, so ordering rows would not survive.
+
+**Files:**
+
+- Create: `train/difficulty.py`
+- Create: `tests/test_difficulty.py`
+- Modify: `train/probe_wink.py` (add `--out-boards`)
+- Modify: `train/grpo_agentic.py` (add `--seed-order`)
+
+**Interfaces:**
+
+- Consumes: probe loop internals from Task 3 (`episodes`, `c`, `n` per board), `build_dataset` and CLI from Task 5.
+- Produces: `load_seed_order(path: str) -> list[int]` (easiest seed first); JSONL record schema `{"seed": int, "episodes": int, "wins": int, "win_rate": float, "mean_mistakes": float}` shared by probe (writer) and trainer (reader).
+
+- [ ] **Step 1: Write the failing test**
+
+`tests/test_difficulty.py`:
+
+```python
+"""Tests for empirical difficulty ordering of board seeds."""
+
+import json
+
+from train.difficulty import load_seed_order
+
+
+def _write(tmp_path, records):
+    """Write records as one-per-line JSONL and return the path."""
+    path = tmp_path / "boards.jsonl"
+    with open(path, "w") as handle:
+        for rec in records:
+            handle.write(json.dumps(rec) + "\n")
+    return str(path)
+
+
+def test_orders_easiest_first(tmp_path):
+    path = _write(tmp_path, [
+        {"seed": 1, "episodes": 8, "wins": 0, "win_rate": 0.0, "mean_mistakes": 4.0},
+        {"seed": 2, "episodes": 8, "wins": 6, "win_rate": 0.75, "mean_mistakes": 1.0},
+        {"seed": 3, "episodes": 8, "wins": 2, "win_rate": 0.25, "mean_mistakes": 2.5},
+    ])
+    assert load_seed_order(path) == [2, 3, 1]
+
+
+def test_ties_break_by_mistakes_then_seed(tmp_path):
+    path = _write(tmp_path, [
+        {"seed": 5, "episodes": 8, "wins": 4, "win_rate": 0.5, "mean_mistakes": 2.0},
+        {"seed": 4, "episodes": 8, "wins": 4, "win_rate": 0.5, "mean_mistakes": 1.0},
+        {"seed": 3, "episodes": 8, "wins": 4, "win_rate": 0.5, "mean_mistakes": 1.0},
+    ])
+    assert load_seed_order(path) == [3, 4, 5]
+```
+
+- [ ] **Step 2: Run test to verify it fails**
+
+Run: `./.venv/bin/python -m pytest tests/test_difficulty.py -q --tb=short`
+Expected: FAIL with `ModuleNotFoundError: No module named 'train.difficulty'`
+
+- [ ] **Step 3: Implement `train/difficulty.py`**
+
+```python
+"""Empirical board-difficulty ordering from win@k probe results.
+
+``train/probe_wink.py --out-boards`` writes one JSONL record per board with
+the model's observed win rate; this module turns that file into a seed list
+ordered easiest-first. Curriculum stages train on the easiest slice of the
+probed pool (board selection, not in-run ordering — the TRL sampler
+shuffles dataset rows).
+"""
+
+from __future__ import annotations
+
+import json
+
+
+def load_seed_order(path: str) -> list[int]:
+    """Return board seeds ordered easiest-first by probed win rate.
+
+    Ties break by lower mean mistakes, then by seed for determinism.
+    """
+    with open(path) as handle:
+        records = [json.loads(line) for line in handle if line.strip()]
+    records.sort(key=lambda r: (-r["win_rate"], r["mean_mistakes"], r["seed"]))
+    return [r["seed"] for r in records]
+```
+
+- [ ] **Step 4: Run test to verify it passes**
+
+Run: `./.venv/bin/python -m pytest tests/test_difficulty.py -q --tb=short`
+Expected: 2 passed
+
+- [ ] **Step 5: Wire `--out-boards` into `train/probe_wink.py`**
+
+Add the argument after `--max-new-tokens`:
+
+```python
+    parser.add_argument("--out-boards", default=None,
+                        help="write per-board JSONL (seed, wins, win_rate, mean_mistakes) "
+                             "for difficulty ordering (train/difficulty.py)")
+```
+
+Collect records inside the board loop (after `c` is computed) and write the file after the loop, before the summary:
+
+```python
+    board_records = []
+    for i, seed in enumerate(range(args.seed_start, args.seed_start + args.num_boards), start=1):
+        ...  # existing loop body
+        board_records.append({
+            "seed": seed,
+            "episodes": n,
+            "wins": c,
+            "win_rate": round(c / n, 4),
+            "mean_mistakes": round(sum(ep.mistakes for ep in episodes) / n, 3),
+        })
+
+    if args.out_boards:
+        with open(args.out_boards, "w") as handle:
+            for rec in board_records:
+                handle.write(json.dumps(rec) + "\n")
+```
+
+- [ ] **Step 6: Wire `--seed-order` into `train/grpo_agentic.py`**
+
+Add the import:
+
+```python
+from train.difficulty import load_seed_order
+```
+
+Replace `build_dataset` with a version that accepts an explicit seed list:
+
+```python
+def build_dataset(num_boards, seed_start, num_categories, config, seeds=None):
+    """One row per board: the rendered initial prompt, keyed back to its seed.
+
+    ``seeds`` (easiest-first, from ``load_seed_order``) overrides the
+    contiguous ``seed_start`` range; only the first ``num_boards`` seeds are
+    used, so the training pool is the easiest slice of the probed pool.
+    """
+    env = ConnectionsEnv(
+        config=config, num_categories=num_categories, sampling_params=_SAMPLING_PARAMS
+    )
+    if seeds is None:
+        seeds = range(seed_start, seed_start + num_boards)
+    else:
+        seeds = seeds[:num_boards]
+    rows = []
+    for seed in seeds:
+        obs = env.reset(seed)
+        _SEED_BY_PROMPT[obs["prompt"]] = seed
+        rows.append({"prompt": obs["prompt"]})
+    return Dataset.from_list(rows)
+```
+
+Add the CLI argument after `--seed-start`:
+
+```python
+    parser.add_argument("--seed-order", default=None,
+                        help="per-board JSONL from probe_wink --out-boards; train on the "
+                             "easiest --num-boards seeds instead of the seed-start range")
+```
+
+Update the `build_dataset` call in `main`:
+
+```python
+    seeds = load_seed_order(args.seed_order) if args.seed_order else None
+    dataset = build_dataset(
+        args.num_boards, args.seed_start, args.num_categories, config, seeds=seeds
+    )
+```
+
+- [ ] **Step 7: Full test suite**
+
+Run: `./.venv/bin/python -m pytest tests/ -q --tb=short`
+Expected: all pass
+
+- [ ] **Step 8: Commit**
+
+```bash
+git add train/difficulty.py tests/test_difficulty.py train/probe_wink.py train/grpo_agentic.py
+git commit -m "feat(train): empirical difficulty ordering"
+```
+
+---
+
+### Task 7: Curriculum runbook (Kaggle, no code)
 
 **Files:**
 
@@ -1062,16 +1253,18 @@ git commit -m "feat(train): agentic GRPO with rollout_func"
 
 **Interfaces:**
 
-- Consumes: all CLIs from Tasks 3–5.
+- Consumes: all CLIs from Tasks 3–6.
 - Produces: trained adapters per curriculum stage.
 
 - [ ] **Step 1: Gate 2-cat with the win@k probe**
 
 ```bash
-!python train/probe_wink.py --model Qwen/Qwen3-1.7B --num-categories 2 --num-boards 16 --num-episodes 8
+!python train/probe_wink.py --model Qwen/Qwen3-1.7B --num-categories 2 --num-boards 96 --num-episodes 4 --out-boards data/boards_2cat.jsonl
 ```
 
 Gate: proceed only if `win_at_k["1"] >= 0.05` (GRPO/STaR need successes to amplify). If 0 — investigate prompt/budget before training.
+
+Probe pool (`--num-boards 96`) must be ≥ the GRPO `--num-boards` (64) so the difficulty ordering has a slice to select from; `--out-boards` feeds Step 3.
 
 - [ ] **Step 2: STaR on 2-cat**
 
@@ -1085,14 +1278,14 @@ Then re-probe with the adapter merged/loaded; expect win@1 up vs Step 1.
 - [ ] **Step 3: Agentic GRPO on 2-cat from the STaR adapter**
 
 ```bash
-!python train/grpo_agentic.py --model Qwen/Qwen3-1.7B --num-categories 2 --init-lora outputs/star-sft-2cat --max-steps 50 --output outputs/grpo-agentic-2cat
+!python train/grpo_agentic.py --model Qwen/Qwen3-1.7B --num-categories 2 --init-lora outputs/star-sft-2cat --seed-order data/boards_2cat.jsonl --max-steps 50 --output outputs/grpo-agentic-2cat
 ```
 
-Watch: reward EMA rising, no persistent zero-grad lines, `truncated` low.
+`--seed-order` selects the 64 easiest probed boards as the training pool (Task 6). Watch: reward EMA rising, no persistent zero-grad lines, `truncated` low.
 
 - [ ] **Step 4: Advance the curriculum**
 
-Advance 2→3 when post-GRPO probe `win_at_k["1"] >= 0.6` on 2-cat; repeat probe → (STaR if win@k collapsed) → GRPO at 3-cat, then 4-cat with the same threshold. Each stage starts from the previous stage's adapter via `--init-lora`.
+Advance 2→3 when post-GRPO probe `win_at_k["1"] >= 0.6` on 2-cat; repeat probe → (STaR if win@k collapsed) → GRPO at 3-cat, then 4-cat with the same threshold. Each stage starts from the previous stage's adapter via `--init-lora`, re-probes with `--out-boards data/boards_Ncat.jsonl`, and trains with the matching `--seed-order`.
 
 - [ ] **Step 5: Commit checked-off plan progress**
 
@@ -1106,5 +1299,5 @@ git commit -m "docs: record curriculum run results"
 ## Backlog (explicitly out of scope)
 
 - Saturn-1.5B base-model comparison probe.
-- Board difficulty estimator for curriculum ordering.
+- Learned difficulty estimator trained on real NYT games (empirical win-rate ordering implemented in Task 6).
 - Batched multi-turn generation in the rollout driver (episodes are sequential; fine for probe/STaR scale, revisit if GRPO wall-clock hurts).
