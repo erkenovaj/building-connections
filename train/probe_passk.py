@@ -72,11 +72,14 @@ def sample_overlaps(
     temperature: float,
     top_p: float,
     max_new_tokens: int,
-) -> tuple[list[int], list[bool]]:
+) -> tuple[list[int], list[bool], list[bool]]:
     """Sample ``n`` completions for one board (chunked to cap KV memory).
 
     Returns per-sample best overlap with any group (0..4; 0 for an invalid
-    guess) and a parallel list of validity flags.
+    guess) plus parallel lists of validity and truncation flags. A truncated
+    sample hit ``max_new_tokens`` before finishing; for thinking models a high
+    truncation rate means the budget was spent inside ``<think>`` and the JSON
+    guess was never emitted, so valid_rate collapses to 0.
     """
     inputs = tokenizer.apply_chat_template(
         [{"role": "user", "content": prompt}],
@@ -88,6 +91,7 @@ def sample_overlaps(
 
     overlaps: list[int] = []
     valids: list[bool] = []
+    truncs: list[bool] = []
     done = 0
     while done < n:
         cur = min(gen_batch, n - done)
@@ -109,8 +113,9 @@ def sample_overlaps(
             k = info["k"]
             valids.append(k is not None)
             overlaps.append(k if k is not None else 0)
+            truncs.append(len(seq) - prompt_len >= max_new_tokens)
         done += cur
-    return overlaps, valids
+    return overlaps, valids, truncs
 
 
 def pass_at_k(n: int, c: int, k: int) -> float:
@@ -136,7 +141,9 @@ def main() -> None:
     parser.add_argument("--seed-start", type=int, default=1_000_000)
     parser.add_argument("--temperature", type=float, default=1.0)
     parser.add_argument("--top-p", type=float, default=1.0)
-    parser.add_argument("--max-new-tokens", type=int, default=256)
+    parser.add_argument("--max-new-tokens", type=int, default=1024,
+                        help="generation budget; thinking models need >=1024 or the "
+                             "<think> block eats the whole budget and valid_rate reads 0")
     args = parser.parse_args()
 
     device = _pick_device()
@@ -156,11 +163,12 @@ def main() -> None:
     boards_with_solve = 0
     best_overlap_hist = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0}
     valid_total = 0
+    trunc_total = 0
     sample_total = 0
 
     for i, seed in enumerate(range(args.seed_start, args.seed_start + args.num_boards), start=1):
         obs = env.reset(seed)
-        overlaps, valids = sample_overlaps(
+        overlaps, valids, truncs = sample_overlaps(
             model, tokenizer, obs["prompt"], obs["remaining"], env.groups,
             device, n, args.gen_batch, args.temperature, args.top_p, args.max_new_tokens,
         )
@@ -171,10 +179,12 @@ def main() -> None:
         best = max(overlaps) if overlaps else 0
         best_overlap_hist[best] += 1
         valid_total += sum(valids)
+        trunc_total += sum(truncs)
         sample_total += len(overlaps)
         print(
             f"  [{i}/{args.num_boards}] seed {seed}: solves {c}/{n} "
-            f"best_overlap {best} valid {sum(valids)}/{len(valids)}",
+            f"best_overlap {best} valid {sum(valids)}/{len(valids)} "
+            f"trunc {sum(truncs)}/{len(truncs)}",
             file=sys.stderr,
             flush=True,
         )
@@ -190,6 +200,7 @@ def main() -> None:
         "frac_boards_solvable": round(boards_with_solve / nb, 4),
         "best_overlap_hist": best_overlap_hist,
         "valid_rate": round(valid_total / max(sample_total, 1), 4),
+        "truncated_rate": round(trunc_total / max(sample_total, 1), 4),
     }
     print(json.dumps(summary, indent=2))
 
