@@ -42,6 +42,9 @@ def main() -> None:
     parser.add_argument("--temperature", type=float, default=1.0)
     parser.add_argument("--top-p", type=float, default=1.0)
     parser.add_argument("--max-new-tokens", type=int, default=1024)
+    parser.add_argument("--out-boards", default=None,
+                        help="write per-board JSONL (seed, wins, win_rate, mean_mistakes) "
+                             "for difficulty ordering (train/difficulty.py)")
     args = parser.parse_args()
 
     device = _pick_device()
@@ -61,6 +64,7 @@ def main() -> None:
     mistakes_total = tool_calls_total = trunc_total = gen_total = 0
     reward_total = 0.0
 
+    board_records = []
     for i, seed in enumerate(range(args.seed_start, args.seed_start + args.num_boards), start=1):
         episodes = [
             play_episode(
@@ -81,6 +85,13 @@ def main() -> None:
         reward_total += sum(
             episode_reward(ep.won, ep.mistakes, ep.tool_calls) for ep in episodes
         )
+        board_records.append({
+            "seed": seed,
+            "episodes": n,
+            "wins": c,
+            "win_rate": round(c / n, 4),
+            "mean_mistakes": round(sum(ep.mistakes for ep in episodes) / n, 3),
+        })
         print(
             f"  [{i}/{args.num_boards}] seed {seed}: wins {c}/{n} "
             f"mistakes {sum(ep.mistakes for ep in episodes)} "
@@ -88,6 +99,11 @@ def main() -> None:
             file=sys.stderr,
             flush=True,
         )
+
+    if args.out_boards:
+        with open(args.out_boards, "w") as handle:
+            for rec in board_records:
+                handle.write(json.dumps(rec) + "\n")
 
     nb = args.num_boards
     total_eps = nb * n

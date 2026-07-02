@@ -46,6 +46,7 @@ from trl import GRPOConfig, GRPOTrainer
 
 from connections_gym.env import ConnectionsEnv
 from connections_gym.episode_reward import episode_reward
+from train.difficulty import load_seed_order
 from train.grpo_connections import CompactLogCallback
 from train.probe_passk import _SAMPLING_PARAMS, _pick_device
 from train.rollout import play_episode
@@ -55,13 +56,22 @@ from train.rollout import play_episode
 _SEED_BY_PROMPT: dict[str, int] = {}
 
 
-def build_dataset(num_boards, seed_start, num_categories, config):
-    """One row per board: the rendered initial prompt, keyed back to its seed."""
+def build_dataset(num_boards, seed_start, num_categories, config, seeds=None):
+    """One row per board: the rendered initial prompt, keyed back to its seed.
+
+    ``seeds`` (easiest-first, from ``load_seed_order``) overrides the
+    contiguous ``seed_start`` range; only the first ``num_boards`` seeds are
+    used, so the training pool is the easiest slice of the probed pool.
+    """
     env = ConnectionsEnv(
         config=config, num_categories=num_categories, sampling_params=_SAMPLING_PARAMS
     )
+    if seeds is None:
+        seeds = range(seed_start, seed_start + num_boards)
+    else:
+        seeds = seeds[:num_boards]
     rows = []
-    for seed in range(seed_start, seed_start + num_boards):
+    for seed in seeds:
         obs = env.reset(seed)
         _SEED_BY_PROMPT[obs["prompt"]] = seed
         rows.append({"prompt": obs["prompt"]})
@@ -110,6 +120,9 @@ def main() -> None:
     parser.add_argument("--num-categories", type=int, default=2)
     parser.add_argument("--num-boards", type=int, default=64)
     parser.add_argument("--seed-start", type=int, default=0)
+    parser.add_argument("--seed-order", default=None,
+                        help="per-board JSONL from probe_wink --out-boards; train on the "
+                             "easiest --num-boards seeds instead of the seed-start range")
     parser.add_argument("--init-lora", default=None,
                         help="path to the STaR SFT adapter to start from")
     parser.add_argument("--max-steps", type=int, default=50)
@@ -127,7 +140,10 @@ def main() -> None:
     if args.config:
         with open(args.config) as handle:
             config = json.load(handle)
-    dataset = build_dataset(args.num_boards, args.seed_start, args.num_categories, config)
+    seeds = load_seed_order(args.seed_order) if args.seed_order else None
+    dataset = build_dataset(
+        args.num_boards, args.seed_start, args.num_categories, config, seeds=seeds
+    )
     env = ConnectionsEnv(
         config=config, num_categories=args.num_categories, sampling_params=_SAMPLING_PARAMS
     )
