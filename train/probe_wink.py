@@ -31,6 +31,8 @@ def main() -> None:
     """Play episodes over held-out boards and print the win@k summary JSON."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", default="Qwen/Qwen3-1.7B")
+    parser.add_argument("--adapter", default=None,
+                        help="path to a trained LoRA adapter to probe with")
     parser.add_argument("--config", default=None,
                         help="path to a flat category config (default: env's built-in pool)")
     parser.add_argument("--num-categories", type=int, default=None,
@@ -49,6 +51,10 @@ def main() -> None:
 
     device = _pick_device()
     model, tokenizer = load_policy(args.model, device)
+    if args.adapter:
+        from peft import PeftModel
+
+        model = PeftModel.from_pretrained(model, args.adapter)
     config = None
     if args.config:
         with open(args.config) as handle:
