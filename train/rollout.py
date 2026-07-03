@@ -29,6 +29,10 @@ from connections_gym.prompt import parse_guess
 # intact, which re-applying the chat template would strip.
 _ENV_TURN = "<|im_start|>user\n{content}<|im_end|>\n<|im_start|>assistant\n"
 
+# Empty think block Qwen3's template inserts when enable_thinking=False;
+# appended to injected env turns so later turns stay in no-think mode too.
+_NO_THINK = "<think>\n\n</think>\n\n"
+
 
 @dataclass
 class Episode:
@@ -65,13 +69,15 @@ def play_episode(
     top_p: float = 1.0,
     max_new_tokens: int = 1024,
     max_turns: int = 12,
+    enable_thinking: bool = True,
 ) -> Episode:
     """Play one episode on the board sampled for ``seed`` and return it."""
     obs = env.reset(seed)
     messages = [{"role": "user", "content": obs["prompt"]}]
     ids = list(
         tokenizer.apply_chat_template(
-            messages, add_generation_prompt=True, tokenize=True, return_dict=False
+            messages, add_generation_prompt=True, tokenize=True, return_dict=False,
+            enable_thinking=enable_thinking,
         )
     )
     prompt_len = len(ids)
@@ -119,7 +125,10 @@ def play_episode(
 
         feedback = f"{_feedback_line(info)}\n\n{obs['prompt']}"
         messages.append({"role": "user", "content": feedback})
-        delta = tokenizer.encode(_ENV_TURN.format(content=feedback), add_special_tokens=False)
+        turn = _ENV_TURN.format(content=feedback)
+        if not enable_thinking:
+            turn += _NO_THINK
+        delta = tokenizer.encode(turn, add_special_tokens=False)
         ids.extend(delta)
         env_mask.extend([0] * len(delta))
         logprobs.extend([0.0] * len(delta))

@@ -44,6 +44,8 @@ def main() -> None:
     parser.add_argument("--temperature", type=float, default=1.0)
     parser.add_argument("--top-p", type=float, default=1.0)
     parser.add_argument("--max-new-tokens", type=int, default=1024)
+    parser.add_argument("--no-think", action="store_true",
+                        help="disable Qwen3 thinking mode (empty <think> block each turn)")
     parser.add_argument("--out-boards", default=None,
                         help="write per-board JSONL (seed, wins, win_rate, mean_mistakes) "
                              "for difficulty ordering (train/difficulty.py)")
@@ -77,6 +79,7 @@ def main() -> None:
                 model, tokenizer, env, seed, device=device,
                 temperature=args.temperature, top_p=args.top_p,
                 max_new_tokens=args.max_new_tokens,
+                enable_thinking=not args.no_think,
             )
             for _ in range(n)
         ]

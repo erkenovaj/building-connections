@@ -60,6 +60,7 @@ def _cmd_sample(args) -> None:
                 episode = play_episode(
                     model, tokenizer, env, seed, device=device,
                     temperature=args.temperature, max_new_tokens=args.max_new_tokens,
+                    enable_thinking=not args.no_think,
                 )
                 played += 1
                 record = episode_to_record(episode)
@@ -116,6 +117,8 @@ def main() -> None:
     p_sample.add_argument("--seed-start", type=int, default=0)
     p_sample.add_argument("--temperature", type=float, default=1.0)
     p_sample.add_argument("--max-new-tokens", type=int, default=1024)
+    p_sample.add_argument("--no-think", action="store_true",
+                          help="disable Qwen3 thinking mode (empty <think> block each turn)")
     p_sample.add_argument("--out", default="data/star.jsonl")
     p_sample.set_defaults(func=_cmd_sample)
 

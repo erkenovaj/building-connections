@@ -23,7 +23,11 @@ class FakeTokenizer:
 
     pad_token_id = 0
 
-    def apply_chat_template(self, messages, add_generation_prompt=True, tokenize=True, return_dict=False):
+    def apply_chat_template(
+        self, messages, add_generation_prompt=True, tokenize=True, return_dict=False,
+        enable_thinking=True,
+    ):
+        self.last_enable_thinking = enable_thinking
         text = "".join(f"<{m['role']}>{m['content']}" for m in messages) + "<assistant>"
         return self.encode(text)
 
@@ -117,3 +121,20 @@ def test_truncation_counted():
     ep = play_episode(model, tok, env, SEED, max_new_tokens=8)
 
     assert ep.truncations == 4 and not ep.won
+
+
+def test_no_think_reaches_template_and_env_turns():
+    """enable_thinking=False is forwarded to the chat template and every
+    injected env turn opens the assistant reply with an empty think block."""
+    env, groups = _board_groups()
+    tok = FakeTokenizer()
+    near_miss = groups[0][:3] + [groups[1][0]]  # forces one extra env turn
+    scripted = [_guess(near_miss), _guess(groups[0]), _guess(groups[1])]
+    model = FakeModel(tok, scripted)
+
+    ep = play_episode(model, tok, env, SEED, enable_thinking=False)
+
+    assert ep.won
+    assert tok.last_enable_thinking is False
+    text = tok.decode(ep.token_ids)
+    assert text.count("<|im_start|>assistant\n<think>\n\n</think>\n\n") == 2

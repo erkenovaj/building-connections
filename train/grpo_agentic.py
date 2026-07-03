@@ -133,6 +133,8 @@ def main() -> None:
     parser.add_argument("--lr-scheduler", default="cosine")
     parser.add_argument("--temperature", type=float, default=1.0)
     parser.add_argument("--max-new-tokens", type=int, default=1024)
+    parser.add_argument("--no-think", action="store_true",
+                        help="disable Qwen3 thinking mode (empty <think> block each turn)")
     parser.add_argument("--output", default="outputs/grpo-agentic")
     args = parser.parse_args()
 
@@ -188,7 +190,11 @@ def main() -> None:
         gradient_checkpointing_kwargs={"use_reentrant": False},
     )
 
-    gen_kwargs = {"temperature": args.temperature, "max_new_tokens": args.max_new_tokens}
+    gen_kwargs = {
+        "temperature": args.temperature,
+        "max_new_tokens": args.max_new_tokens,
+        "enable_thinking": not args.no_think,
+    }
     trainer = GRPOTrainer(
         model=model,
         reward_funcs=terminal_reward,
