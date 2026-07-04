@@ -68,6 +68,7 @@ def _cmd_sample(args) -> None:
                     out.write(json.dumps(record) + "\n")
                     kept += 1
             print(f"  seed {seed}: kept {kept}/{played}", file=sys.stderr, flush=True)
+            out.flush()  # keep JSONL durable across Colab disconnects
     print(json.dumps({"played": played, "kept": kept, "out": args.out}))
 
 
