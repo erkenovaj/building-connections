@@ -1,8 +1,12 @@
-"""Tests for STaR trajectory filtering."""
+"""Tests for STaR trajectory filtering and the SFT/DFT train config."""
+
+import argparse
+import math
+import types
 
 import pytest
 
-pytest.importorskip("torch")
+torch = pytest.importorskip("torch")
 
 from train.rollout import Episode
 from train.star_sft import episode_to_record
@@ -26,3 +30,47 @@ def test_won_episode_kept_with_think_intact():
 
 def test_lost_episode_dropped():
     assert episode_to_record(_episode(won=False)) is None
+
+
+def _train_args(dft):
+    return argparse.Namespace(
+        output="outputs/test-sft", batch_size=4, grad_accum=4, lr=1e-5,
+        epochs=2, dft=dft,
+    )
+
+
+def test_train_config_defaults_to_nll_loss():
+    pytest.importorskip("trl")
+    from train.star_sft import build_train_config
+
+    config = build_train_config(_train_args(dft=False))
+    assert config.loss_type == "chunked_nll"
+    assert config.assistant_only_loss is True
+
+
+def test_train_config_dft_flag_selects_dft_loss():
+    pytest.importorskip("trl")
+    from train.star_sft import build_train_config
+
+    config = build_train_config(_train_args(dft=True))
+    assert config.loss_type == "dft"
+    assert config.assistant_only_loss is True
+
+
+def test_trl_dft_loss_matches_paper_formula():
+    """Guard the pinned TRL: dft_loss must be -sg(p)*log p on unmasked tokens."""
+    pytest.importorskip("trl")
+    from trl.trainer.sft_trainer import dft_loss
+
+    # Position 0 predicts token 0 with logits [2, 0]; position 1 predicts
+    # token 1 with logits [0, 1]; first label is masked out by the shift.
+    logits = torch.tensor([[[2.0, 0.0], [0.0, 1.0], [5.0, 5.0]]])
+    labels = torch.tensor([[-100, 0, 1]])
+    outputs = types.SimpleNamespace(logits=logits)
+
+    p1 = math.exp(2.0) / (math.exp(2.0) + 1.0)
+    p2 = math.exp(1.0) / (1.0 + math.exp(1.0))
+    expected = -(p1 * math.log(p1) + p2 * math.log(p2)) / 2
+
+    loss = dft_loss(outputs, labels)
+    assert loss.item() == pytest.approx(expected, rel=1e-5)

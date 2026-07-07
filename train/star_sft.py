@@ -12,6 +12,8 @@ Examples::
         --num-boards 200 --episodes-per-board 4 --out data/star_2cat.jsonl
     python train/star_sft.py train --model Qwen/Qwen3-1.7B \
         --data data/star_2cat.jsonl --output outputs/star-sft-2cat
+    python train/star_sft.py train --model Qwen/Qwen3-1.7B --dft \
+        --data data/star_2cat.jsonl --output outputs/star-dft-2cat
 """
 
 from __future__ import annotations
@@ -72,27 +74,40 @@ def _cmd_sample(args) -> None:
     print(json.dumps({"played": played, "kept": kept, "out": args.out}))
 
 
-def _cmd_train(args) -> None:
-    """SFT a LoRA on won trajectories, loss on assistant tokens only."""
-    from datasets import load_dataset
-    from peft import LoraConfig
-    from trl import SFTConfig, SFTTrainer
+def build_train_config(args):
+    """SFTConfig for the train subcommand.
 
-    dataset = load_dataset("json", data_files=args.data, split="train")
-    dataset = dataset.select_columns(["messages"])
+    ``--dft`` swaps the NLL loss for TRL's built-in DFT loss
+    (per-token CE weighted by sg(p), arXiv:2508.05629); everything else
+    stays identical so SFT and DFT runs differ only in the objective.
+    """
+    from trl import SFTConfig
 
-    config = SFTConfig(
+    return SFTConfig(
         output_dir=args.output,
         per_device_train_batch_size=args.batch_size,
         gradient_accumulation_steps=args.grad_accum,
         learning_rate=args.lr,
         lr_scheduler_type="cosine",
         num_train_epochs=args.epochs,
+        loss_type="dft" if args.dft else "chunked_nll",
         assistant_only_loss=True,
         logging_steps=1,
         report_to="none",
         gradient_checkpointing=True,
     )
+
+
+def _cmd_train(args) -> None:
+    """SFT/DFT a LoRA on won trajectories, loss on assistant tokens only."""
+    from datasets import load_dataset
+    from peft import LoraConfig
+    from trl import SFTTrainer
+
+    dataset = load_dataset("json", data_files=args.data, split="train")
+    dataset = dataset.select_columns(["messages"])
+
+    config = build_train_config(args)
     peft_config = LoraConfig(
         r=16, lora_alpha=32, lora_dropout=0.05, bias="none",
         task_type="CAUSAL_LM", target_modules="all-linear",
@@ -130,6 +145,8 @@ def main() -> None:
     p_train.add_argument("--grad-accum", type=int, default=4)
     p_train.add_argument("--lr", type=float, default=1e-5)
     p_train.add_argument("--epochs", type=int, default=2)
+    p_train.add_argument("--dft", action="store_true",
+                         help="use DFT loss (sg(p)-weighted CE, arXiv:2508.05629) instead of NLL")
     p_train.add_argument("--output", default="outputs/star-sft")
     p_train.set_defaults(func=_cmd_train)
 
