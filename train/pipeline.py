@@ -144,13 +144,15 @@ def run_step(cmd: list[str], log_path: str) -> str:
 
 
 def parse_last_json(text: str) -> dict | None:
-    """Last line of text that parses as a JSON object (probe/STaR summaries)."""
-    for line in reversed(text.splitlines()):
-        line = line.strip()
-        if not line.startswith("{"):
+    """Last JSON object in text, single- or multi-line (probe/STaR summaries)."""
+    decoder = json.JSONDecoder()
+    lines = text.splitlines()
+    for i in reversed(range(len(lines))):
+        if not lines[i].lstrip().startswith("{"):
             continue
+        chunk = "\n".join(lines[i:]).lstrip()
         try:
-            parsed = json.loads(line)
+            parsed, _ = decoder.raw_decode(chunk)
         except json.JSONDecodeError:
             continue
         if isinstance(parsed, dict):

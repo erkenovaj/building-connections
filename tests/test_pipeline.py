@@ -124,6 +124,12 @@ def test_parse_last_json_picks_last_json_object():
     assert parse_last_json("no json here\n") is None
 
 
+def test_parse_last_json_handles_multiline_json():
+    """probe_wink prints its summary with indent=2 across multiple lines."""
+    text = 'noise\n{\n  "win_at_k": {\n    "1": 0.0\n  }\n}\ntrailing noise\n'
+    assert parse_last_json(text) == {"win_at_k": {"1": 0.0}}
+
+
 def test_step_records_skips_and_writes_metrics(tmp_path):
     run_dir = str(tmp_path)
     state = new_state(make_cfg())
