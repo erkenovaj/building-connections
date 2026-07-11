@@ -82,3 +82,103 @@ def load_config(path: str) -> dict:
     cfg = {**DEFAULTS, **cfg}
     validate_config(cfg)
     return cfg
+
+
+def new_state(cfg: dict) -> dict:
+    """Fresh resume state for a run."""
+    return {"run_name": cfg["run_name"], "completed": {},
+            "model_path": None, "adapter_path": None, "stopped": None}
+
+
+def _state_path(run_dir: str) -> str:
+    return os.path.join(run_dir, "state.json")
+
+
+def load_state(run_dir: str) -> dict | None:
+    """Load state.json from a run dir; None if the run has no state yet."""
+    path = _state_path(run_dir)
+    if not os.path.exists(path):
+        return None
+    with open(path) as handle:
+        return json.load(handle)
+
+
+def save_state(run_dir: str, state: dict) -> None:
+    """Write state.json atomically so a crash mid-save cannot corrupt resume."""
+    path = _state_path(run_dir)
+    tmp = path + ".tmp"
+    with open(tmp, "w") as handle:
+        json.dump(state, handle, indent=2)
+    os.replace(tmp, path)
+
+
+def decide_after_probe(win1: float, gates: dict, star_done: bool) -> str:
+    """Gate before GRPO: start, warm-start via STaR (once), or stop."""
+    if win1 >= gates["start_grpo"]:
+        return "grpo"
+    return "stop" if star_done else "star"
+
+
+def decide_after_eval(win1: float, gates: dict) -> str:
+    """Gate after held-out eval: advance the curriculum or stop."""
+    return "advance" if win1 >= gates["advance"] else "stop"
+
+
+def run_step(cmd: list[str], log_path: str) -> str:
+    """Run one subprocess, teeing combined stdout+stderr to log and console."""
+    os.makedirs(os.path.dirname(log_path) or ".", exist_ok=True)
+    lines = []
+    with open(log_path, "w") as log:
+        proc = subprocess.Popen(
+            cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True
+        )
+        for line in proc.stdout:
+            log.write(line)
+            log.flush()
+            sys.stdout.write(line)
+            lines.append(line)
+        proc.wait()
+    if proc.returncode != 0:
+        raise StepFailed(f"{' '.join(cmd[1:3])} exited {proc.returncode}")
+    return "".join(lines)
+
+
+def parse_last_json(text: str) -> dict | None:
+    """Last line of text that parses as a JSON object (probe/STaR summaries)."""
+    for line in reversed(text.splitlines()):
+        line = line.strip()
+        if not line.startswith("{"):
+            continue
+        try:
+            parsed = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(parsed, dict):
+            return parsed
+    return None
+
+
+def _append_metrics(run_dir: str, name: str, metrics: dict | None) -> None:
+    with open(os.path.join(run_dir, "metrics.jsonl"), "a") as handle:
+        handle.write(json.dumps(
+            {"ts": time.time(), "step": name, "metrics": metrics}) + "\n")
+
+
+def step(state: dict, run_dir: str, name: str, cmd: list[str],
+         require_json: bool = False) -> dict:
+    """Run a named pipeline step once; on resume, return the recorded result."""
+    if name in state["completed"]:
+        print(f"pipeline: skip completed step {name}")
+        return state["completed"][name]
+    log_path = os.path.join(run_dir, "logs",
+                            f"{len(state['completed']):02d}-{name}.log")
+    print(f"pipeline: run {name}: {' '.join(cmd)}")
+    stdout = run_step(cmd, log_path)
+    metrics = parse_last_json(stdout)
+    if require_json and metrics is None:
+        raise StepFailed(f"{name}: no summary JSON found in output")
+    record = {"metrics": metrics}
+    state["completed"][name] = record
+    _append_metrics(run_dir, name, metrics)
+    save_state(run_dir, state)
+    return record
