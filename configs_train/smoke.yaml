@@ -1,0 +1,36 @@
+# Smoke run: tiny numbers, LoRA, one curriculum stage. Validates the whole
+# pipeline (probe -> STaR -> GRPO -> eval, resume, metrics) in under an hour.
+run_name: smoke
+model: Qwen/Qwen3-0.6B
+full_ft: false
+optim: adamw_torch
+report_to: none
+max_new_tokens: 512
+stages: [2]
+gates:
+  start_grpo: 0.05
+  advance: 0.6
+probe:
+  num_boards: 2
+  num_episodes: 2
+  seed_start: 1000000
+eval:
+  num_boards: 2
+  num_episodes: 2
+  seed_start: 2000000
+star:
+  num_boards: 4
+  episodes_per_board: 2
+  seed_start: 150
+  batch_size: 1
+  grad_accum: 2
+  lr: 1.0e-5
+  epochs: 1
+  dft: false
+grpo:
+  num_boards: 2
+  max_steps: 4
+  num_generations: 2
+  batch_size: 2
+  grad_accum: 1
+  lr: 1.0e-5

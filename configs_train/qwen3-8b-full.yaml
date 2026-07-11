@@ -1,0 +1,36 @@
+# Qwen3-8B full fine-tuning. bf16 weights+grads ~32GB + 8-bit Adam ~16GB +
+# gradient checkpointing ~= 60GB on 1x80GB. Smaller batches, larger accum.
+run_name: qwen3-8b-full
+model: Qwen/Qwen3-8B
+full_ft: true
+optim: adamw_bnb_8bit
+report_to: comet_ml
+max_new_tokens: 1024
+stages: [2, 3, 4]
+gates:
+  start_grpo: 0.05
+  advance: 0.6
+probe:
+  num_boards: 16
+  num_episodes: 8
+  seed_start: 1000000
+eval:
+  num_boards: 16
+  num_episodes: 8
+  seed_start: 2000000
+star:
+  num_boards: 200
+  episodes_per_board: 4
+  seed_start: 150
+  batch_size: 2
+  grad_accum: 8
+  lr: 1.0e-5
+  epochs: 2
+  dft: false
+grpo:
+  num_boards: 64
+  max_steps: 200
+  num_generations: 8
+  batch_size: 4
+  grad_accum: 4
+  lr: 1.0e-5

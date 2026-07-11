@@ -273,3 +273,11 @@ def test_multi_stage_chains_model_path(monkeypatch, tmp_path):
     )
     assert s3_probe[s3_probe.index("--model") + 1] == os.path.join(
         str(tmp_path), "grpo-s2")
+
+
+@pytest.mark.parametrize("name", ["smoke", "qwen3-4b-full", "qwen3-8b-full"])
+def test_shipped_configs_are_valid(name):
+    cfg = load_config(f"configs_train/{name}.yaml")
+    assert cfg["run_name"] == name
+    for section in ("star", "grpo"):
+        assert isinstance(cfg[section]["lr"], float)

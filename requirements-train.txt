@@ -33,3 +33,6 @@ torchao==0.17.0
 
 # pipeline.py orchestrator config files
 pyyaml>=6.0
+
+# adamw_bnb_8bit (8-bit Adam states for 8B full FT on 80GB); linux-only wheels
+bitsandbytes>=0.45; sys_platform == "linux"
