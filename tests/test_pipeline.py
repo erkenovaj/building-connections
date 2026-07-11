@@ -205,7 +205,7 @@ def test_star_sample_cmd_uses_star_seeds():
 import train.pipeline as pipeline
 
 
-def _fake_runner(monkeypatch, probe_win1s):
+def _fake_runner(monkeypatch, probe_win1s, star_kept=2):
     """Replace run_step; scripted win@1 per probe call, no-op otherwise."""
     calls = []
     win1s = iter(probe_win1s)
@@ -216,7 +216,7 @@ def _fake_runner(monkeypatch, probe_win1s):
         if script.endswith("probe_wink.py"):
             return json.dumps({"win_at_k": {"1": next(win1s), "4": 0, "8": 0}})
         if script.endswith("star_sft.py") and cmd[2] == "sample":
-            return json.dumps({"played": 8, "kept": 2})
+            return json.dumps({"played": 8, "kept": star_kept})
         return "trained\n"
 
     monkeypatch.setattr(pipeline, "run_step", fake)
@@ -240,6 +240,15 @@ def test_star_retry_then_gate_failed(monkeypatch, tmp_path):
     ]
     assert state["stopped"] == "gate_failed"
     assert state["model_path"] == os.path.join(str(tmp_path), "star-s2")
+
+
+def test_star_sample_kept_zero_stops_without_training(monkeypatch, tmp_path):
+    """Zero kept trajectories: no data to train on, stop instead of crashing."""
+    calls = _fake_runner(monkeypatch, [0.0], star_kept=0)
+    state = pipeline.run_pipeline(make_cfg(), str(tmp_path))
+    assert list(state["completed"]) == ["s2-probe-base", "s2-star-sample"]
+    assert state["stopped"] == "gate_failed"
+    assert not any(c[1].endswith("star_sft.py") and c[2] == "train" for c in calls)
 
 
 def test_star_retry_recovers_and_advances(monkeypatch, tmp_path):

@@ -294,17 +294,22 @@ def run_stage(cfg: dict, stage: int, run_dir: str, state: dict) -> str:
     if decision == "star":
         data = os.path.join(run_dir, f"star-s{stage}.jsonl")
         star_out = os.path.join(run_dir, f"star-s{stage}")
-        step(state, run_dir, f"s{stage}-star-sample",
-             star_sample_cmd(cfg, stage, model, data), require_json=True)
-        step(state, run_dir, f"s{stage}-star-train",
-             star_train_cmd(cfg, stage, model, data, star_out))
-        _record_trained(cfg, state, run_dir, star_out)
-        model, adapter = _current_model(cfg, state)
-        rec = step(state, run_dir, f"s{stage}-probe-star",
-                   probe_cmd(cfg, stage, model, adapter, cfg["probe"], boards),
-                   require_json=True)
-        decision = decide_after_probe(rec["metrics"]["win_at_k"]["1"], gates,
-                                      star_done=True)
+        rec = step(state, run_dir, f"s{stage}-star-sample",
+                   star_sample_cmd(cfg, stage, model, data), require_json=True)
+        if rec["metrics"]["kept"] == 0:
+            # No won episodes to train on: STaR retry is impossible.
+            decision = "stop"
+        else:
+            step(state, run_dir, f"s{stage}-star-train",
+                 star_train_cmd(cfg, stage, model, data, star_out))
+            _record_trained(cfg, state, run_dir, star_out)
+            model, adapter = _current_model(cfg, state)
+            rec = step(state, run_dir, f"s{stage}-probe-star",
+                       probe_cmd(cfg, stage, model, adapter, cfg["probe"],
+                                 boards),
+                       require_json=True)
+            decision = decide_after_probe(rec["metrics"]["win_at_k"]["1"],
+                                          gates, star_done=True)
 
     if decision == "stop":
         state["stopped"] = "gate_failed"
