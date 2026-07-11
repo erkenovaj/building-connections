@@ -112,8 +112,8 @@ def terminal_reward(completions=None, won=None, mistakes=None, tool_calls=None, 
     ]
 
 
-def main() -> None:
-    """Parse arguments and run agentic GRPO."""
+def parse_args(argv=None):
+    """CLI for agentic GRPO; --full-ft and --init-lora are mutually exclusive."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", default="Qwen/Qwen3-1.7B")
     parser.add_argument("--config", default=None)
@@ -125,6 +125,14 @@ def main() -> None:
                              "easiest --num-boards seeds instead of the seed-start range")
     parser.add_argument("--init-lora", default=None,
                         help="path to the STaR SFT adapter to start from")
+    parser.add_argument("--full-ft", action="store_true",
+                        help="full fine-tuning: no LoRA, save a full model dir")
+    parser.add_argument("--optim", default="adamw_torch",
+                        help="optimizer name for GRPOConfig (adamw_bnb_8bit for 8B)")
+    parser.add_argument("--report-to", default="none",
+                        help="TRL reporting target (comet_ml on the cluster)")
+    parser.add_argument("--run-name", default=None,
+                        help="experiment run name for the reporting backend")
     parser.add_argument("--max-steps", type=int, default=50)
     parser.add_argument("--num-generations", type=int, default=8)
     parser.add_argument("--batch-size", type=int, default=8)
@@ -136,7 +144,40 @@ def main() -> None:
     parser.add_argument("--no-think", action="store_true",
                         help="disable Qwen3 thinking mode (empty <think> block each turn)")
     parser.add_argument("--output", default="outputs/grpo-agentic")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
+    if args.full_ft and args.init_lora:
+        parser.error("--full-ft conflicts with --init-lora")
+    return args
+
+
+def build_grpo_config(args, cuda, use_bf16):
+    """GRPOConfig from CLI args; bf16 on cc>=8 CUDA, fp16 as the fallback."""
+    return GRPOConfig(
+        output_dir=args.output,
+        per_device_train_batch_size=args.batch_size,
+        gradient_accumulation_steps=args.grad_accum,
+        num_generations=args.num_generations,
+        max_completion_length=args.max_new_tokens * 4,
+        temperature=args.temperature,
+        learning_rate=args.lr,
+        lr_scheduler_type=args.lr_scheduler,
+        max_steps=args.max_steps,
+        logging_steps=1,
+        save_strategy="steps",
+        save_steps=20,
+        optim=args.optim,
+        report_to=args.report_to,
+        run_name=args.run_name,
+        bf16=use_bf16,
+        fp16=cuda and not use_bf16,
+        gradient_checkpointing=True,
+        gradient_checkpointing_kwargs={"use_reentrant": False},
+    )
+
+
+def main() -> None:
+    """Parse arguments and run agentic GRPO."""
+    args = parse_args()
 
     config = None
     if args.config:
@@ -158,9 +199,12 @@ def main() -> None:
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
     model = AutoModelForCausalLM.from_pretrained(
-        args.model, dtype=torch.float16 if cuda else None
+        args.model,
+        dtype=(torch.bfloat16 if use_bf16 else torch.float16) if cuda else None,
     )
-    if args.init_lora:
+    if args.full_ft:
+        peft_config = None
+    elif args.init_lora:
         model = PeftModel.from_pretrained(model, args.init_lora, is_trainable=True)
         peft_config = None
     else:
@@ -170,25 +214,7 @@ def main() -> None:
         )
     model.to(device)
 
-    grpo_config = GRPOConfig(
-        output_dir=args.output,
-        per_device_train_batch_size=args.batch_size,
-        gradient_accumulation_steps=args.grad_accum,
-        num_generations=args.num_generations,
-        max_completion_length=args.max_new_tokens * 4,
-        temperature=args.temperature,
-        learning_rate=args.lr,
-        lr_scheduler_type=args.lr_scheduler,
-        max_steps=args.max_steps,
-        logging_steps=1,
-        save_strategy="steps",
-        save_steps=20,
-        report_to="none",
-        bf16=use_bf16,
-        fp16=cuda and not use_bf16,
-        gradient_checkpointing=True,
-        gradient_checkpointing_kwargs={"use_reentrant": False},
-    )
+    grpo_config = build_grpo_config(args, cuda, use_bf16)
 
     gen_kwargs = {
         "temperature": args.temperature,
