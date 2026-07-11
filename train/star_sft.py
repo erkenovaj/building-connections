@@ -93,25 +93,35 @@ def build_train_config(args):
         loss_type="dft" if args.dft else "chunked_nll",
         assistant_only_loss=True,
         logging_steps=1,
-        report_to="none",
+        optim=args.optim,
+        report_to=args.report_to,
+        run_name=args.run_name,
         gradient_checkpointing=True,
+    )
+
+
+def build_peft_config(args):
+    """LoRA config for the train subcommand; None when --full-ft."""
+    if args.full_ft:
+        return None
+    from peft import LoraConfig
+
+    return LoraConfig(
+        r=16, lora_alpha=32, lora_dropout=0.05, bias="none",
+        task_type="CAUSAL_LM", target_modules="all-linear",
     )
 
 
 def _cmd_train(args) -> None:
     """SFT/DFT a LoRA on won trajectories, loss on assistant tokens only."""
     from datasets import load_dataset
-    from peft import LoraConfig
     from trl import SFTTrainer
 
     dataset = load_dataset("json", data_files=args.data, split="train")
     dataset = dataset.select_columns(["messages"])
 
     config = build_train_config(args)
-    peft_config = LoraConfig(
-        r=16, lora_alpha=32, lora_dropout=0.05, bias="none",
-        task_type="CAUSAL_LM", target_modules="all-linear",
-    )
+    peft_config = build_peft_config(args)
     trainer = SFTTrainer(
         model=args.model, args=config, train_dataset=dataset, peft_config=peft_config
     )
@@ -147,6 +157,14 @@ def main() -> None:
     p_train.add_argument("--epochs", type=int, default=2)
     p_train.add_argument("--dft", action="store_true",
                          help="use DFT loss (sg(p)-weighted CE, arXiv:2508.05629) instead of NLL")
+    p_train.add_argument("--full-ft", action="store_true",
+                         help="full fine-tuning instead of LoRA")
+    p_train.add_argument("--optim", default="adamw_torch",
+                         help="optimizer name passed to SFTConfig (e.g. adamw_bnb_8bit)")
+    p_train.add_argument("--report-to", default="none",
+                         help="experiment tracker (e.g. comet_ml) or 'none'")
+    p_train.add_argument("--run-name", default=None,
+                         help="tracker run name")
     p_train.add_argument("--output", default="outputs/star-sft")
     p_train.set_defaults(func=_cmd_train)
 

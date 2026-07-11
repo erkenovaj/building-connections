@@ -32,10 +32,11 @@ def test_lost_episode_dropped():
     assert episode_to_record(_episode(won=False)) is None
 
 
-def _train_args(dft):
+def _train_args(dft, full_ft=False):
     return argparse.Namespace(
         output="outputs/test-sft", batch_size=4, grad_accum=4, lr=1e-5,
-        epochs=2, dft=dft,
+        epochs=2, dft=dft, full_ft=full_ft, optim="adamw_torch",
+        report_to="none", run_name=None,
     )
 
 
@@ -74,3 +75,33 @@ def test_trl_dft_loss_matches_paper_formula():
 
     loss = dft_loss(outputs, labels)
     assert loss.item() == pytest.approx(expected, rel=1e-5)
+
+
+def test_train_config_forwards_optim_report_to_run_name():
+    pytest.importorskip("trl")
+    from train.star_sft import build_train_config
+
+    args = _train_args(dft=False)
+    args.optim = "adamw_bnb_8bit"
+    args.report_to = "comet_ml"
+    args.run_name = "smoke-s2-star"
+    config = build_train_config(args)
+    assert config.optim == "adamw_bnb_8bit"
+    assert config.report_to == ["comet_ml"]
+    assert config.run_name == "smoke-s2-star"
+
+
+def test_full_ft_disables_peft_config():
+    pytest.importorskip("peft")
+    from train.star_sft import build_peft_config
+
+    assert build_peft_config(_train_args(dft=False, full_ft=True)) is None
+
+
+def test_default_mode_builds_lora_config():
+    pytest.importorskip("peft")
+    from train.star_sft import build_peft_config
+
+    peft_config = build_peft_config(_train_args(dft=False))
+    assert peft_config is not None
+    assert peft_config.r == 16
