@@ -194,3 +194,82 @@ def test_star_sample_cmd_uses_star_seeds():
     assert cmd[1:3] == ["train/star_sft.py", "sample"]
     assert cmd[cmd.index("--seed-start") + 1] == "150"
     assert cmd[cmd.index("--out") + 1] == "d.jsonl"
+
+
+import train.pipeline as pipeline
+
+
+def _fake_runner(monkeypatch, probe_win1s):
+    """Replace run_step; scripted win@1 per probe call, no-op otherwise."""
+    calls = []
+    win1s = iter(probe_win1s)
+
+    def fake(cmd, log_path):
+        calls.append(cmd)
+        script = cmd[1]
+        if script.endswith("probe_wink.py"):
+            return json.dumps({"win_at_k": {"1": next(win1s), "4": 0, "8": 0}})
+        if script.endswith("star_sft.py") and cmd[2] == "sample":
+            return json.dumps({"played": 8, "kept": 2})
+        return "trained\n"
+
+    monkeypatch.setattr(pipeline, "run_step", fake)
+    return calls
+
+
+def test_happy_path_single_stage(monkeypatch, tmp_path):
+    calls = _fake_runner(monkeypatch, [0.2, 0.9])  # probe-base, eval
+    state = pipeline.run_pipeline(make_cfg(), str(tmp_path))
+    assert list(state["completed"]) == ["s2-probe-base", "s2-grpo", "s2-eval"]
+    assert state["stopped"] is None
+    assert state["model_path"] == os.path.join(str(tmp_path), "grpo-s2")
+    assert len(calls) == 3
+
+
+def test_star_retry_then_gate_failed(monkeypatch, tmp_path):
+    calls = _fake_runner(monkeypatch, [0.0, 0.0])  # probe-base, probe-star
+    state = pipeline.run_pipeline(make_cfg(), str(tmp_path))
+    assert list(state["completed"]) == [
+        "s2-probe-base", "s2-star-sample", "s2-star-train", "s2-probe-star",
+    ]
+    assert state["stopped"] == "gate_failed"
+    assert state["model_path"] == os.path.join(str(tmp_path), "star-s2")
+
+
+def test_star_retry_recovers_and_advances(monkeypatch, tmp_path):
+    _fake_runner(monkeypatch, [0.0, 0.3, 0.9])  # base, re-probe, eval
+    state = pipeline.run_pipeline(make_cfg(), str(tmp_path))
+    assert "s2-grpo" in state["completed"]
+    assert state["stopped"] is None
+
+
+def test_lora_mode_tracks_adapter_not_model(monkeypatch, tmp_path):
+    calls = _fake_runner(monkeypatch, [0.0, 0.3, 0.9])
+    state = pipeline.run_pipeline(make_cfg(full_ft=False), str(tmp_path))
+    assert state["model_path"] is None
+    assert state["adapter_path"] == os.path.join(str(tmp_path), "grpo-s2")
+    grpo_call = next(c for c in calls if c[1].endswith("grpo_agentic.py"))
+    assert grpo_call[grpo_call.index("--init-lora") + 1] == os.path.join(
+        str(tmp_path), "star-s2")
+
+
+def test_resume_skips_completed_steps(monkeypatch, tmp_path):
+    _fake_runner(monkeypatch, [0.2, 0.9])
+    pipeline.run_pipeline(make_cfg(), str(tmp_path))
+    calls = _fake_runner(monkeypatch, [])  # any run_step call would StopIteration
+    state = pipeline.run_pipeline(make_cfg(), str(tmp_path), resume=True)
+    assert calls == []
+    assert state["stopped"] is None
+
+
+def test_multi_stage_chains_model_path(monkeypatch, tmp_path):
+    calls = _fake_runner(monkeypatch, [0.2, 0.9, 0.2, 0.9])
+    state = pipeline.run_pipeline(make_cfg(stages=[2, 3]), str(tmp_path))
+    assert "s3-eval" in state["completed"]
+    assert state["model_path"] == os.path.join(str(tmp_path), "grpo-s3")
+    s3_probe = next(
+        c for c in calls
+        if c[1].endswith("probe_wink.py") and c[c.index("--num-categories") + 1] == "3"
+    )
+    assert s3_probe[s3_probe.index("--model") + 1] == os.path.join(
+        str(tmp_path), "grpo-s2")

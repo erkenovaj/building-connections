@@ -261,3 +261,110 @@ def grpo_cmd(cfg, stage, model, adapter, seed_order, output):
     elif adapter:
         cmd += ["--init-lora", adapter]
     return cmd
+
+
+def _current_model(cfg: dict, state: dict) -> tuple[str, str | None]:
+    """Latest (model, adapter) pair to load, chained across stages."""
+    return state["model_path"] or cfg["model"], state["adapter_path"]
+
+
+def _record_trained(cfg: dict, state: dict, run_dir: str, output: str) -> None:
+    """Point the chain at a just-trained checkpoint (full dir or adapter)."""
+    if cfg["full_ft"]:
+        state["model_path"] = output
+    else:
+        state["adapter_path"] = output
+    save_state(run_dir, state)
+
+
+def run_stage(cfg: dict, stage: int, run_dir: str, state: dict) -> str:
+    """One curriculum stage: probe -> (STaR retry) -> GRPO -> held-out eval."""
+    gates = cfg["gates"]
+    boards = os.path.join(run_dir, f"boards-s{stage}.jsonl")
+
+    model, adapter = _current_model(cfg, state)
+    rec = step(state, run_dir, f"s{stage}-probe-base",
+               probe_cmd(cfg, stage, model, adapter, cfg["probe"], boards),
+               require_json=True)
+    decision = decide_after_probe(rec["metrics"]["win_at_k"]["1"], gates,
+                                  star_done=False)
+
+    if decision == "star":
+        data = os.path.join(run_dir, f"star-s{stage}.jsonl")
+        star_out = os.path.join(run_dir, f"star-s{stage}")
+        step(state, run_dir, f"s{stage}-star-sample",
+             star_sample_cmd(cfg, stage, model, data), require_json=True)
+        step(state, run_dir, f"s{stage}-star-train",
+             star_train_cmd(cfg, stage, model, data, star_out))
+        _record_trained(cfg, state, run_dir, star_out)
+        model, adapter = _current_model(cfg, state)
+        rec = step(state, run_dir, f"s{stage}-probe-star",
+                   probe_cmd(cfg, stage, model, adapter, cfg["probe"], boards),
+                   require_json=True)
+        decision = decide_after_probe(rec["metrics"]["win_at_k"]["1"], gates,
+                                      star_done=True)
+
+    if decision == "stop":
+        state["stopped"] = "gate_failed"
+        save_state(run_dir, state)
+        return "stop"
+
+    grpo_out = os.path.join(run_dir, f"grpo-s{stage}")
+    step(state, run_dir, f"s{stage}-grpo",
+         grpo_cmd(cfg, stage, model, adapter, boards, grpo_out))
+    _record_trained(cfg, state, run_dir, grpo_out)
+
+    model, adapter = _current_model(cfg, state)
+    rec = step(state, run_dir, f"s{stage}-eval",
+               probe_cmd(cfg, stage, model, adapter, cfg["eval"], None),
+               require_json=True)
+    if decide_after_eval(rec["metrics"]["win_at_k"]["1"], gates) == "advance":
+        return "advance"
+    state["stopped"] = "gate_failed"
+    save_state(run_dir, state)
+    return "stop"
+
+
+def run_pipeline(cfg: dict, run_dir: str, resume: bool = False) -> dict:
+    """Run all curriculum stages, checkpointing state after every step."""
+    os.makedirs(os.path.join(run_dir, "logs"), exist_ok=True)
+    state = (load_state(run_dir) if resume else None) or new_state(cfg)
+    if state["stopped"]:
+        print(f"pipeline: already stopped: {state['stopped']}")
+        return state
+    for stage in cfg["stages"]:
+        print(f"pipeline: === stage {stage} categories ===")
+        if run_stage(cfg, stage, run_dir, state) == "stop":
+            break
+    save_state(run_dir, state)
+    return state
+
+
+def main() -> None:
+    """CLI entrypoint: load config, run (or resume) the pipeline."""
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--config", required=True, help="pipeline YAML config")
+    parser.add_argument("--run-dir", default=None,
+                        help="run directory (default outputs/runs/<run_name>)")
+    parser.add_argument("--resume", action="store_true",
+                        help="skip steps already recorded in state.json")
+    args = parser.parse_args()
+    try:
+        cfg = load_config(args.config)
+    except ConfigError as exc:
+        print(f"pipeline: bad config: {exc}", file=sys.stderr)
+        sys.exit(1)
+    run_dir = args.run_dir or os.path.join("outputs", "runs", cfg["run_name"])
+    try:
+        state = run_pipeline(cfg, run_dir, resume=args.resume)
+    except StepFailed as exc:
+        print(f"pipeline: step failed: {exc}", file=sys.stderr)
+        sys.exit(1)
+    if state["stopped"]:
+        print(f"pipeline: stopped: {state['stopped']}")
+    else:
+        print("pipeline: all stages complete")
+
+
+if __name__ == "__main__":
+    main()
