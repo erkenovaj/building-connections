@@ -145,3 +145,52 @@ def test_step_requires_json_when_asked(tmp_path):
     with pytest.raises(StepFailed):
         step(state, str(tmp_path), "s2-probe-base",
              [sys.executable, "-c", "print('no json')"], require_json=True)
+
+
+from train.pipeline import grpo_cmd, probe_cmd, star_sample_cmd, star_train_cmd
+
+
+def test_probe_cmd_includes_adapter_and_boards_only_when_given():
+    cfg = make_cfg()
+    cmd = probe_cmd(cfg, 2, "m", None, cfg["probe"], None)
+    assert cmd[:2] == [sys.executable, "train/probe_wink.py"]
+    assert "--adapter" not in cmd and "--out-boards" not in cmd
+    assert cmd[cmd.index("--seed-start") + 1] == "1000000"
+
+    cmd = probe_cmd(cfg, 2, "m", "outputs/star", cfg["eval"], "b.jsonl")
+    assert cmd[cmd.index("--adapter") + 1] == "outputs/star"
+    assert cmd[cmd.index("--out-boards") + 1] == "b.jsonl"
+    assert cmd[cmd.index("--seed-start") + 1] == "2000000"
+
+
+def test_star_train_cmd_full_ft_and_dft_flags():
+    cfg = make_cfg()
+    cfg["star"]["dft"] = True
+    cmd = star_train_cmd(cfg, 3, "m", "d.jsonl", "out")
+    assert cmd[1:3] == ["train/star_sft.py", "train"]
+    assert "--full-ft" in cmd and "--dft" in cmd
+    assert cmd[cmd.index("--run-name") + 1] == "t-s3-star"
+
+    cfg = make_cfg(full_ft=False)
+    cmd = star_train_cmd(cfg, 3, "m", "d.jsonl", "out")
+    assert "--full-ft" not in cmd and "--dft" not in cmd
+
+
+def test_grpo_cmd_full_ft_vs_lora_modes():
+    cfg = make_cfg()
+    cmd = grpo_cmd(cfg, 2, "m", None, "b.jsonl", "out")
+    assert "--full-ft" in cmd and "--init-lora" not in cmd
+    assert cmd[cmd.index("--seed-order") + 1] == "b.jsonl"
+
+    cfg = make_cfg(full_ft=False)
+    cmd = grpo_cmd(cfg, 2, "m", "outputs/star", "b.jsonl", "out")
+    assert "--full-ft" not in cmd
+    assert cmd[cmd.index("--init-lora") + 1] == "outputs/star"
+
+
+def test_star_sample_cmd_uses_star_seeds():
+    cfg = make_cfg()
+    cmd = star_sample_cmd(cfg, 2, "m", "d.jsonl")
+    assert cmd[1:3] == ["train/star_sft.py", "sample"]
+    assert cmd[cmd.index("--seed-start") + 1] == "150"
+    assert cmd[cmd.index("--out") + 1] == "d.jsonl"

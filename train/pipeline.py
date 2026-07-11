@@ -182,3 +182,82 @@ def step(state: dict, run_dir: str, name: str, cmd: list[str],
     _append_metrics(run_dir, name, metrics)
     save_state(run_dir, state)
     return record
+
+
+def probe_cmd(cfg, stage, model, adapter, seeds, out_boards):
+    """probe_wink invocation; seeds is the probe or eval config section."""
+    cmd = [sys.executable, "train/probe_wink.py",
+           "--model", model,
+           "--num-categories", str(stage),
+           "--num-boards", str(seeds["num_boards"]),
+           "--num-episodes", str(seeds["num_episodes"]),
+           "--seed-start", str(seeds["seed_start"]),
+           "--max-new-tokens", str(cfg["max_new_tokens"])]
+    if adapter:
+        cmd += ["--adapter", adapter]
+    if out_boards:
+        cmd += ["--out-boards", out_boards]
+    return cmd
+
+
+def star_sample_cmd(cfg, stage, model, out):
+    """star_sft sample invocation (STaR rejection sampling).
+
+    Sampling has no adapter support, so in LoRA mode it plays the base
+    model; full-FT mode passes the current full checkpoint as --model.
+    """
+    star = cfg["star"]
+    return [sys.executable, "train/star_sft.py", "sample",
+            "--model", model,
+            "--num-categories", str(stage),
+            "--num-boards", str(star["num_boards"]),
+            "--episodes-per-board", str(star["episodes_per_board"]),
+            "--seed-start", str(star["seed_start"]),
+            "--max-new-tokens", str(cfg["max_new_tokens"]),
+            "--out", out]
+
+
+def star_train_cmd(cfg, stage, model, data, output):
+    """star_sft train invocation on the kept trajectories."""
+    star = cfg["star"]
+    cmd = [sys.executable, "train/star_sft.py", "train",
+           "--model", model,
+           "--data", data,
+           "--batch-size", str(star["batch_size"]),
+           "--grad-accum", str(star["grad_accum"]),
+           "--lr", str(star["lr"]),
+           "--epochs", str(star["epochs"]),
+           "--optim", cfg["optim"],
+           "--report-to", cfg["report_to"],
+           "--run-name", f"{cfg['run_name']}-s{stage}-star",
+           "--output", output]
+    if star["dft"]:
+        cmd.append("--dft")
+    if cfg["full_ft"]:
+        cmd.append("--full-ft")
+    return cmd
+
+
+def grpo_cmd(cfg, stage, model, adapter, seed_order, output):
+    """grpo_agentic invocation on the easiest probed boards."""
+    grpo = cfg["grpo"]
+    cmd = [sys.executable, "train/grpo_agentic.py",
+           "--model", model,
+           "--num-categories", str(stage),
+           "--num-boards", str(grpo["num_boards"]),
+           "--seed-order", seed_order,
+           "--max-steps", str(grpo["max_steps"]),
+           "--num-generations", str(grpo["num_generations"]),
+           "--batch-size", str(grpo["batch_size"]),
+           "--grad-accum", str(grpo["grad_accum"]),
+           "--lr", str(grpo["lr"]),
+           "--max-new-tokens", str(cfg["max_new_tokens"]),
+           "--optim", cfg["optim"],
+           "--report-to", cfg["report_to"],
+           "--run-name", f"{cfg['run_name']}-s{stage}-grpo",
+           "--output", output]
+    if cfg["full_ft"]:
+        cmd.append("--full-ft")
+    elif adapter:
+        cmd += ["--init-lora", adapter]
+    return cmd
