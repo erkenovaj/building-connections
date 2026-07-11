@@ -1,5 +1,8 @@
 node_modules/
 .venv/
+.venv-train/
+outputs/
+*.zip
 __pycache__/
 *.py[cod]
 data/

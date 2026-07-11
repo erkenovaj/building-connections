@@ -1,0 +1,469 @@
+[
+  {
+    "name": "Pierogi",
+    "description": "Eastern European dumplings of unleavened dough, typically filled with a savory or sweet stuffing.",
+    "tags": [
+      "STUFFED OR FOLDED"
+    ]
+  },
+  {
+    "name": "Empanada",
+    "description": "A baked or fried turnover consisting of pastry and a savory filling, common in Southern European and Latin American cultures.",
+    "tags": [
+      "STUFFED OR FOLDED"
+    ]
+  },
+  {
+    "name": "Wonton",
+    "description": "A type of Chinese dumpling commonly found in soups or fried as an appetizer.",
+    "tags": [
+      "STUFFED OR FOLDED"
+    ]
+  },
+  {
+    "name": "Dumpling",
+    "description": "A broad class of dishes that consist of pieces of dough wrapped around a filling.",
+    "tags": [
+      "STUFFED OR FOLDED"
+    ]
+  },
+  {
+    "name": "Samosa",
+    "description": "A fried or baked pastry with a savory filling, such as spiced potatoes, onions, and peas.",
+    "tags": [
+      "STUFFED OR FOLDED"
+    ]
+  },
+  {
+    "name": "Tamale",
+    "description": "A Mesoamerican dish of seasoned filling wrapped in corn dough and steamed in a corn husk or banana leaf.",
+    "tags": [
+      "STUFFED OR FOLDED"
+    ]
+  },
+  {
+    "name": "Ravioli",
+    "description": "A type of pasta comprising a filling sealed between two layers of thin pasta dough.",
+    "tags": [
+      "STUFFED OR FOLDED",
+      "MADE WITH DOUGH"
+    ]
+  },
+  {
+    "name": "Calzone",
+    "description": "An Italian oven-baked folded pizza that originated in Naples.",
+    "tags": [
+      "STUFFED OR FOLDED",
+      "MADE WITH DOUGH"
+    ]
+  },
+  {
+    "name": "Kefir",
+    "description": "A fermented milk drink, similar to a thin yogurt, made from grains that are a symbiotic culture of bacteria and yeast.",
+    "tags": [
+      "FERMENTED FOODS"
+    ]
+  },
+  {
+    "name": "Kombucha",
+    "description": "A fermented, lightly effervescent, sweetened black or green tea drink.",
+    "tags": [
+      "FERMENTED FOODS"
+    ]
+  },
+  {
+    "name": "Tempeh",
+    "description": "A traditional Indonesian food made from fermented soybeans, formed into a cake.",
+    "tags": [
+      "FERMENTED FOODS",
+      "UMAMI POWERHOUSES"
+    ]
+  },
+  {
+    "name": "Sauerkraut",
+    "description": "Finely cut raw cabbage that has been fermented by various lactic acid bacteria.",
+    "tags": [
+      "FERMENTED FOODS"
+    ]
+  },
+  {
+    "name": "Kimchi",
+    "description": "A traditional Korean side dish of salted and fermented vegetables, such as napa cabbage and Korean radish.",
+    "tags": [
+      "FERMENTED FOODS",
+      "SPICY CONDIMENTS & PASTES"
+    ]
+  },
+  {
+    "name": "Yogurt",
+    "description": "A food produced by bacterial fermentation of milk.",
+    "tags": [
+      "FERMENTED FOODS"
+    ]
+  },
+  {
+    "name": "Miso",
+    "description": "A traditional Japanese seasoning produced by fermenting soybeans with salt and kōji.",
+    "tags": [
+      "FERMENTED FOODS",
+      "UMAMI POWERHOUSES"
+    ]
+  },
+  {
+    "name": "Sourdough",
+    "description": "Bread made by the fermentation of dough using naturally occurring lactobacilli and yeast.",
+    "tags": [
+      "FERMENTED FOODS",
+      "MADE WITH DOUGH"
+    ]
+  },
+  {
+    "name": "Steak Tartare",
+    "description": "A meat dish made from finely chopped or minced raw beef or horse meat.",
+    "tags": [
+      "SERVED RAW"
+    ]
+  },
+  {
+    "name": "Oysters",
+    "description": "A common name for a number of different families of salt-water bivalve molluscs that are often eaten uncooked on the half shell.",
+    "tags": [
+      "SERVED RAW"
+    ]
+  },
+  {
+    "name": "Sashimi",
+    "description": "A Japanese delicacy consisting of fresh raw fish or meat sliced into thin pieces and often eaten with soy sauce.",
+    "tags": [
+      "SERVED RAW"
+    ]
+  },
+  {
+    "name": "Carpaccio",
+    "description": "A dish of meat or fish, thinly sliced or pounded thin, and served uncooked.",
+    "tags": [
+      "SERVED RAW"
+    ]
+  },
+  {
+    "name": "Crudo",
+    "description": "An Italian and Spanish word for 'raw,' referring to dishes of uncooked fish or shellfish dressed with oil, citrus, and seasonings.",
+    "tags": [
+      "SERVED RAW"
+    ]
+  },
+  {
+    "name": "Kitfo",
+    "description": "An Ethiopian dish of minced raw beef, marinated in a chili powder-based spice blend.",
+    "tags": [
+      "SERVED RAW",
+      "SPICY CONDIMENTS & PASTES"
+    ]
+  },
+  {
+    "name": "Ceviche",
+    "description": "A South American dish of fresh raw fish cured in fresh citrus juices, most commonly lime or lemon.",
+    "tags": [
+      "SERVED RAW"
+    ]
+  },
+  {
+    "name": "Poke",
+    "description": "A Hawaiian dish of diced raw fish, often served as an appetizer or a main course.",
+    "tags": [
+      "SERVED RAW",
+      "UMAMI POWERHOUSES"
+    ]
+  },
+  {
+    "name": "Anchovy",
+    "description": "A small, common forage fish of the family Engraulidae, often salt-cured and used to add savory flavor.",
+    "tags": [
+      "UMAMI POWERHOUSES",
+      "CURED MEATS"
+    ]
+  },
+  {
+    "name": "Mushroom",
+    "description": "The fleshy, spore-bearing fruiting body of a fungus, known for its deep, savory flavor.",
+    "tags": [
+      "UMAMI POWERHOUSES"
+    ]
+  },
+  {
+    "name": "Tomato Paste",
+    "description": "A thick paste made by cooking tomatoes for several hours to reduce the water content, concentrating their flavor.",
+    "tags": [
+      "UMAMI POWERHOUSES"
+    ]
+  },
+  {
+    "name": "Nutritional Yeast",
+    "description": "A deactivated yeast, sold as a food product with a cheesy, nutty, and savory flavor.",
+    "tags": [
+      "UMAMI POWERHOUSES"
+    ]
+  },
+  {
+    "name": "Parmesan",
+    "description": "A hard, granular cheese, aged for at least 12 months, with a complex savory flavor.",
+    "tags": [
+      "UMAMI POWERHOUSES",
+      "FERMENTED FOODS"
+    ]
+  },
+  {
+    "name": "Soy Sauce",
+    "description": "A liquid condiment of Chinese origin, made from a fermented paste of soybeans, roasted grain, brine, and Aspergillus mold.",
+    "tags": [
+      "UMAMI POWERHOUSES",
+      "FERMENTED FOODS"
+    ]
+  },
+  {
+    "name": "Fish Sauce",
+    "description": "A liquid condiment made from fish or krill that have been coated in salt and fermented for up to two years.",
+    "tags": [
+      "UMAMI POWERHOUSES",
+      "FERMENTED FOODS"
+    ]
+  },
+  {
+    "name": "Seaweed",
+    "description": "Edible algae, such as nori or kombu, that are naturally high in glutamate and provide a savory flavor.",
+    "tags": [
+      "UMAMI POWERHOUSES"
+    ]
+  },
+  {
+    "name": "Baguette",
+    "description": "A long, thin loaf of French bread that is commonly made from basic lean dough.",
+    "tags": [
+      "MADE WITH DOUGH"
+    ]
+  },
+  {
+    "name": "Beignet",
+    "description": "A type of deep-fried pastry, typically made from choux pastry, popular in New Orleans.",
+    "tags": [
+      "MADE WITH DOUGH"
+    ]
+  },
+  {
+    "name": "Pretzel",
+    "description": "A type of baked pastry made from dough that is commonly shaped into a knot.",
+    "tags": [
+      "MADE WITH DOUGH"
+    ]
+  },
+  {
+    "name": "Focaccia",
+    "description": "A flat oven-baked Italian bread, similar in style and texture to pizza.",
+    "tags": [
+      "MADE WITH DOUGH"
+    ]
+  },
+  {
+    "name": "Pizza",
+    "description": "A dish of Italian origin consisting of a usually round, flat base of leavened wheat-based dough topped with various ingredients.",
+    "tags": [
+      "MADE WITH DOUGH"
+    ]
+  },
+  {
+    "name": "Naan",
+    "description": "A leavened, oven-baked flatbread found in the cuisines of West and South Asia.",
+    "tags": [
+      "MADE WITH DOUGH"
+    ]
+  },
+  {
+    "name": "Gnocchi",
+    "description": "Small Italian dumplings made from potato, semolina, or flour, usually served with a sauce.",
+    "tags": [
+      "MADE WITH DOUGH",
+      "ONE-POT MEALS"
+    ]
+  },
+  {
+    "name": "Pasta",
+    "description": "A staple food of Italian cuisine, made from an unleavened dough of wheat flour mixed with water or eggs.",
+    "tags": [
+      "MADE WITH DOUGH"
+    ]
+  },
+  {
+    "name": "Harissa",
+    "description": "A hot chili pepper paste, native to the Maghreb, made from roasted red peppers, spices, and herbs.",
+    "tags": [
+      "SPICY CONDIMENTS & PASTES"
+    ]
+  },
+  {
+    "name": "Sambal",
+    "description": "A chili sauce or paste typically made from a mixture of chili peppers with secondary ingredients such as shrimp paste, garlic, and lime juice.",
+    "tags": [
+      "SPICY CONDIMENTS & PASTES",
+      "UMAMI POWERHOUSES"
+    ]
+  },
+  {
+    "name": "Sriracha",
+    "description": "A type of hot sauce or chili sauce made from a paste of chili peppers, distilled vinegar, garlic, sugar, and salt.",
+    "tags": [
+      "SPICY CONDIMENTS & PASTES"
+    ]
+  },
+  {
+    "name": "Tabasco",
+    "description": "A brand of hot sauce made from peppers, vinegar, and salt, aged in white oak barrels.",
+    "tags": [
+      "SPICY CONDIMENTS & PASTES",
+      "FERMENTED FOODS"
+    ]
+  },
+  {
+    "name": "Gochujang",
+    "description": "A savory, sweet, and spicy fermented condiment popular in Korean cooking.",
+    "tags": [
+      "SPICY CONDIMENTS & PASTES",
+      "FERMENTED FOODS",
+      "UMAMI POWERHOUSES"
+    ]
+  },
+  {
+    "name": "Wasabi",
+    "description": "A paste made from the rhizome of the Wasabia japonica plant, with an extremely strong pungency.",
+    "tags": [
+      "SPICY CONDIMENTS & PASTES"
+    ]
+  },
+  {
+    "name": "Horseradish",
+    "description": "A root vegetable used as a spice and prepared as a condiment, known for its pungent taste and odor.",
+    "tags": [
+      "SPICY CONDIMENTS & PASTES"
+    ]
+  },
+  {
+    "name": "Mustard",
+    "description": "A condiment made from whole, ground, or cracked seeds of its namesake plant, mixed with a liquid.",
+    "tags": [
+      "SPICY CONDIMENTS & PASTES"
+    ]
+  },
+  {
+    "name": "Goulash",
+    "description": "A soup or stew of meat and vegetables seasoned with paprika and other spices, originating in Hungary.",
+    "tags": [
+      "ONE-POT MEALS"
+    ]
+  },
+  {
+    "name": "Chili",
+    "description": "A spicy stew containing chili peppers, meat (usually beef), and often tomatoes and beans.",
+    "tags": [
+      "ONE-POT MEALS"
+    ]
+  },
+  {
+    "name": "Stew",
+    "description": "A dish of solid food ingredients that have been cooked in liquid and served in the resultant gravy.",
+    "tags": [
+      "ONE-POT MEALS"
+    ]
+  },
+  {
+    "name": "Cassoulet",
+    "description": "A rich, slow-cooked casserole containing meat (typically pork sausages, goose, duck) and white beans, originating in southern France.",
+    "tags": [
+      "ONE-POT MEALS",
+      "CURED MEATS"
+    ]
+  },
+  {
+    "name": "Ratatouille",
+    "description": "A French Provençal stewed vegetable dish, originating in Nice.",
+    "tags": [
+      "ONE-POT MEALS"
+    ]
+  },
+  {
+    "name": "Curry",
+    "description": "A variety of dishes originating in the Indian subcontinent that use a complex combination of spices or herbs, usually including ground turmeric, cumin, and coriander.",
+    "tags": [
+      "ONE-POT MEALS"
+    ]
+  },
+  {
+    "name": "Tagine",
+    "description": "A North African stew of spiced meat and vegetables prepared by slow cooking in a shallow earthenware cooking dish with a tall, conical lid.",
+    "tags": [
+      "ONE-POT MEALS"
+    ]
+  },
+  {
+    "name": "Paella",
+    "description": "A Spanish rice dish originally from Valencia, cooked and served in a large shallow pan.",
+    "tags": [
+      "ONE-POT MEALS"
+    ]
+  },
+  {
+    "name": "Prosciutto",
+    "description": "An Italian dry-cured ham that is usually thinly sliced and served uncooked.",
+    "tags": [
+      "CURED MEATS"
+    ]
+  },
+  {
+    "name": "Salami",
+    "description": "A type of cured sausage consisting of fermented and air-dried meat, typically beef or pork.",
+    "tags": [
+      "CURED MEATS"
+    ]
+  },
+  {
+    "name": "Bresaola",
+    "description": "Air-dried, salted beef that has been aged two or three months until it becomes hard and turns a dark red, almost purple color.",
+    "tags": [
+      "CURED MEATS"
+    ]
+  },
+  {
+    "name": "Capicola",
+    "description": "A traditional Italian and Corsican pork cold cut made from the dry-cured muscle running from the neck to the fourth or fifth rib of the pork shoulder.",
+    "tags": [
+      "CURED MEATS"
+    ]
+  },
+  {
+    "name": "Speck",
+    "description": "An Italian cured, smoked meat native to the South Tyrol region, made from a boned pork leg.",
+    "tags": [
+      "CURED MEATS"
+    ]
+  },
+  {
+    "name": "Chorizo",
+    "description": "A type of pork sausage originating from the Iberian Peninsula, often seasoned with smoked paprika.",
+    "tags": [
+      "CURED MEATS",
+      "SPICY CONDIMENTS & PASTES"
+    ]
+  },
+  {
+    "name": "Pancetta",
+    "description": "An Italian salt-cured pork belly meat, similar to bacon but not smoked.",
+    "tags": [
+      "CURED MEATS"
+    ]
+  },
+  {
+    "name": "Bacon",
+    "description": "A type of salt-cured pork prepared from several different cuts of meat, typically from the pork belly or from the less fatty back cuts.",
+    "tags": [
+      "CURED MEATS"
+    ]
+  }
+]

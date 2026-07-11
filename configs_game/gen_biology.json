@@ -1,0 +1,597 @@
+[
+  {
+    "name": "Arctic Fox",
+    "description": "A small fox native to the Arctic regions, known for its thick, warm fur that also serves as camouflage.",
+    "tags": [
+      "POLAR ANIMALS"
+    ]
+  },
+  {
+    "name": "Beluga Whale",
+    "description": "An arctic and sub-arctic cetacean known for its distinctive white color and high-pitched calls.",
+    "tags": [
+      "POLAR ANIMALS",
+      "SOCIAL MAMMALS"
+    ]
+  },
+  {
+    "name": "Caribou",
+    "description": "A species of deer native to arctic and subarctic regions, known for undertaking long seasonal journeys.",
+    "tags": [
+      "MIGRATORY ANIMALS",
+      "POLAR ANIMALS",
+      "SOCIAL MAMMALS"
+    ]
+  },
+  {
+    "name": "Lemming",
+    "description": "A small rodent, usually living in or near the Arctic in tundra biomes.",
+    "tags": [
+      "POLAR ANIMALS"
+    ]
+  },
+  {
+    "name": "Musk Ox",
+    "description": "An Arctic-dwelling, shaggy-coated mammal known for its strong odor and defensive circling behavior.",
+    "tags": [
+      "POLAR ANIMALS",
+      "SOCIAL MAMMALS"
+    ]
+  },
+  {
+    "name": "Narwhal",
+    "description": "A medium-sized toothed whale that possesses a large, characteristic tusk from a protruding canine tooth.",
+    "tags": [
+      "POLAR ANIMALS"
+    ]
+  },
+  {
+    "name": "Penguin",
+    "description": "A group of aquatic flightless birds living almost exclusively in the Southern Hemisphere.",
+    "tags": [
+      "POLAR ANIMALS",
+      "MIGRATORY ANIMALS"
+    ]
+  },
+  {
+    "name": "Polar Bear",
+    "description": "A hypercarnivorous bear whose native range lies largely within the Arctic Circle.",
+    "tags": [
+      "POLAR ANIMALS"
+    ]
+  },
+  {
+    "name": "Snowy Owl",
+    "description": "A large, white owl of the true owl family, native to Arctic regions of North America and Eurasia.",
+    "tags": [
+      "POLAR ANIMALS",
+      "NOCTURNAL HUNTERS"
+    ]
+  },
+  {
+    "name": "Walrus",
+    "description": "A large flippered marine mammal with a discontinuous distribution about the North Pole in the Arctic Ocean.",
+    "tags": [
+      "POLAR ANIMALS"
+    ]
+  },
+  {
+    "name": "Addax",
+    "description": "A critically endangered antelope that lives in the Sahara, known for its long, twisted horns.",
+    "tags": [
+      "DESERT DWELLERS"
+    ]
+  },
+  {
+    "name": "Camel",
+    "description": "An even-toed ungulate known for its distinctive fatty deposits known as humps on its back.",
+    "tags": [
+      "DESERT DWELLERS"
+    ]
+  },
+  {
+    "name": "Fennec Fox",
+    "description": "A small crepuscular fox native to the Sahara Desert, recognizable by its unusually large ears.",
+    "tags": [
+      "DESERT DWELLERS",
+      "NOCTURNAL HUNTERS"
+    ]
+  },
+  {
+    "name": "Gila Monster",
+    "description": "A species of venomous lizard native to the southwestern United States and northwestern Mexico.",
+    "tags": [
+      "DESERT DWELLERS",
+      "VENOMOUS CREATURES"
+    ]
+  },
+  {
+    "name": "Jerboa",
+    "description": "A hopping desert rodent of Asia and northern Africa, known for its long hind legs.",
+    "tags": [
+      "DESERT DWELLERS"
+    ]
+  },
+  {
+    "name": "Kangaroo Rat",
+    "description": "A small rodent of North American deserts, able to generate water through metabolic processes.",
+    "tags": [
+      "DESERT DWELLERS"
+    ]
+  },
+  {
+    "name": "Meerkat",
+    "description": "A small mongoose found in southern Africa, known for its upright posture and cooperative behavior.",
+    "tags": [
+      "DESERT DWELLERS",
+      "SOCIAL MAMMALS"
+    ]
+  },
+  {
+    "name": "Rattlesnake",
+    "description": "A group of venomous snakes, best known for the characteristic rattle at the tip of the tail.",
+    "tags": [
+      "DESERT DWELLERS",
+      "VENOMOUS CREATURES"
+    ]
+  },
+  {
+    "name": "Roadrunner",
+    "description": "A fast-running ground cuckoo native to North and Central America, found in arid country.",
+    "tags": [
+      "DESERT DWELLERS"
+    ]
+  },
+  {
+    "name": "Scorpion",
+    "description": "A predatory arachnid of the order Scorpiones, having a segmented tail tipped with a venomous stinger.",
+    "tags": [
+      "DESERT DWELLERS",
+      "VENOMOUS CREATURES",
+      "NOCTURNAL HUNTERS"
+    ]
+  },
+  {
+    "name": "Thorny Devil",
+    "description": "An Australian lizard covered in conical spines, which are mostly uncalcified keratin.",
+    "tags": [
+      "DESERT DWELLERS"
+    ]
+  },
+  {
+    "name": "Tortoise",
+    "description": "A land-dwelling reptile of the order Testudines, known for its bony or cartilaginous shell.",
+    "tags": [
+      "DESERT DWELLERS",
+      "HAS A SHELL"
+    ]
+  },
+  {
+    "name": "Armadillo",
+    "description": "A New World placental mammal with a leathery armor covering.",
+    "tags": [
+      "HAS A SHELL",
+      "NOCTURNAL HUNTERS"
+    ]
+  },
+  {
+    "name": "Clam",
+    "description": "A common name for several kinds of bivalve molluscs.",
+    "tags": [
+      "HAS A SHELL"
+    ]
+  },
+  {
+    "name": "Cone Snail",
+    "description": "A predatory sea snail that uses a venomous harpoon-like tooth to capture prey.",
+    "tags": [
+      "HAS A SHELL",
+      "VENOMOUS CREATURES"
+    ]
+  },
+  {
+    "name": "Crab",
+    "description": "A decapod crustacean with a very short projecting tail, usually hidden entirely under the thorax.",
+    "tags": [
+      "HAS A SHELL"
+    ]
+  },
+  {
+    "name": "Hermit Crab",
+    "description": "A type of crab that has a soft abdomen and protects it by living inside an empty gastropod shell.",
+    "tags": [
+      "HAS A SHELL"
+    ]
+  },
+  {
+    "name": "Leatherback Sea Turtle",
+    "description": "The largest of all living turtles, known for its lack of a bony shell and long-distance ocean journeys.",
+    "tags": [
+      "MIGRATORY ANIMALS",
+      "HAS A SHELL"
+    ]
+  },
+  {
+    "name": "Limpet",
+    "description": "An aquatic snail with a shell that is broadly conical in shape.",
+    "tags": [
+      "HAS A SHELL"
+    ]
+  },
+  {
+    "name": "Lobster",
+    "description": "A family of large marine crustaceans with long bodies and muscular tails.",
+    "tags": [
+      "HAS A SHELL"
+    ]
+  },
+  {
+    "name": "Nautilus",
+    "description": "A pelagic marine mollusc of the cephalopod family Nautilidae, known for its chambered pearly shell.",
+    "tags": [
+      "HAS A SHELL"
+    ]
+  },
+  {
+    "name": "Oyster",
+    "description": "A common name for a number of different families of salt-water bivalve molluscs.",
+    "tags": [
+      "HAS A SHELL"
+    ]
+  },
+  {
+    "name": "Scallop",
+    "description": "A marine bivalve mollusc with a fan-shaped shell that is often fluted.",
+    "tags": [
+      "HAS A SHELL"
+    ]
+  },
+  {
+    "name": "Snail",
+    "description": "A shelled gastropod, characterized by its helical, spiral shell.",
+    "tags": [
+      "HAS A SHELL"
+    ]
+  },
+  {
+    "name": "Black Widow",
+    "description": "A species of spider notorious for the female's neurotoxic venom.",
+    "tags": [
+      "VENOMOUS CREATURES"
+    ]
+  },
+  {
+    "name": "Blue-Ringed Octopus",
+    "description": "A group of four highly venomous species of octopus that are found in tide pools and coral reefs.",
+    "tags": [
+      "VENOMOUS CREATURES"
+    ]
+  },
+  {
+    "name": "Box Jellyfish",
+    "description": "A cnidarian invertebrate distinguished by its cube-shaped medusa, with some species producing extremely potent venom.",
+    "tags": [
+      "VENOMOUS CREATURES"
+    ]
+  },
+  {
+    "name": "Cobra",
+    "description": "A venomous snake of a genus occurring in Africa and Asia, noted for its ability to expand the skin of its neck into a hood.",
+    "tags": [
+      "VENOMOUS CREATURES"
+    ]
+  },
+  {
+    "name": "Funnel-Web Spider",
+    "description": "A spider native to eastern Australia, known for its highly toxic and fast-acting venom.",
+    "tags": [
+      "VENOMOUS CREATURES"
+    ]
+  },
+  {
+    "name": "Platypus",
+    "description": "A semiaquatic, egg-laying mammal endemic to eastern Australia, where the male has a venomous spur on the hind foot.",
+    "tags": [
+      "VENOMOUS CREATURES"
+    ]
+  },
+  {
+    "name": "Stonefish",
+    "description": "A genus of venomous, marine fish, the members of which are known for their potent neurotoxins.",
+    "tags": [
+      "VENOMOUS CREATURES"
+    ]
+  },
+  {
+    "name": "Taipan",
+    "description": "A genus of large, fast-moving, and highly venomous snakes found in Australasia.",
+    "tags": [
+      "VENOMOUS CREATURES"
+    ]
+  },
+  {
+    "name": "Baboon",
+    "description": "A primate comprising the genus Papio, one of the 23 genera of Old World monkeys, that lives in large troops.",
+    "tags": [
+      "SOCIAL MAMMALS"
+    ]
+  },
+  {
+    "name": "Bonobo",
+    "description": "An endangered great ape and one of the two species making up the genus Pan, known for its matriarchal and peaceful society.",
+    "tags": [
+      "SOCIAL MAMMALS",
+      "RAINFOREST LIFE"
+    ]
+  },
+  {
+    "name": "Capybara",
+    "description": "The largest living rodent in the world, native to South America and known for its gregarious nature.",
+    "tags": [
+      "RAINFOREST LIFE",
+      "SOCIAL MAMMALS"
+    ]
+  },
+  {
+    "name": "Chimpanzee",
+    "description": "A species of great ape native to the forest and savannah of tropical Africa, living in complex communities.",
+    "tags": [
+      "SOCIAL MAMMALS",
+      "RAINFOREST LIFE"
+    ]
+  },
+  {
+    "name": "Dolphin",
+    "description": "An aquatic mammal within the infraorder Cetacea, known for its intelligence and living in social groups called pods.",
+    "tags": [
+      "SOCIAL MAMMALS"
+    ]
+  },
+  {
+    "name": "Elephant",
+    "description": "A large mammal of the family Elephantidae, known for living in complex, matriarchal family groups.",
+    "tags": [
+      "SOCIAL MAMMALS"
+    ]
+  },
+  {
+    "name": "Howler Monkey",
+    "description": "A genus of New World monkeys, famous for their loud vocalizations and living in groups.",
+    "tags": [
+      "RAINFOREST LIFE",
+      "SOCIAL MAMMALS"
+    ]
+  },
+  {
+    "name": "Humpback Whale",
+    "description": "A species of baleen whale known for its long migrations and complex songs, often traveling in loose groups.",
+    "tags": [
+      "MIGRATORY ANIMALS",
+      "SOCIAL MAMMALS"
+    ]
+  },
+  {
+    "name": "Hyena",
+    "description": "A feliform carnivoran mammal known for its complex social behavior and living in large groups called clans.",
+    "tags": [
+      "SOCIAL MAMMALS",
+      "NOCTURNAL HUNTERS"
+    ]
+  },
+  {
+    "name": "Lion",
+    "description": "A large cat of the genus Panthera, which has a muscular, deep-chested body and lives in groups called prides.",
+    "tags": [
+      "SOCIAL MAMMALS"
+    ]
+  },
+  {
+    "name": "Orca",
+    "description": "A toothed whale belonging to the oceanic dolphin family, which lives in tight-knit, matrilineal family groups.",
+    "tags": [
+      "SOCIAL MAMMALS"
+    ]
+  },
+  {
+    "name": "Prairie Dog",
+    "description": "A herbivorous burrowing rodent native to the grasslands of North America, living in large colonies or towns.",
+    "tags": [
+      "SOCIAL MAMMALS"
+    ]
+  },
+  {
+    "name": "Wildebeest",
+    "description": "An antelope in the genus Connochaetes, known for forming large herds that graze in seasonal patterns.",
+    "tags": [
+      "MIGRATORY ANIMALS",
+      "SOCIAL MAMMALS"
+    ]
+  },
+  {
+    "name": "Wolf",
+    "description": "A large canine native to Eurasia and North America, known for living and hunting in family units called packs.",
+    "tags": [
+      "SOCIAL MAMMALS",
+      "NOCTURNAL HUNTERS"
+    ]
+  },
+  {
+    "name": "Arctic Tern",
+    "description": "A seabird of the tern family, known for undertaking the longest regular migration of any known animal.",
+    "tags": [
+      "MIGRATORY ANIMALS",
+      "POLAR ANIMALS"
+    ]
+  },
+  {
+    "name": "Canada Goose",
+    "description": "A large wild goose with a black head and neck, white cheeks, and a brown body, known for its V-formation flight.",
+    "tags": [
+      "MIGRATORY ANIMALS"
+    ]
+  },
+  {
+    "name": "Gray Whale",
+    "description": "A baleen whale that travels between feeding and breeding grounds along the North American coast.",
+    "tags": [
+      "MIGRATORY ANIMALS"
+    ]
+  },
+  {
+    "name": "Monarch Butterfly",
+    "description": "A milkweed butterfly known for its seasonal journey of up to 3,000 miles from Canada to Mexico.",
+    "tags": [
+      "MIGRATORY ANIMALS"
+    ]
+  },
+  {
+    "name": "Salmon",
+    "description": "A ray-finned fish famous for being born in fresh water, migrating to the ocean, then returning to fresh water to reproduce.",
+    "tags": [
+      "MIGRATORY ANIMALS"
+    ]
+  },
+  {
+    "name": "Sandpiper",
+    "description": "A large family of waders or shorebirds, many of which undertake long-distance annual journeys.",
+    "tags": [
+      "MIGRATORY ANIMALS"
+    ]
+  },
+  {
+    "name": "Sockeye Salmon",
+    "description": "A species of salmon in the Northern Pacific Ocean, known for its epic upstream journey to spawn.",
+    "tags": [
+      "MIGRATORY ANIMALS"
+    ]
+  },
+  {
+    "name": "Swallow",
+    "description": "A passerine bird found on all continents except Antarctica, adapted to aerial feeding and known for long-distance travel.",
+    "tags": [
+      "MIGRATORY ANIMALS"
+    ]
+  },
+  {
+    "name": "Aardvark",
+    "description": "A medium-sized, burrowing, nocturnal mammal native to Africa, which feeds on ants and termites.",
+    "tags": [
+      "NOCTURNAL HUNTERS"
+    ]
+  },
+  {
+    "name": "Badger",
+    "description": "A carnivorous mammal in the family Mustelidae, known for its powerful claws and tendency to hunt at night.",
+    "tags": [
+      "NOCTURNAL HUNTERS"
+    ]
+  },
+  {
+    "name": "Bat",
+    "description": "A mammal whose forelimbs form webbed wings, making them the only mammals naturally capable of true and sustained flight.",
+    "tags": [
+      "NOCTURNAL HUNTERS"
+    ]
+  },
+  {
+    "name": "Civet",
+    "description": "A slender, nocturnal carnivorous mammal native to tropical Asia and Africa.",
+    "tags": [
+      "NOCTURNAL HUNTERS"
+    ]
+  },
+  {
+    "name": "Fox",
+    "description": "A small to medium-sized, omnivorous mammal belonging to several genera of the family Canidae, often active at night.",
+    "tags": [
+      "NOCTURNAL HUNTERS"
+    ]
+  },
+  {
+    "name": "Jaguar",
+    "description": "A large cat species and the only living member of the genus Panthera native to the Americas, often hunting at night.",
+    "tags": [
+      "RAINFOREST LIFE",
+      "NOCTURNAL HUNTERS"
+    ]
+  },
+  {
+    "name": "Leopard",
+    "description": "A large cat of the genus Panthera, known for its spotted coat and its ability as a solitary, opportunistic hunter.",
+    "tags": [
+      "NOCTURNAL HUNTERS"
+    ]
+  },
+  {
+    "name": "Owl",
+    "description": "An order of birds of prey, most of which are solitary and hunt for small mammals, insects, and other birds at night.",
+    "tags": [
+      "NOCTURNAL HUNTERS"
+    ]
+  },
+  {
+    "name": "Raccoon",
+    "description": "A medium-sized mammal native to North America, recognizable by its facial mask and ringed tail.",
+    "tags": [
+      "NOCTURNAL HUNTERS"
+    ]
+  },
+  {
+    "name": "Tarsier",
+    "description": "A haplorrhine primate with enormous eyes, whose diet consists mainly of insects which it catches by leaping.",
+    "tags": [
+      "NOCTURNAL HUNTERS",
+      "RAINFOREST LIFE"
+    ]
+  },
+  {
+    "name": "Macaw",
+    "description": "A long-tailed, often colorful New World parrot.",
+    "tags": [
+      "RAINFOREST LIFE"
+    ]
+  },
+  {
+    "name": "Okapi",
+    "description": "An artiodactyl mammal native to the northeast of the Democratic Republic of the Congo, closely related to the giraffe.",
+    "tags": [
+      "RAINFOREST LIFE"
+    ]
+  },
+  {
+    "name": "Orangutan",
+    "description": "A great ape native to the rainforests of Borneo and Sumatra, known for its long arms and reddish-brown hair.",
+    "tags": [
+      "RAINFOREST LIFE"
+    ]
+  },
+  {
+    "name": "Piranha",
+    "description": "A member of a family of omnivorous freshwater fish that live in South American rivers, especially the Amazon.",
+    "tags": [
+      "RAINFOREST LIFE"
+    ]
+  },
+  {
+    "name": "Poison Dart Frog",
+    "description": "A common name of a group of frogs in the family Dendrobatidae which are native to tropical Central and South America.",
+    "tags": [
+      "RAINFOREST LIFE",
+      "VENOMOUS CREATURES"
+    ]
+  },
+  {
+    "name": "Sloth",
+    "description": "A medium-sized mammal known for its slow movement, spending most of its life hanging upside down in tropical trees.",
+    "tags": [
+      "RAINFOREST LIFE"
+    ]
+  },
+  {
+    "name": "Toucan",
+    "description": "A brightly marked bird with a large, often colorful bill, native to the Neotropics.",
+    "tags": [
+      "RAINFOREST LIFE"
+    ]
+  }
+]

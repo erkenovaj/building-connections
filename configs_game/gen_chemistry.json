@@ -1,0 +1,362 @@
+[
+  {
+    "name": "Lithium",
+    "description": "A soft, highly reactive Group 1 metal used in batteries and specialty alloys.",
+    "tags": [
+      "Alkali Metals"
+    ]
+  },
+  {
+    "name": "Sodium",
+    "description": "A very reactive Group 1 metal whose vapor gives a yellow flame and whose compounds are ubiquitous.",
+    "tags": [
+      "Alkali Metals",
+      "Diatomic Elements"
+    ]
+  },
+  {
+    "name": "Potassium",
+    "description": "An extremely reactive Group 1 metal essential to biology in ionic form.",
+    "tags": [
+      "Alkali Metals"
+    ]
+  },
+  {
+    "name": "Rubidium",
+    "description": "A soft, silvery alkali metal used in research and atomic clocks.",
+    "tags": [
+      "Alkali Metals"
+    ]
+  },
+  {
+    "name": "Cesium",
+    "description": "A low-melting alkali metal famous for its extreme reactivity and precise clock standards.",
+    "tags": [
+      "Alkali Metals"
+    ]
+  },
+  {
+    "name": "Francium",
+    "description": "A highly radioactive alkali metal known only in trace amounts.",
+    "tags": [
+      "Alkali Metals"
+    ]
+  },
+  {
+    "name": "Fluorine",
+    "description": "The most electronegative element, appearing as a pale yellow diatomic gas.",
+    "tags": [
+      "Halogens",
+      "Diatomic Elements"
+    ]
+  },
+  {
+    "name": "Chlorine",
+    "description": "A greenish-yellow diatomic gas widely used in disinfectants and industrial chemistry.",
+    "tags": [
+      "Halogens",
+      "Diatomic Elements"
+    ]
+  },
+  {
+    "name": "Bromine",
+    "description": "A reddish-brown liquid halogen notable as one of the few liquid elements at room temperature.",
+    "tags": [
+      "Halogens",
+      "Diatomic Elements"
+    ]
+  },
+  {
+    "name": "Iodine",
+    "description": "A dark solid halogen that sublimes readily to a violet vapor.",
+    "tags": [
+      "Halogens",
+      "Diatomic Elements",
+      "Colored Salts"
+    ]
+  },
+  {
+    "name": "Astatine",
+    "description": "A rare, highly radioactive halogen with very limited direct observation.",
+    "tags": [
+      "Halogens"
+    ]
+  },
+  {
+    "name": "Tennessine",
+    "description": "A synthetic superheavy halogen whose properties are inferred from brief production.",
+    "tags": [
+      "Halogens"
+    ]
+  },
+  {
+    "name": "Iron",
+    "description": "A common transition metal that forms many vividly colored coordination compounds.",
+    "tags": [
+      "Transition Metals",
+      "Colored Salts"
+    ]
+  },
+  {
+    "name": "Copper",
+    "description": "A reddish transition metal prized for electrical conductivity and colored salts.",
+    "tags": [
+      "Transition Metals",
+      "Colored Salts"
+    ]
+  },
+  {
+    "name": "Nickel",
+    "description": "A corrosion-resistant transition metal used in stainless steels and catalysts.",
+    "tags": [
+      "Transition Metals"
+    ]
+  },
+  {
+    "name": "Cobalt",
+    "description": "A transition metal whose ions and compounds often show deep blue colors.",
+    "tags": [
+      "Transition Metals",
+      "Colored Salts"
+    ]
+  },
+  {
+    "name": "Chromium",
+    "description": "A hard transition metal associated with brilliant oxidation-state color chemistry.",
+    "tags": [
+      "Transition Metals",
+      "Colored Salts"
+    ]
+  },
+  {
+    "name": "Manganese",
+    "description": "A transition metal with many oxidation states and important metallurgical uses.",
+    "tags": [
+      "Transition Metals"
+    ]
+  },
+  {
+    "name": "Aluminum",
+    "description": "A light, abundant metal whose oxide is amphoteric and protective.",
+    "tags": [
+      "Post-Transition Metals",
+      "Acidic Oxides"
+    ]
+  },
+  {
+    "name": "Gallium",
+    "description": "A soft post-transition metal that can melt in the hand.",
+    "tags": [
+      "Post-Transition Metals"
+    ]
+  },
+  {
+    "name": "Indium",
+    "description": "A malleable post-transition metal used in semiconductors and coatings.",
+    "tags": [
+      "Post-Transition Metals"
+    ]
+  },
+  {
+    "name": "Tin",
+    "description": "A post-transition metal famous for bronze and for forming multiple allotropes.",
+    "tags": [
+      "Post-Transition Metals"
+    ]
+  },
+  {
+    "name": "Lead",
+    "description": "A dense post-transition metal known for toxicity, dense shielding, and colorful pigments in compounds.",
+    "tags": [
+      "Post-Transition Metals",
+      "Colored Salts"
+    ]
+  },
+  {
+    "name": "Bismuth",
+    "description": "A brittle post-transition metal whose oxide and salts can show striking iridescent colors.",
+    "tags": [
+      "Post-Transition Metals",
+      "Colored Salts"
+    ]
+  },
+  {
+    "name": "Ozone",
+    "description": "A triatomic allotrope of oxygen that behaves as a strongly oxidizing atmospheric gas.",
+    "tags": [
+      "Diatomic Elements",
+      "Acidic Oxides"
+    ]
+  },
+  {
+    "name": "Hydrogen",
+    "description": "A colorless diatomic gas and the lightest element.",
+    "tags": [
+      "Diatomic Elements"
+    ]
+  },
+  {
+    "name": "Nitrogen",
+    "description": "A very stable diatomic gas that dominates Earth’s atmosphere.",
+    "tags": [
+      "Diatomic Elements"
+    ]
+  },
+  {
+    "name": "Oxygen",
+    "description": "A diatomic gas essential for combustion and aerobic life.",
+    "tags": [
+      "Diatomic Elements"
+    ]
+  },
+  {
+    "name": "Selenium",
+    "description": "An element with multiple structural forms and important semiconductor chemistry.",
+    "tags": [
+      "Diatomic Elements"
+    ]
+  },
+  {
+    "name": "Tellurium",
+    "description": "A metalloid-like element often discussed alongside sulfur and selenium chemistry.",
+    "tags": [
+      "Diatomic Elements"
+    ]
+  },
+  {
+    "name": "Copper(II) sulfate",
+    "description": "A bright blue salt used in laboratories and agriculture.",
+    "tags": [
+      "Colored Salts",
+      "Transition Metals"
+    ]
+  },
+  {
+    "name": "Potassium permanganate",
+    "description": "A deep purple oxidizing salt of manganese.",
+    "tags": [
+      "Colored Salts",
+      "Transition Metals"
+    ]
+  },
+  {
+    "name": "Chromium(III) oxide",
+    "description": "A green chromium compound widely recognized for its pigment-like color.",
+    "tags": [
+      "Colored Salts",
+      "Transition Metals",
+      "Acidic Oxides"
+    ]
+  },
+  {
+    "name": "Nickel(II) sulfate",
+    "description": "A greenish nickel salt used in plating baths and electrochemistry.",
+    "tags": [
+      "Colored Salts",
+      "Transition Metals"
+    ]
+  },
+  {
+    "name": "Cobalt(II) chloride",
+    "description": "A blue-to-pink indicator salt often used in moisture-sensitive contexts.",
+    "tags": [
+      "Colored Salts",
+      "Transition Metals"
+    ]
+  },
+  {
+    "name": "Lead(II) iodide",
+    "description": "A bright yellow precipitate formed from lead and iodide ions.",
+    "tags": [
+      "Colored Salts",
+      "Halogens",
+      "Post-Transition Metals"
+    ]
+  },
+  {
+    "name": "Carbon dioxide",
+    "description": "A nonmetal oxide that dissolves in water to give carbonic acid.",
+    "tags": [
+      "Acidic Oxides"
+    ]
+  },
+  {
+    "name": "Sulfur dioxide",
+    "description": "A pungent acidic oxide responsible for part of acid rain chemistry.",
+    "tags": [
+      "Acidic Oxides"
+    ]
+  },
+  {
+    "name": "Sulfur trioxide",
+    "description": "A highly reactive acidic oxide that is a key precursor to sulfuric acid.",
+    "tags": [
+      "Acidic Oxides"
+    ]
+  },
+  {
+    "name": "Nitrogen dioxide",
+    "description": "A brown acidic oxide and air pollutant formed in high-temperature combustion.",
+    "tags": [
+      "Acidic Oxides",
+      "Diatomic Elements"
+    ]
+  },
+  {
+    "name": "Phosphorus pentoxide",
+    "description": "A powerful desiccant and acidic oxide of phosphorus.",
+    "tags": [
+      "Acidic Oxides"
+    ]
+  },
+  {
+    "name": "Silicon dioxide",
+    "description": "A network solid oxide that forms quartz and many silicate minerals.",
+    "tags": [
+      "Acidic Oxides"
+    ]
+  },
+  {
+    "name": "Graphite",
+    "description": "A layered allotrope of carbon used in pencils and electrodes.",
+    "tags": [
+      "Allotropes and Polymorphs"
+    ]
+  },
+  {
+    "name": "Diamond",
+    "description": "A hard tetrahedral allotrope of carbon with exceptional thermal conductivity.",
+    "tags": [
+      "Allotropes and Polymorphs"
+    ]
+  },
+  {
+    "name": "White phosphorus",
+    "description": "A highly reactive phosphorus allotrope that oxidizes readily in air.",
+    "tags": [
+      "Allotropes and Polymorphs",
+      "Acidic Oxides"
+    ]
+  },
+  {
+    "name": "Red phosphorus",
+    "description": "A more stable phosphorus allotrope used in safety matches.",
+    "tags": [
+      "Allotropes and Polymorphs"
+    ]
+  },
+  {
+    "name": "Rhombic sulfur",
+    "description": "A crystalline allotrope of sulfur stable at room temperature.",
+    "tags": [
+      "Allotropes and Polymorphs"
+    ]
+  },
+  {
+    "name": "Monoclinic sulfur",
+    "description": "A higher-temperature crystalline allotrope of sulfur.",
+    "tags": [
+      "Allotropes and Polymorphs"
+    ]
+  }
+]
