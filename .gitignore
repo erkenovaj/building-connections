@@ -2,6 +2,8 @@ node_modules/
 .venv/
 .venv-train/
 outputs/
+logs/*.out
+logs/*.err
 *.zip
 __pycache__/
 *.py[cod]
