@@ -1,0 +1,14 @@
+pandas
+numpy
+scipy
+scikit-learn
+matplotlib
+seaborn
+sentence-transformers
+transformers
+torch
+datasets
+accelerate
+peft
+joblib
+

@@ -1,0 +1,148 @@
+{
+  "best_global_step": 130,
+  "best_metric": 0.7438344676215369,
+  "best_model_checkpoint": "/Users/xenomirant/Projects/building-connections-sync/difficulty_estimation/artifacts/models/gemma_3_270m_it_lora/checkpoint-130",
+  "epoch": 1.0,
+  "eval_steps": 500,
+  "global_step": 130,
+  "is_hyper_param_search": false,
+  "is_local_process_zero": true,
+  "is_world_process_zero": true,
+  "log_history": [
+    {
+      "epoch": 0.07692307692307693,
+      "grad_norm": 52.86949157714844,
+      "learning_rate": 0.00018615384615384617,
+      "loss": 0.7543270587921143,
+      "step": 10
+    },
+    {
+      "epoch": 0.15384615384615385,
+      "grad_norm": 12.64980697631836,
+      "learning_rate": 0.00017076923076923077,
+      "loss": 0.3693676948547363,
+      "step": 20
+    },
+    {
+      "epoch": 0.23076923076923078,
+      "grad_norm": 5.54768705368042,
+      "learning_rate": 0.0001553846153846154,
+      "loss": 0.3192716360092163,
+      "step": 30
+    },
+    {
+      "epoch": 0.3076923076923077,
+      "grad_norm": 39.270206451416016,
+      "learning_rate": 0.00014,
+      "loss": 0.36582441329956056,
+      "step": 40
+    },
+    {
+      "epoch": 0.38461538461538464,
+      "grad_norm": 37.553062438964844,
+      "learning_rate": 0.0001246153846153846,
+      "loss": 0.3766255617141724,
+      "step": 50
+    },
+    {
+      "epoch": 0.46153846153846156,
+      "grad_norm": 36.61183547973633,
+      "learning_rate": 0.00010923076923076922,
+      "loss": 0.34249286651611327,
+      "step": 60
+    },
+    {
+      "epoch": 0.5384615384615384,
+      "grad_norm": 39.45897674560547,
+      "learning_rate": 9.384615384615386e-05,
+      "loss": 0.35481159687042235,
+      "step": 70
+    },
+    {
+      "epoch": 0.6153846153846154,
+      "grad_norm": 18.90708351135254,
+      "learning_rate": 7.846153846153847e-05,
+      "loss": 0.307738733291626,
+      "step": 80
+    },
+    {
+      "epoch": 0.6923076923076923,
+      "grad_norm": 34.116451263427734,
+      "learning_rate": 6.307692307692308e-05,
+      "loss": 0.2890662431716919,
+      "step": 90
+    },
+    {
+      "epoch": 0.7692307692307693,
+      "grad_norm": 21.835172653198242,
+      "learning_rate": 4.76923076923077e-05,
+      "loss": 0.2982167720794678,
+      "step": 100
+    },
+    {
+      "epoch": 0.8461538461538461,
+      "grad_norm": 53.92095184326172,
+      "learning_rate": 3.230769230769231e-05,
+      "loss": 0.33255743980407715,
+      "step": 110
+    },
+    {
+      "epoch": 0.9230769230769231,
+      "grad_norm": 36.18095779418945,
+      "learning_rate": 1.6923076923076924e-05,
+      "loss": 0.3144965648651123,
+      "step": 120
+    },
+    {
+      "epoch": 1.0,
+      "grad_norm": 3.3020989894866943,
+      "learning_rate": 1.5384615384615387e-06,
+      "loss": 0.32764201164245604,
+      "step": 130
+    },
+    {
+      "epoch": 1.0,
+      "eval_kendall": 0.08531737748026388,
+      "eval_loss": 0.43476611375808716,
+      "eval_mae": 0.7438344676215369,
+      "eval_pairwise_accuracy": 0.5434535104364326,
+      "eval_pearson": 0.16490810293067526,
+      "eval_rmse": 0.8988462084360995,
+      "eval_runtime": 16.4792,
+      "eval_samples_per_second": 6.736,
+      "eval_spearman": 0.12053481863051292,
+      "eval_steps_per_second": 1.699,
+      "step": 130
+    }
+  ],
+  "logging_steps": 10,
+  "max_steps": 130,
+  "num_input_tokens_seen": 0,
+  "num_train_epochs": 1,
+  "save_steps": 500,
+  "stateful_callbacks": {
+    "EarlyStoppingCallback": {
+      "args": {
+        "early_stopping_patience": 3,
+        "early_stopping_threshold": 0.0
+      },
+      "attributes": {
+        "early_stopping_patience_counter": 0
+      }
+    },
+    "TrainerControl": {
+      "args": {
+        "should_epoch_stop": false,
+        "should_evaluate": false,
+        "should_log": false,
+        "should_save": true,
+        "should_training_stop": true
+      },
+      "attributes": {}
+    }
+  },
+  "total_flos": 99027799617024.0,
+  "train_batch_size": 4,
+  "trial_name": null,
+  "trial_params": null
+}

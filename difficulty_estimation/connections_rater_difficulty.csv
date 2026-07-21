@@ -1,0 +1,742 @@
+date,puzzle_number,difficulty,verbatim,url
+15/06/2024,370,2.8,,https://www.nytimes.com/2024/06/14/crosswords/connections-companion-370.html
+16/06/2024,371,2.5,,https://www.nytimes.com/2024/06/15/crosswords/connections-companion-371.html
+17/06/2024,372,3.5,,https://www.nytimes.com/2024/06/17/crosswords/connections-companion-372.html
+18/06/2024,373,3,,https://www.nytimes.com/2024/06/17/crosswords/connections-companion-373.html
+19/06/2024,374,2.8,,https://www.nytimes.com/2024/06/18/crosswords/connections-companion-374.html
+20/06/2024,375,3.5,,https://www.nytimes.com/2024/06/19/crosswords/connections-companion-375.html
+21/06/2024,376,3,,https://www.nytimes.com/2024/06/20/crosswords/connections-companion-376.html
+22/06/2024,377,1.7,,https://www.nytimes.com/2024/06/21/crosswords/connections-companion-377.html
+23/06/2024,378,3.5,,https://www.nytimes.com/2024/06/22/crosswords/connections-companion-378.html
+24/06/2024,379,3,,https://www.nytimes.com/2024/06/23/crosswords/connections-companion-379.html
+25/06/2024,380,3.2,,https://www.nytimes.com/2024/06/24/crosswords/connections-companion-380.html
+26/06/2024,381,3.3,,https://www.nytimes.com/2024/06/25/crosswords/connections-companion-381.html
+27/06/2024,382,2.5,,https://www.nytimes.com/2024/06/26/crosswords/connections-companion-382.html
+28/06/2024,383,2.7,,https://www.nytimes.com/2024/06/27/crosswords/connections-companion-383.html
+29/06/2024,384,3.3,,https://www.nytimes.com/2024/06/28/crosswords/connections-companion-384.html
+30/06/2024,385,3.7,,https://www.nytimes.com/2024/06/29/crosswords/connections-companion-385.html
+01/07/2024,386,3.2,,https://www.nytimes.com/2024/06/30/crosswords/connections-companion-386.html
+02/07/2024,387,2.7,,https://www.nytimes.com/2024/07/01/crosswords/connections-companion-387.html
+03/07/2024,388,2.8,,https://www.nytimes.com/2024/07/02/crosswords/connections-companion-388.html
+04/07/2024,389,2.3,,https://www.nytimes.com/2024/07/03/crosswords/connections-companion-389.html
+05/07/2024,390,3.2,,https://www.nytimes.com/2024/07/04/crosswords/connections-companion-390.html
+06/07/2024,391,3.2,,https://www.nytimes.com/2024/07/05/crosswords/connections-companion-391.html
+07/07/2024,392,4.2,,https://www.nytimes.com/2024/07/06/crosswords/connections-companion-392.html
+08/07/2024,393,2.3,,https://www.nytimes.com/2024/07/07/crosswords/connections-companion-393.html
+09/07/2024,394,3.5,,https://www.nytimes.com/2024/07/08/crosswords/connections-companion-394.html
+10/07/2024,395,2.7,,https://www.nytimes.com/2024/07/09/crosswords/connections-companion-395.html
+11/07/2024,396,2.4,,https://www.nytimes.com/2024/07/10/crosswords/connections-companion-396.html
+12/07/2024,397,3,,https://www.nytimes.com/2024/07/11/crosswords/connections-companion-397.html
+13/07/2024,398,2.5,,https://www.nytimes.com/2024/07/12/crosswords/connections-companion-398.html
+14/07/2024,399,2.6,,https://www.nytimes.com/2024/07/13/crosswords/connections-companion-399.html
+15/07/2024,400,2.4,,https://www.nytimes.com/2024/07/14/crosswords/connections-companion-400.html
+16/07/2024,401,2.6,,https://www.nytimes.com/2024/07/15/crosswords/connections-companion-401.html
+17/07/2024,402,2.7,,https://www.nytimes.com/2024/07/16/crosswords/connections-companion-402.html
+18/07/2024,403,3.2,,https://www.nytimes.com/2024/07/17/crosswords/connections-companion-403.html
+19/07/2024,404,3,,https://www.nytimes.com/2024/07/18/crosswords/connections-companion-404.html
+20/07/2024,405,2.6,,https://www.nytimes.com/2024/07/19/crosswords/connections-companion-405.html
+21/07/2024,406,2.7,,https://www.nytimes.com/2024/07/20/crosswords/connections-companion-406.html
+22/07/2024,407,3.7,,https://www.nytimes.com/2024/07/21/crosswords/connections-companion-407.html
+23/07/2024,408,3,,https://www.nytimes.com/2024/07/22/crosswords/connections-companion-408.html
+24/07/2024,409,2.4,,https://www.nytimes.com/2024/07/23/crosswords/connections-companion-409.html
+25/07/2024,410,2.6,,https://www.nytimes.com/2024/07/24/crosswords/connections-companion-410.html
+26/07/2024,411,2.6,,https://www.nytimes.com/2024/07/25/crosswords/connections-companion-411.html
+27/07/2024,412,2.6,,https://www.nytimes.com/2024/07/26/crosswords/connections-companion-412.html
+28/07/2024,413,2.7,,https://www.nytimes.com/2024/07/27/crosswords/connections-companion-413.html
+29/07/2024,414,3.3,,https://www.nytimes.com/2024/07/28/crosswords/connections-companion-414.html
+30/07/2024,415,2,,https://www.nytimes.com/2024/07/29/crosswords/connections-companion-415.html
+31/07/2024,416,3.6,,https://www.nytimes.com/2024/07/30/crosswords/connections-companion-416.html
+01/08/2024,417,3.1,,https://www.nytimes.com/2024/07/31/crosswords/connections-companion-417.html
+02/08/2024,418,3.4,,https://www.nytimes.com/2024/08/01/crosswords/connections-companion-418.html
+03/08/2024,419,3,,https://www.nytimes.com/2024/08/02/crosswords/connections-companion-419.html
+04/08/2024,420,2.6,,https://www.nytimes.com/2024/08/03/crosswords/connections-companion-420.html
+05/08/2024,421,2.6,,https://www.nytimes.com/2024/08/04/crosswords/connections-companion-421.html
+06/08/2024,422,2.7,,https://www.nytimes.com/2024/08/05/crosswords/connections-companion-422.html
+07/08/2024,423,3.3,,https://www.nytimes.com/2024/08/06/crosswords/connections-companion-423.html
+08/08/2024,424,2.3,,https://www.nytimes.com/2024/08/07/crosswords/connections-companion-424.html
+09/08/2024,425,3.9,,https://www.nytimes.com/2024/08/08/crosswords/connections-companion-425.html
+10/08/2024,426,3.4,,https://www.nytimes.com/2024/08/09/crosswords/connections-companion-426.html
+11/08/2024,427,2,,https://www.nytimes.com/2024/08/10/crosswords/connections-companion-427.html
+12/08/2024,428,2.4,,https://www.nytimes.com/2024/08/11/crosswords/connections-companion-428.html
+13/08/2024,429,2.8,,https://www.nytimes.com/2024/08/12/crosswords/connections-companion-429.html
+14/08/2024,430,2.4,,https://www.nytimes.com/2024/08/13/crosswords/connections-companion-430.html
+15/08/2024,431,3.2,,https://www.nytimes.com/2024/08/14/crosswords/connections-companion-431.html
+16/08/2024,432,3.4,,https://www.nytimes.com/2024/08/15/crosswords/connections-companion-432.html
+17/08/2024,433,1.8,,https://www.nytimes.com/2024/08/16/crosswords/connections-companion-433.html
+18/08/2024,434,3.4,Today's difficulty is 3.4 out of 5,https://www.nytimes.com/2024/08/17/crosswords/the-connections-companion-no-434.html
+19/08/2024,435,3,,https://www.nytimes.com/2024/08/18/crosswords/connections-companion-435.html
+20/08/2024,436,2.2,,https://www.nytimes.com/2024/08/19/crosswords/connections-companion-436.html
+21/08/2024,437,3.4,,https://www.nytimes.com/2024/08/20/crosswords/connections-companion-437.html
+22/08/2024,438,2.8,,https://www.nytimes.com/2024/08/21/crosswords/connections-companion-438.html
+23/08/2024,439,3.6,,https://www.nytimes.com/2024/08/22/crosswords/connections-companion-439.html
+24/08/2024,440,2.4,,https://www.nytimes.com/2024/08/23/crosswords/connections-companion-440.html
+25/08/2024,441,2.6,,https://www.nytimes.com/2024/08/24/crosswords/connections-companion-441.html
+26/08/2024,442,3,,https://www.nytimes.com/2024/08/25/crosswords/connections-companion-442.html
+27/08/2024,443,3.4,,https://www.nytimes.com/2024/08/26/crosswords/connections-companion-443.html
+28/08/2024,444,3.7,,https://www.nytimes.com/2024/08/27/crosswords/connections-companion-444.html
+29/08/2024,445,3,,https://www.nytimes.com/2024/08/28/crosswords/connections-companion-445.html
+30/08/2024,446,3.9,,https://www.nytimes.com/2024/08/29/crosswords/connections-companion-446.html
+31/08/2024,447,2.9,,https://www.nytimes.com/2024/08/30/crosswords/connections-companion-447.html
+01/09/2024,448,3.4,,https://www.nytimes.com/2024/08/31/crosswords/connections-companion-448.html
+02/09/2024,449,2.8,,https://www.nytimes.com/2024/09/01/crosswords/connections-companion-449.html
+03/09/2024,450,3.1,,https://www.nytimes.com/2024/09/02/crosswords/connections-companion-450.html
+04/09/2024,451,2.7,,https://www.nytimes.com/2024/09/03/crosswords/connections-companion-451.html
+05/09/2024,452,3.1,,https://www.nytimes.com/2024/09/04/crosswords/connections-companion-452.html
+06/09/2024,453,2.9,,https://www.nytimes.com/2024/09/05/crosswords/connections-companion-453.html
+07/09/2024,454,3.4,,https://www.nytimes.com/2024/09/06/crosswords/connections-companion-454.html
+08/09/2024,455,3.3,,https://www.nytimes.com/2024/09/07/crosswords/connections-companion-455.html
+09/09/2024,456,3.3,,https://www.nytimes.com/2024/09/08/crosswords/connections-companion-456.html
+10/09/2024,457,3.3,,https://www.nytimes.com/2024/09/09/crosswords/connections-companion-457.html
+11/09/2024,458,4,,https://www.nytimes.com/2024/09/10/crosswords/connections-companion-458.html
+12/09/2024,459,3.2,,https://www.nytimes.com/2024/09/11/crosswords/connections-companion-459.html
+13/09/2024,460,3.7,,https://www.nytimes.com/2024/09/12/crosswords/connections-companion-460.html
+14/09/2024,461,3.4,,https://www.nytimes.com/2024/09/13/crosswords/connections-companion-461.html
+15/09/2024,462,2.9,,https://www.nytimes.com/2024/09/14/crosswords/connections-companion-462.html
+16/09/2024,463,3.2,,https://www.nytimes.com/2024/09/15/crosswords/connections-companion-463.html
+17/09/2024,464,2.8,,https://www.nytimes.com/2024/09/16/crosswords/connections-companion-464.html
+18/09/2024,465,3.2,,https://www.nytimes.com/2024/09/17/crosswords/connections-companion-465.html
+19/09/2024,466,3.3,,https://www.nytimes.com/2024/09/18/crosswords/connections-companion-466.html
+20/09/2024,467,2.9,,https://www.nytimes.com/2024/09/19/crosswords/connections-companion-467.html
+21/09/2024,468,2.2,,https://www.nytimes.com/2024/09/20/crosswords/connections-companion-468.html
+22/09/2024,469,2.8,,https://www.nytimes.com/2024/09/21/crosswords/connections-companion-469.html
+23/09/2024,470,3.3,,https://www.nytimes.com/2024/09/22/crosswords/connections-companion-470.html
+24/09/2024,471,3,,https://www.nytimes.com/2024/09/23/crosswords/connections-companion-471.html
+25/09/2024,472,3,,https://www.nytimes.com/2024/09/24/crosswords/connections-companion-472.html
+26/09/2024,473,2.6,,https://www.nytimes.com/2024/09/25/crosswords/connections-companion-473.html
+27/09/2024,474,3.6,,https://www.nytimes.com/2024/09/26/crosswords/connections-companion-474.html
+28/09/2024,475,4.2,,https://www.nytimes.com/2024/09/27/crosswords/connections-companion-475.html
+29/09/2024,476,4.5,,https://www.nytimes.com/2024/09/28/crosswords/connections-companion-476.html
+30/09/2024,477,3.7,,https://www.nytimes.com/2024/09/29/crosswords/connections-companion-477.html
+01/10/2024,478,3.6,,https://www.nytimes.com/2024/09/30/crosswords/connections-companion-478.html
+02/10/2024,479,2.8,,https://www.nytimes.com/2024/10/01/crosswords/connections-companion-479.html
+03/10/2024,480,3.7,,https://www.nytimes.com/2024/10/02/crosswords/connections-companion-480.html
+04/10/2024,481,2.3,,https://www.nytimes.com/2024/10/03/crosswords/connections-companion-481.html
+05/10/2024,482,3.2,,https://www.nytimes.com/2024/10/04/crosswords/connections-companion-482.html
+06/10/2024,483,2.3,,https://www.nytimes.com/2024/10/05/crosswords/connections-companion-483.html
+07/10/2024,484,3.2,,https://www.nytimes.com/2024/10/06/crosswords/connections-companion-484.html
+08/10/2024,485,3,,https://www.nytimes.com/2024/10/07/crosswords/connections-companion-485.html
+09/10/2024,486,3.3,,https://www.nytimes.com/2024/10/08/crosswords/connections-companion-486.html
+10/10/2024,487,3.4,,https://www.nytimes.com/2024/10/09/crosswords/connections-companion-487.html
+11/10/2024,488,2.4,,https://www.nytimes.com/2024/10/10/crosswords/connections-companion-488.html
+12/10/2024,489,2.4,,https://www.nytimes.com/2024/10/11/crosswords/connections-companion-489.html
+13/10/2024,490,3,,https://www.nytimes.com/2024/10/12/crosswords/connections-companion-490.html
+14/10/2024,491,3.5,,https://www.nytimes.com/2024/10/13/crosswords/connections-companion-491.html
+15/10/2024,492,3.5,,https://www.nytimes.com/2024/10/14/crosswords/connections-companion-492.html
+16/10/2024,493,3,,https://www.nytimes.com/2024/10/15/crosswords/connections-companion-493.html
+17/10/2024,494,3.3,,https://www.nytimes.com/2024/10/16/crosswords/connections-companion-494.html
+18/10/2024,495,2.8,,https://www.nytimes.com/2024/10/17/crosswords/connections-companion-495.html
+19/10/2024,496,2.5,,https://www.nytimes.com/2024/10/18/crosswords/connections-companion-496.html
+20/10/2024,497,2,,https://www.nytimes.com/2024/10/19/crosswords/connections-companion-497.html
+21/10/2024,498,1.8,,https://www.nytimes.com/2024/10/20/crosswords/connections-companion-498.html
+22/10/2024,499,2.5,,https://www.nytimes.com/2024/10/21/crosswords/connections-companion-499.html
+23/10/2024,500,2.8,,https://www.nytimes.com/2024/10/22/crosswords/connections-companion-500.html
+24/10/2024,501,3.5,,https://www.nytimes.com/2024/10/23/crosswords/connections-companion-501.html
+25/10/2024,502,3.2,,https://www.nytimes.com/2024/10/24/crosswords/connections-companion-502.html
+26/10/2024,503,2.3,,https://www.nytimes.com/2024/10/25/crosswords/connections-companion-503.html
+27/10/2024,504,3.3,,https://www.nytimes.com/2024/10/26/crosswords/connections-companion-504.html
+28/10/2024,505,2.3,,https://www.nytimes.com/2024/10/27/crosswords/connections-companion-505.html
+29/10/2024,506,3.8,,https://www.nytimes.com/2024/10/28/crosswords/connections-companion-506.html
+30/10/2024,507,3.1,,https://www.nytimes.com/2024/10/29/crosswords/connections-companion-507.html
+31/10/2024,508,3.3,,https://www.nytimes.com/2024/10/30/crosswords/connections-companion-508.html
+01/11/2024,509,2.6,,https://www.nytimes.com/2024/10/31/crosswords/connections-companion-509.html
+02/11/2024,510,3,,https://www.nytimes.com/2024/11/01/crosswords/connections-companion-510.html
+03/11/2024,511,2.2,,https://www.nytimes.com/2024/11/02/crosswords/connections-companion-511.html
+04/11/2024,512,2.8,,https://www.nytimes.com/2024/11/03/crosswords/connections-companion-512.html
+05/11/2024,513,3,,https://www.nytimes.com/2024/11/04/crosswords/connections-companion-513.html
+06/11/2024,514,2.4,,https://www.nytimes.com/2024/11/05/crosswords/connections-companion-514.html
+07/11/2024,515,3.6,,https://www.nytimes.com/2024/11/06/crosswords/connections-companion-515.html
+08/11/2024,516,2.8,,https://www.nytimes.com/2024/11/07/crosswords/connections-companion-516.html
+09/11/2024,517,2,,https://www.nytimes.com/2024/11/08/crosswords/connections-companion-517.html
+10/11/2024,518,3,,https://www.nytimes.com/2024/11/09/crosswords/connections-companion-518.html
+11/11/2024,519,2.8,,https://www.nytimes.com/2024/11/10/crosswords/connections-companion-519.html
+12/11/2024,520,3,,https://www.nytimes.com/2024/11/11/crosswords/connections-companion-520.html
+13/11/2024,521,3.2,,https://www.nytimes.com/2024/11/12/crosswords/connections-companion-521.html
+14/11/2024,522,2.6,,https://www.nytimes.com/2024/11/13/crosswords/connections-companion-522.html
+15/11/2024,523,3,,https://www.nytimes.com/2024/11/14/crosswords/connections-companion-523.html
+16/11/2024,524,2.8,,https://www.nytimes.com/2024/11/15/crosswords/connections-companion-524.html
+17/11/2024,525,3.3,,https://www.nytimes.com/2024/11/16/crosswords/connections-companion-525.html
+18/11/2024,526,2.3,,https://www.nytimes.com/2024/11/17/crosswords/connections-companion-526.html
+19/11/2024,527,3.7,,https://www.nytimes.com/2024/11/18/crosswords/connections-companion-527.html
+20/11/2024,528,2.8,,https://www.nytimes.com/2024/11/19/crosswords/connections-companion-528.html
+21/11/2024,529,3.3,,https://www.nytimes.com/2024/11/20/crosswords/connections-companion-529.html
+22/11/2024,530,2.8,,https://www.nytimes.com/2024/11/21/crosswords/connections-companion-530.html
+23/11/2024,531,3,,https://www.nytimes.com/2024/11/22/crosswords/connections-companion-531.html
+24/11/2024,532,3,,https://www.nytimes.com/2024/11/23/crosswords/connections-companion-532.html
+25/11/2024,533,3,,https://www.nytimes.com/2024/11/24/crosswords/connections-companion-533.html
+26/11/2024,534,2.3,,https://www.nytimes.com/2024/11/25/crosswords/connections-companion-534.html
+27/11/2024,535,2.7,,https://www.nytimes.com/2024/11/26/crosswords/connections-companion-535.html
+28/11/2024,536,2.3,,https://www.nytimes.com/2024/11/27/crosswords/connections-companion-536.html
+29/11/2024,537,3.3,,https://www.nytimes.com/2024/11/28/crosswords/connections-companion-537.html
+30/11/2024,538,3,,https://www.nytimes.com/2024/11/29/crosswords/connections-companion-538.html
+01/12/2024,539,3,,https://www.nytimes.com/2024/11/30/crosswords/connections-companion-539.html
+02/12/2024,540,3,,https://www.nytimes.com/2024/12/02/crosswords/connections-companion-540.html
+03/12/2024,541,3.8,,https://www.nytimes.com/2024/12/02/crosswords/connections-companion-541.html
+04/12/2024,542,3.8,,https://www.nytimes.com/2024/12/03/crosswords/connections-companion-542.html
+05/12/2024,543,3.4,,https://www.nytimes.com/2024/12/04/crosswords/connections-companion-543.html
+06/12/2024,544,2.8,,https://www.nytimes.com/2024/12/05/crosswords/connections-companion-544.html
+07/12/2024,545,3.7,,https://www.nytimes.com/2024/12/06/crosswords/connections-companion-545.html
+08/12/2024,546,3,,https://www.nytimes.com/2024/12/07/crosswords/connections-companion-546.html
+09/12/2024,547,2.6,,https://www.nytimes.com/2024/12/08/crosswords/connections-companion-547.html
+10/12/2024,548,3.8,,https://www.nytimes.com/2024/12/09/crosswords/connections-companion-548.html
+11/12/2024,549,1,,https://www.nytimes.com/2024/12/10/crosswords/connections-companion-549.html
+12/12/2024,550,3.6,,https://www.nytimes.com/2024/12/11/crosswords/connections-companion-550.html
+13/12/2024,551,1.5,,https://www.nytimes.com/2024/12/12/crosswords/connections-companion-551.html
+14/12/2024,552,3,,https://www.nytimes.com/2024/12/13/crosswords/connections-companion-552.html
+15/12/2024,553,3.4,,https://www.nytimes.com/2024/12/14/crosswords/connections-companion-553.html
+16/12/2024,554,3.3,,https://www.nytimes.com/2024/12/15/crosswords/connections-companion-554.html
+17/12/2024,555,3.2,,https://www.nytimes.com/2024/12/16/crosswords/connections-companion-555.html
+18/12/2024,556,3.3,,https://www.nytimes.com/2024/12/17/crosswords/connections-companion-556.html
+19/12/2024,557,3.3,,https://www.nytimes.com/2024/12/18/crosswords/connections-companion-557.html
+20/12/2024,558,1.5,,https://www.nytimes.com/2024/12/19/crosswords/connections-companion-558.html
+21/12/2024,559,3,,https://www.nytimes.com/2024/12/20/crosswords/connections-companion-559.html
+22/12/2024,560,3.5,,https://www.nytimes.com/2024/12/21/crosswords/connections-companion-560.html
+23/12/2024,561,3,,https://www.nytimes.com/2024/12/22/crosswords/connections-companion-561.html
+24/12/2024,562,2.6,,https://www.nytimes.com/2024/12/23/crosswords/connections-companion-562.html
+25/12/2024,563,2.5,,https://www.nytimes.com/2024/12/24/crosswords/connections-companion-563.html
+26/12/2024,564,2.5,,https://www.nytimes.com/2024/12/25/crosswords/connections-companion-564.html
+27/12/2024,565,2.8,,https://www.nytimes.com/2024/12/26/crosswords/connections-companion-565.html
+28/12/2024,566,3.8,,https://www.nytimes.com/2024/12/27/crosswords/connections-companion-566.html
+29/12/2024,567,2,,https://www.nytimes.com/2024/12/28/crosswords/connections-companion-567.html
+30/12/2024,568,3,,https://www.nytimes.com/2024/12/29/crosswords/connections-companion-568.html
+31/12/2024,569,2.8,,https://www.nytimes.com/2024/12/30/crosswords/connections-companion-569.html
+01/01/2025,570,3,,https://www.nytimes.com/2024/12/31/crosswords/connections-companion-570.html
+02/01/2025,571,2.8,,https://www.nytimes.com/2025/01/01/crosswords/connections-companion-571.html
+03/01/2025,572,1.7,,https://www.nytimes.com/2025/01/02/crosswords/connections-companion-572.html
+04/01/2025,573,3,,https://www.nytimes.com/2025/01/03/crosswords/connections-companion-573.html
+05/01/2025,574,2,,https://www.nytimes.com/2025/01/04/crosswords/connections-companion-574.html
+06/01/2025,575,2.8,,https://www.nytimes.com/2025/01/05/crosswords/connections-companion-575.html
+07/01/2025,576,3,,https://www.nytimes.com/2025/01/06/crosswords/connections-companion-576.html
+08/01/2025,577,3.3,,https://www.nytimes.com/2025/01/07/crosswords/connections-companion-577.html
+09/01/2025,578,2.5,,https://www.nytimes.com/2025/01/08/crosswords/connections-companion-578.html
+10/01/2025,579,2.3,,https://www.nytimes.com/2025/01/09/crosswords/connections-companion-579.html
+11/01/2025,580,2.6,,https://www.nytimes.com/2025/01/10/crosswords/connections-companion-580.html
+12/01/2025,581,3.8,,https://www.nytimes.com/2025/01/11/crosswords/connections-companion-581.html
+13/01/2025,582,2.6,,https://www.nytimes.com/2025/01/12/crosswords/connections-companion-582.html
+14/01/2025,583,3.3,,https://www.nytimes.com/2025/01/13/crosswords/connections-companion-583.html
+15/01/2025,584,4,,https://www.nytimes.com/2025/01/14/crosswords/connections-companion-584.html
+16/01/2025,585,2,,https://www.nytimes.com/2025/01/15/crosswords/connections-companion-585.html
+17/01/2025,586,3.5,,https://www.nytimes.com/2025/01/16/crosswords/connections-companion-586.html
+18/01/2025,587,3,,https://www.nytimes.com/2025/01/17/crosswords/connections-companion-587.html
+19/01/2025,588,3,,https://www.nytimes.com/2025/01/18/crosswords/connections-companion-588.html
+20/01/2025,589,3,,https://www.nytimes.com/2025/01/19/crosswords/connections-companion-589.html
+21/01/2025,590,2,,https://www.nytimes.com/2025/01/20/crosswords/connections-companion-590.html
+22/01/2025,591,3.3,,https://www.nytimes.com/2025/01/21/crosswords/connections-companion-591.html
+23/01/2025,592,3.3,,https://www.nytimes.com/2025/01/22/crosswords/connections-companion-592.html
+24/01/2025,593,2.8,,https://www.nytimes.com/2025/01/23/crosswords/connections-companion-593.html
+25/01/2025,594,3.3,,https://www.nytimes.com/2025/01/24/crosswords/connections-companion-594.html
+26/01/2025,595,3,,https://www.nytimes.com/2025/01/25/crosswords/connections-companion-595.html
+27/01/2025,596,3,,https://www.nytimes.com/2025/01/26/crosswords/connections-companion-596.html
+28/01/2025,597,3.5,,https://www.nytimes.com/2025/01/27/crosswords/connections-companion-597.html
+29/01/2025,598,2.5,,https://www.nytimes.com/2025/01/28/crosswords/connections-companion-598.html
+30/01/2025,599,2.8,,https://www.nytimes.com/2025/01/29/crosswords/connections-companion-599.html
+31/01/2025,600,3,,https://www.nytimes.com/2025/01/30/crosswords/connections-companion-600.html
+01/02/2025,601,2.4,,https://www.nytimes.com/2025/01/31/crosswords/connections-companion-601.html
+02/02/2025,602,3,,https://www.nytimes.com/2025/02/01/crosswords/connections-companion-602.html
+03/02/2025,603,3.8,,https://www.nytimes.com/2025/02/02/crosswords/connections-companion-603.html
+04/02/2025,604,3.2,,https://www.nytimes.com/2025/02/03/crosswords/connections-companion-604.html
+05/02/2025,605,3.3,,https://www.nytimes.com/2025/02/04/crosswords/connections-companion-605.html
+06/02/2025,606,2.5,,https://www.nytimes.com/2025/02/05/crosswords/connections-companion-606.html
+07/02/2025,607,4,,https://www.nytimes.com/2025/02/06/crosswords/connections-companion-607.html
+08/02/2025,608,3.8,,https://www.nytimes.com/2025/02/07/crosswords/connections-companion-608.html
+09/02/2025,609,2.5,,https://www.nytimes.com/2025/02/08/crosswords/connections-companion-609.html
+10/02/2025,610,2.8,,https://www.nytimes.com/2025/02/09/crosswords/connections-companion-610.html
+11/02/2025,611,3.5,,https://www.nytimes.com/2025/02/10/crosswords/connections-companion-611.html
+12/02/2025,612,4,,https://www.nytimes.com/2025/02/11/crosswords/connections-companion-612.html
+13/02/2025,613,3,,https://www.nytimes.com/2025/02/12/crosswords/connections-companion-613.html
+14/02/2025,614,2.5,,https://www.nytimes.com/2025/02/13/crosswords/connections-companion-614.html
+15/02/2025,615,3.3,,https://www.nytimes.com/2025/02/14/crosswords/connections-companion-615.html
+16/02/2025,616,3,,https://www.nytimes.com/2025/02/15/crosswords/connections-companion-616.html
+17/02/2025,617,2.8,,https://www.nytimes.com/2025/02/16/crosswords/connections-companion-617.html
+18/02/2025,618,2.5,,https://www.nytimes.com/2025/02/17/crosswords/connections-companion-618.html
+19/02/2025,619,2.3,,https://www.nytimes.com/2025/02/18/crosswords/connections-companion-619.html
+20/02/2025,620,4,,https://www.nytimes.com/2025/02/19/crosswords/connections-companion-620.html
+21/02/2025,621,4,,https://www.nytimes.com/2025/02/20/crosswords/connections-companion-621.html
+22/02/2025,622,3,,https://www.nytimes.com/2025/02/21/crosswords/connections-companion-622.html
+23/02/2025,623,3.5,,https://www.nytimes.com/2025/02/22/crosswords/connections-companion-623.html
+24/02/2025,624,4,,https://www.nytimes.com/2025/02/23/crosswords/connections-companion-624.html
+25/02/2025,625,4.5,,https://www.nytimes.com/2025/02/24/crosswords/connections-companion-625.html
+26/02/2025,626,2.3,,https://www.nytimes.com/2025/02/25/crosswords/connections-companion-626.html
+27/02/2025,627,3.3,,https://www.nytimes.com/2025/02/26/crosswords/connections-companion-627.html
+28/02/2025,628,2.8,,https://www.nytimes.com/2025/02/27/crosswords/connections-companion-628.html
+01/03/2025,629,3.8,,https://www.nytimes.com/2025/02/28/crosswords/connections-companion-629.html
+02/03/2025,630,2.7,,https://www.nytimes.com/2025/03/01/crosswords/connections-companion-630.html
+03/03/2025,631,3.3,,https://www.nytimes.com/2025/03/02/crosswords/connections-companion-631.html
+04/03/2025,632,4.3,,https://www.nytimes.com/2025/03/03/crosswords/connections-companion-632.html
+05/03/2025,633,4,,https://www.nytimes.com/2025/03/04/crosswords/connections-companion-633.html
+06/03/2025,634,2.8,,https://www.nytimes.com/2025/03/05/crosswords/connections-companion-634.html
+07/03/2025,635,4.3,,https://www.nytimes.com/2025/03/06/crosswords/connections-companion-635.html
+08/03/2025,636,2.8,,https://www.nytimes.com/2025/03/07/crosswords/connections-companion-636.html
+09/03/2025,637,2.8,,https://www.nytimes.com/2025/03/08/crosswords/connections-companion-637.html
+10/03/2025,638,3.3,,https://www.nytimes.com/2025/03/09/crosswords/connections-companion-638.html
+11/03/2025,639,3.3,,https://www.nytimes.com/2025/03/10/crosswords/connections-companion-639.html
+12/03/2025,640,4,,https://www.nytimes.com/2025/03/11/crosswords/connections-companion-640.html
+13/03/2025,641,3.3,,https://www.nytimes.com/2025/03/12/crosswords/connections-companion-641.html
+14/03/2025,642,3.3,,https://www.nytimes.com/2025/03/13/crosswords/connections-companion-642.html
+15/03/2025,643,3.3,,https://www.nytimes.com/2025/03/14/crosswords/connections-companion-643.html
+16/03/2025,644,3.3,,https://www.nytimes.com/2025/03/15/crosswords/connections-companion-644.html
+17/03/2025,645,2,,https://www.nytimes.com/2025/03/16/crosswords/connections-companion-645.html
+18/03/2025,646,3,,https://www.nytimes.com/2025/03/17/crosswords/connections-companion-646.html
+19/03/2025,647,3,,https://www.nytimes.com/2025/03/18/crosswords/connections-companion-647.html
+20/03/2025,648,2.7,,https://www.nytimes.com/2025/03/19/crosswords/connections-companion-648.html
+21/03/2025,649,3.3,,https://www.nytimes.com/2025/03/20/crosswords/connections-companion-649.html
+22/03/2025,650,2.3,,https://www.nytimes.com/2025/03/21/crosswords/connections-companion-650.html
+23/03/2025,651,3,,https://www.nytimes.com/2025/03/22/crosswords/connections-companion-651.html
+24/03/2025,652,2.6,,https://www.nytimes.com/2025/03/23/crosswords/connections-companion-652.html
+25/03/2025,653,2.4,,https://www.nytimes.com/2025/03/24/crosswords/connections-companion-653.html
+26/03/2025,654,3.2,,https://www.nytimes.com/2025/03/25/crosswords/connections-companion-654.html
+27/03/2025,655,4.2,,https://www.nytimes.com/2025/03/26/crosswords/connections-companion-655.html
+28/03/2025,656,3,,https://www.nytimes.com/2025/03/27/crosswords/connections-companion-656.html
+29/03/2025,657,3.6,,https://www.nytimes.com/2025/03/28/crosswords/connections-companion-657.html
+30/03/2025,658,3.4,,https://www.nytimes.com/2025/03/29/crosswords/connections-companion-658.html
+31/03/2025,659,2.2,,https://www.nytimes.com/2025/03/30/crosswords/connections-companion-659.html
+01/04/2025,660,4.6,,https://www.nytimes.com/2025/03/31/crosswords/connections-companion-660.html
+02/04/2025,661,2.8,,https://www.nytimes.com/2025/04/01/crosswords/connections-companion-661.html
+03/04/2025,662,3.3,,https://www.nytimes.com/2025/04/02/crosswords/connections-companion-662.html
+04/04/2025,663,2.5,,https://www.nytimes.com/2025/04/03/crosswords/connections-companion-663.html
+05/04/2025,664,3.8,,https://www.nytimes.com/2025/04/04/crosswords/connections-companion-664.html
+06/04/2025,665,3.5,,https://www.nytimes.com/2025/04/05/crosswords/connections-companion-665.html
+07/04/2025,666,3.8,,https://www.nytimes.com/2025/04/06/crosswords/connections-companion-666.html
+08/04/2025,667,1.8,,https://www.nytimes.com/2025/04/07/crosswords/connections-companion-667.html
+09/04/2025,668,2.8,,https://www.nytimes.com/2025/04/08/crosswords/connections-companion-668.html
+10/04/2025,669,2.5,,https://www.nytimes.com/2025/04/09/crosswords/connections-companion-669.html
+11/04/2025,670,2.5,,https://www.nytimes.com/2025/04/10/crosswords/connections-companion-670.html
+12/04/2025,671,2.5,,https://www.nytimes.com/2025/04/11/crosswords/connections-companion-671.html
+13/04/2025,672,3.5,,https://www.nytimes.com/2025/04/12/crosswords/connections-companion-672.html
+14/04/2025,673,3.4,,https://www.nytimes.com/2025/04/13/crosswords/connections-companion-673.html
+15/04/2025,674,2.7,,https://www.nytimes.com/2025/04/14/crosswords/connections-companion-674.html
+16/04/2025,675,3,,https://www.nytimes.com/2025/04/15/crosswords/connections-companion-675.html
+17/04/2025,676,2.5,,https://www.nytimes.com/2025/04/16/crosswords/connections-companion-676.html
+18/04/2025,677,3,,https://www.nytimes.com/2025/04/17/crosswords/connections-companion-677.html
+19/04/2025,678,3,,https://www.nytimes.com/2025/04/18/crosswords/connections-companion-678.html
+20/04/2025,679,3.5,,https://www.nytimes.com/2025/04/19/crosswords/connections-companion-679.html
+21/04/2025,680,2.8,,https://www.nytimes.com/2025/04/20/crosswords/connections-companion-680.html
+22/04/2025,681,3,,https://www.nytimes.com/2025/04/21/crosswords/connections-companion-681.html
+23/04/2025,682,2.8,,https://www.nytimes.com/2025/04/22/crosswords/connections-companion-682.html
+24/04/2025,683,2.8,,https://www.nytimes.com/2025/04/23/crosswords/connections-companion-683.html
+25/04/2025,684,2.3,,https://www.nytimes.com/2025/04/24/crosswords/connections-companion-684.html
+26/04/2025,685,3.3,,https://www.nytimes.com/2025/04/25/crosswords/connections-companion-685.html
+27/04/2025,686,3.2,,https://www.nytimes.com/2025/04/26/crosswords/connections-companion-686.html
+28/04/2025,687,2.8,,https://www.nytimes.com/2025/04/27/crosswords/connections-companion-687.html
+29/04/2025,688,3.3,,https://www.nytimes.com/2025/04/28/crosswords/connections-companion-688.html
+30/04/2025,689,3.3,,https://www.nytimes.com/2025/04/29/crosswords/connections-companion-689.html
+01/05/2025,690,4.5,,https://www.nytimes.com/2025/04/30/crosswords/connections-companion-690.html
+02/05/2025,691,4,,https://www.nytimes.com/2025/05/01/crosswords/connections-companion-691.html
+03/05/2025,692,4.3,,https://www.nytimes.com/2025/05/02/crosswords/connections-companion-692.html
+04/05/2025,693,3.5,,https://www.nytimes.com/2025/05/03/crosswords/connections-companion-693.html
+05/05/2025,694,3.3,,https://www.nytimes.com/2025/05/04/crosswords/connections-companion-694.html
+06/05/2025,695,2.3,,https://www.nytimes.com/2025/05/05/crosswords/connections-companion-695.html
+07/05/2025,696,2.8,,https://www.nytimes.com/2025/05/06/crosswords/connections-companion-696.html
+08/05/2025,697,4,,https://www.nytimes.com/2025/05/07/crosswords/connections-companion-697.html
+09/05/2025,698,2.7,,https://www.nytimes.com/2025/05/08/crosswords/connections-companion-698.html
+10/05/2025,699,3,,https://www.nytimes.com/2025/05/09/crosswords/connections-companion-699.html
+11/05/2025,700,2.8,,https://www.nytimes.com/2025/05/10/crosswords/connections-companion-700.html
+12/05/2025,701,3,,https://www.nytimes.com/2025/05/11/crosswords/connections-companion-701.html
+13/05/2025,702,2.8,,https://www.nytimes.com/2025/05/12/crosswords/connections-companion-702.html
+14/05/2025,703,3.3,,https://www.nytimes.com/2025/05/13/crosswords/connections-companion-703.html
+15/05/2025,704,3,,https://www.nytimes.com/2025/05/14/crosswords/connections-companion-704.html
+16/05/2025,705,4,,https://www.nytimes.com/2025/05/15/crosswords/connections-companion-705.html
+17/05/2025,706,3.8,,https://www.nytimes.com/2025/05/16/crosswords/connections-companion-706.html
+18/05/2025,707,2.3,,https://www.nytimes.com/2025/05/17/crosswords/connections-companion-707.html
+19/05/2025,708,3,,https://www.nytimes.com/2025/05/18/crosswords/connections-companion-708.html
+20/05/2025,709,2.5,,https://www.nytimes.com/2025/05/19/crosswords/connections-companion-709.html
+21/05/2025,710,2.5,,https://www.nytimes.com/2025/05/20/crosswords/connections-companion-710.html
+22/05/2025,711,2.3,,https://www.nytimes.com/2025/05/21/crosswords/connections-companion-711.html
+23/05/2025,712,2.5,,https://www.nytimes.com/2025/05/22/crosswords/connections-companion-712.html
+24/05/2025,713,1.6,,https://www.nytimes.com/2025/05/23/crosswords/connections-companion-713.html
+25/05/2025,714,2.3,,https://www.nytimes.com/2025/05/24/crosswords/connections-companion-714.html
+26/05/2025,715,2,,https://www.nytimes.com/2025/05/25/crosswords/connections-companion-715.html
+27/05/2025,716,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/05/26/crosswords/connections-companion-716.html
+28/05/2025,717,3,,https://www.nytimes.com/2025/05/27/crosswords/connections-companion-717.html
+29/05/2025,718,2,,https://www.nytimes.com/2025/05/28/crosswords/connections-companion-718.html
+30/05/2025,719,2.8,,https://www.nytimes.com/2025/05/29/crosswords/connections-companion-719.html
+31/05/2025,720,2.3,,https://www.nytimes.com/2025/05/30/crosswords/connections-companion-720.html
+01/06/2025,721,2.5,,https://www.nytimes.com/2025/05/31/crosswords/connections-companion-721.html
+02/06/2025,722,2.3,,https://www.nytimes.com/2025/06/01/crosswords/connections-companion-722.html
+03/06/2025,723,2.3,,https://www.nytimes.com/2025/06/02/crosswords/connections-companion-723.html
+04/06/2025,724,2,,https://www.nytimes.com/2025/06/03/crosswords/connections-companion-724.html
+05/06/2025,725,3.5,,https://www.nytimes.com/2025/06/04/crosswords/connections-companion-725.html
+06/06/2025,726,2.5,,https://www.nytimes.com/2025/06/05/crosswords/connections-companion-726.html
+07/06/2025,727,2.5,,https://www.nytimes.com/2025/06/06/crosswords/connections-companion-727.html
+08/06/2025,728,2.5,,https://www.nytimes.com/2025/06/07/crosswords/connections-companion-728.html
+09/06/2025,729,2.5,,https://www.nytimes.com/2025/06/08/crosswords/connections-companion-729.html
+10/06/2025,730,3,,https://www.nytimes.com/2025/06/09/crosswords/connections-companion-730.html
+11/06/2025,731,3.3,,https://www.nytimes.com/2025/06/10/crosswords/connections-companion-731.html
+12/06/2025,732,2.5,,https://www.nytimes.com/2025/06/11/crosswords/connections-companion-732.html
+13/06/2025,733,2.8,,https://www.nytimes.com/2025/06/12/crosswords/connections-companion-733.html
+14/06/2025,734,2.5,,https://www.nytimes.com/2025/06/13/crosswords/connections-companion-734.html
+15/06/2025,735,2.3,,https://www.nytimes.com/2025/06/14/crosswords/connections-companion-735.html
+16/06/2025,736,2.8,,https://www.nytimes.com/2025/06/15/crosswords/connections-companion-736.html
+17/06/2025,737,1.8,,https://www.nytimes.com/2025/06/16/crosswords/connections-companion-737.html
+18/06/2025,738,3,,https://www.nytimes.com/2025/06/17/crosswords/connections-companion-738.html
+19/06/2025,739,2,,https://www.nytimes.com/2025/06/18/crosswords/connections-companion-739.html
+20/06/2025,740,2.8,,https://www.nytimes.com/2025/06/19/crosswords/connections-companion-740.html
+21/06/2025,741,3.5,,https://www.nytimes.com/2025/06/20/crosswords/connections-companion-741.html
+22/06/2025,742,2.8,,https://www.nytimes.com/2025/06/21/crosswords/connections-companion-742.html
+23/06/2025,743,2.8,,https://www.nytimes.com/2025/06/22/crosswords/connections-companion-743.html
+24/06/2025,744,1.5,,https://www.nytimes.com/2025/06/23/crosswords/connections-companion-744.html
+25/06/2025,745,3,,https://www.nytimes.com/2025/06/24/crosswords/connections-companion-745.html
+26/06/2025,746,2.3,,https://www.nytimes.com/2025/06/25/crosswords/connections-companion-746.html
+27/06/2025,747,1.8,,https://www.nytimes.com/2025/06/26/crosswords/connections-companion-747.html
+28/06/2025,748,3.3,,https://www.nytimes.com/2025/06/27/crosswords/connections-companion-748.html
+29/06/2025,749,2.5,,https://www.nytimes.com/2025/06/28/crosswords/connections-companion-749.html
+30/06/2025,750,3.3,,https://www.nytimes.com/2025/06/29/crosswords/connections-companion-750.html
+01/07/2025,751,3,,https://www.nytimes.com/2025/06/30/crosswords/connections-companion-751.html
+02/07/2025,752,3.5,,https://www.nytimes.com/2025/07/01/crosswords/connections-companion-752.html
+03/07/2025,753,2.8,,https://www.nytimes.com/2025/07/02/crosswords/connections-companion-753.html
+04/07/2025,754,3,,https://www.nytimes.com/2025/07/03/crosswords/connections-companion-754.html
+05/07/2025,755,2.3,,https://www.nytimes.com/2025/07/04/crosswords/connections-companion-755.html
+06/07/2025,756,1.8,,https://www.nytimes.com/2025/07/05/crosswords/connections-companion-756.html
+07/07/2025,757,2.3,,https://www.nytimes.com/2025/07/06/crosswords/connections-companion-757.html
+08/07/2025,758,2.5,,https://www.nytimes.com/2025/07/07/crosswords/connections-companion-758.html
+09/07/2025,759,2.5,,https://www.nytimes.com/2025/07/08/crosswords/connections-companion-759.html
+10/07/2025,760,3.3,,https://www.nytimes.com/2025/07/09/crosswords/connections-companion-760.html
+11/07/2025,761,3,,https://www.nytimes.com/2025/07/10/crosswords/connections-companion-761.html
+12/07/2025,762,2.8,,https://www.nytimes.com/2025/07/11/crosswords/connections-companion-762.html
+13/07/2025,763,2.4,,https://www.nytimes.com/2025/07/12/crosswords/connections-companion-763.html
+14/07/2025,764,3,,https://www.nytimes.com/2025/07/13/crosswords/connections-companion-764.html
+15/07/2025,765,3.3,,https://www.nytimes.com/2025/07/14/crosswords/connections-companion-765.html
+16/07/2025,766,2.8,,https://www.nytimes.com/2025/07/15/crosswords/connections-companion-766.html
+17/07/2025,767,2.8,,https://www.nytimes.com/2025/07/16/crosswords/connections-companion-767.html
+18/07/2025,768,2.5,,https://www.nytimes.com/2025/07/17/crosswords/connections-companion-768.html
+19/07/2025,769,2.8,,https://www.nytimes.com/2025/07/18/crosswords/connections-companion-769.html
+20/07/2025,770,2.5,,https://www.nytimes.com/2025/07/19/crosswords/connections-companion-770.html
+21/07/2025,771,1.5,,https://www.nytimes.com/2025/07/20/crosswords/connections-companion-771.html
+22/07/2025,772,1.5,,https://www.nytimes.com/2025/07/21/crosswords/connections-companion-772.html
+23/07/2025,773,2.8,,https://www.nytimes.com/2025/07/22/crosswords/connections-companion-773.html
+24/07/2025,774,2.8,,https://www.nytimes.com/2025/07/23/crosswords/connections-companion-774.html
+25/07/2025,775,2.3,,https://www.nytimes.com/2025/07/24/crosswords/connections-companion-775.html
+26/07/2025,776,2.8,,https://www.nytimes.com/2025/07/25/crosswords/connections-companion-776.html
+27/07/2025,777,2.8,,https://www.nytimes.com/2025/07/26/crosswords/connections-companion-777.html
+28/07/2025,778,2,,https://www.nytimes.com/2025/07/27/crosswords/connections-companion-778.html
+29/07/2025,779,2.3,,https://www.nytimes.com/2025/07/28/crosswords/connections-companion-779.html
+30/07/2025,780,3,,https://www.nytimes.com/2025/07/29/crosswords/connections-companion-780.html
+31/07/2025,781,2.5,,https://www.nytimes.com/2025/07/30/crosswords/connections-companion-781.html
+01/08/2025,782,2.5,,https://www.nytimes.com/2025/07/31/crosswords/connections-companion-782.html
+02/08/2025,783,3.3,,https://www.nytimes.com/2025/08/01/crosswords/connections-companion-783.html
+03/08/2025,784,2.6,,https://www.nytimes.com/2025/08/02/crosswords/connections-companion-784.html
+04/08/2025,785,3,,https://www.nytimes.com/2025/08/03/crosswords/connections-companion-785.html
+05/08/2025,786,2,,https://www.nytimes.com/2025/08/04/crosswords/connections-companion-786.html
+06/08/2025,787,2.3,,https://www.nytimes.com/2025/08/05/crosswords/connections-companion-787.html
+07/08/2025,788,3,,https://www.nytimes.com/2025/08/06/crosswords/connections-companion-788.html
+08/08/2025,789,2.8,,https://www.nytimes.com/2025/08/07/crosswords/connections-companion-789.html
+09/08/2025,790,2.8,,https://www.nytimes.com/2025/08/08/crosswords/connections-companion-790.html
+10/08/2025,791,2.5,,https://www.nytimes.com/2025/08/09/crosswords/connections-companion-791.html
+11/08/2025,792,1.8,,https://www.nytimes.com/2025/08/10/crosswords/connections-companion-792.html
+12/08/2025,793,2.8,,https://www.nytimes.com/2025/08/11/crosswords/connections-companion-793.html
+13/08/2025,794,2,,https://www.nytimes.com/2025/08/12/crosswords/connections-companion-794.html
+14/08/2025,795,1.8,,https://www.nytimes.com/2025/08/13/crosswords/connections-companion-795.html
+15/08/2025,796,2.5,,https://www.nytimes.com/2025/08/14/crosswords/connections-companion-796.html
+16/08/2025,797,2.2,,https://www.nytimes.com/2025/08/15/crosswords/connections-companion-797.html
+17/08/2025,798,2,,https://www.nytimes.com/2025/08/16/crosswords/connections-companion-798.html
+18/08/2025,799,2.8,,https://www.nytimes.com/2025/08/17/crosswords/connections-companion-799.html
+19/08/2025,800,3,,https://www.nytimes.com/2025/08/18/crosswords/connections-companion-800.html
+20/08/2025,801,2.5,,https://www.nytimes.com/2025/08/19/crosswords/connections-companion-801.html
+21/08/2025,802,2.5,,https://www.nytimes.com/2025/08/20/crosswords/connections-companion-802.html
+22/08/2025,803,3.3,,https://www.nytimes.com/2025/08/21/crosswords/connections-companion-803.html
+23/08/2025,804,1.8,,https://www.nytimes.com/2025/08/22/crosswords/connections-companion-804.html
+24/08/2025,805,2,,https://www.nytimes.com/2025/08/23/crosswords/connections-companion-805.html
+25/08/2025,806,3.2,,https://www.nytimes.com/2025/08/24/crosswords/connections-companion-806.html
+26/08/2025,807,3.3,,https://www.nytimes.com/2025/08/25/crosswords/connections-companion-807.html
+27/08/2025,808,2,,https://www.nytimes.com/2025/08/26/crosswords/connections-companion-808.html
+28/08/2025,809,2.3,,https://www.nytimes.com/2025/08/27/crosswords/connections-companion-809.html
+29/08/2025,810,2.5,,https://www.nytimes.com/2025/08/28/crosswords/connections-companion-810.html
+30/08/2025,811,2.5,,https://www.nytimes.com/2025/08/29/crosswords/connections-companion-811.html
+31/08/2025,812,3.3,,https://www.nytimes.com/2025/08/30/crosswords/connections-companion-812.html
+01/09/2025,813,3.5,,https://www.nytimes.com/2025/08/31/crosswords/connections-companion-813.html
+02/09/2025,814,2.8,,https://www.nytimes.com/2025/09/01/crosswords/connections-companion-814.html
+03/09/2025,815,2.8,,https://www.nytimes.com/2025/09/02/crosswords/connections-companion-815.html
+04/09/2025,816,2.3,,https://www.nytimes.com/2025/09/03/crosswords/connections-companion-816.html
+05/09/2025,817,2.8,,https://www.nytimes.com/2025/09/04/crosswords/connections-companion-817.html
+06/09/2025,818,2.3,,https://www.nytimes.com/2025/09/05/crosswords/connections-companion-818.html
+07/09/2025,819,3,,https://www.nytimes.com/2025/09/06/crosswords/connections-companion-819.html
+08/09/2025,820,3.5,,https://www.nytimes.com/2025/09/07/crosswords/connections-companion-820.html
+09/09/2025,821,3.3,,https://www.nytimes.com/2025/09/08/crosswords/connections-companion-821.html
+10/09/2025,822,3.3,,https://www.nytimes.com/2025/09/09/crosswords/connections-companion-822.html
+11/09/2025,823,2,,https://www.nytimes.com/2025/09/10/crosswords/connections-companion-823.html
+12/09/2025,824,2.5,,https://www.nytimes.com/2025/09/11/crosswords/connections-companion-824.html
+13/09/2025,825,2.8,,https://www.nytimes.com/2025/09/12/crosswords/connections-companion-825.html
+14/09/2025,826,2,,https://www.nytimes.com/2025/09/13/crosswords/connections-companion-826.html
+15/09/2025,827,2.8,,https://www.nytimes.com/2025/09/14/crosswords/connections-companion-827.html
+16/09/2025,828,2.3,,https://www.nytimes.com/2025/09/15/crosswords/connections-companion-828.html
+17/09/2025,829,2,,https://www.nytimes.com/2025/09/16/crosswords/connections-companion-829.html
+18/09/2025,830,3.4,,https://www.nytimes.com/2025/09/17/crosswords/connections-companion-830.html
+19/09/2025,831,2,,https://www.nytimes.com/2025/09/18/crosswords/connections-companion-831.html
+20/09/2025,832,3.3,,https://www.nytimes.com/2025/09/19/crosswords/connections-companion-832.html
+21/09/2025,833,2,,https://www.nytimes.com/2025/09/20/crosswords/connections-companion-833.html
+22/09/2025,834,2.3,,https://www.nytimes.com/2025/09/21/crosswords/connections-companion-834.html
+23/09/2025,835,2.5,,https://www.nytimes.com/2025/09/22/crosswords/connections-companion-835.html
+24/09/2025,836,2,,https://www.nytimes.com/2025/09/23/crosswords/connections-companion-836.html
+25/09/2025,837,3,Today's difficulty is 3 out of 5,https://www.nytimes.com/2025/09/24/crosswords/connections-companion-837.html
+26/09/2025,838,3,Today's difficulty is 3 out of 5,https://www.nytimes.com/2025/09/25/crosswords/connections-companion-838.html
+27/09/2025,839,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2025/09/26/crosswords/connections-companion-839.html
+28/09/2025,840,3,Today's difficulty is 3 out of 5,https://www.nytimes.com/2025/09/27/crosswords/connections-companion-840.html
+29/09/2025,841,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/09/28/crosswords/connections-companion-841.html
+30/09/2025,842,3,Today's difficulty is 3 out of 5,https://www.nytimes.com/2025/09/29/crosswords/connections-companion-842.html
+01/10/2025,843,3.5,Today's difficulty is 3.5 out of 5,https://www.nytimes.com/2025/09/30/crosswords/connections-companion-843.html
+02/10/2025,844,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2025/10/01/crosswords/connections-companion-844.html
+03/10/2025,845,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/10/02/crosswords/connections-companion-845.html
+04/10/2025,846,1.8,Today's difficulty is 1.8 out of 5,https://www.nytimes.com/2025/10/03/crosswords/connections-companion-846.html
+05/10/2025,847,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2025/10/04/crosswords/connections-companion-847.html
+06/10/2025,848,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2025/10/05/crosswords/connections-companion-848.html
+07/10/2025,849,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/10/06/crosswords/connections-companion-849.html
+08/10/2025,850,3.5,Today's difficulty is 3.5 out of 5,https://www.nytimes.com/2025/10/07/crosswords/connections-companion-850.html
+09/10/2025,851,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2025/10/08/crosswords/connections-companion-851.html
+10/10/2025,852,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2025/10/09/crosswords/connections-companion-852.html
+11/10/2025,853,1.8,Today's difficulty is 1.8 out of 5,https://www.nytimes.com/2025/10/10/crosswords/connections-companion-853.html
+12/10/2025,854,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2025/10/11/crosswords/connections-companion-854.html
+13/10/2025,855,3.3,Today's difficulty is 3.3 out of 5,https://www.nytimes.com/2025/10/12/crosswords/connections-companion-855.html
+14/10/2025,856,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2025/10/13/crosswords/connections-companion-856.html
+15/10/2025,857,3.3,Today's difficulty is 3.3 out of 5,https://www.nytimes.com/2025/10/14/crosswords/connections-companion-857.html
+16/10/2025,858,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/10/15/crosswords/connections-companion-858.html
+17/10/2025,859,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2025/10/16/crosswords/connections-companion-859.html
+18/10/2025,860,2.7,Today's difficulty is 2.7 out of 5,https://www.nytimes.com/2025/10/17/crosswords/connections-companion-860.html
+19/10/2025,861,2.7,Today's difficulty is 2.7 out of 5,https://www.nytimes.com/2025/10/18/crosswords/connections-companion-861.html
+20/10/2025,862,3.3,Today's difficulty is 3.3 out of 5,https://www.nytimes.com/2025/10/19/crosswords/connections-companion-862.html
+21/10/2025,863,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2025/10/20/crosswords/connections-companion-863.html
+22/10/2025,864,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2025/10/21/crosswords/connections-companion-864.html
+23/10/2025,865,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2025/10/22/crosswords/connections-companion-865.html
+24/10/2025,866,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2025/10/23/crosswords/connections-companion-866.html
+25/10/2025,867,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/10/24/crosswords/connections-companion-867.html
+26/10/2025,868,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2025/10/25/crosswords/connections-companion-868.html
+27/10/2025,869,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/10/26/crosswords/connections-companion-869.html
+28/10/2025,870,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/10/27/crosswords/connections-companion-870.html
+29/10/2025,871,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2025/10/28/crosswords/connections-companion-871.html
+30/10/2025,872,3.3,Today's difficulty is 3.3 out of 5,https://www.nytimes.com/2025/10/29/crosswords/connections-companion-872.html
+31/10/2025,873,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/10/30/crosswords/connections-companion-873.html
+01/11/2025,874,3.3,Today's difficulty is 3.3 out of 5,https://www.nytimes.com/2025/10/31/crosswords/connections-companion-874.html
+02/11/2025,875,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2025/11/01/crosswords/connections-companion-875.html
+03/11/2025,876,3.5,Today's difficulty is 3.5 out of 5,https://www.nytimes.com/2025/11/02/crosswords/connections-companion-876.html
+04/11/2025,877,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2025/11/03/crosswords/connections-companion-877.html
+05/11/2025,878,3.5,Today's difficulty is 3.5 out of 5,https://www.nytimes.com/2025/11/04/crosswords/connections-companion-878.html
+06/11/2025,879,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2025/11/05/crosswords/connections-companion-879.html
+07/11/2025,880,1.3,Today's difficulty is 1.3 out of 5,https://www.nytimes.com/2025/11/06/crosswords/connections-companion-880.html
+08/11/2025,881,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2025/11/07/crosswords/connections-companion-881.html
+09/11/2025,882,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/11/08/crosswords/connections-companion-882.html
+10/11/2025,883,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2025/11/09/crosswords/connections-companion-883.html
+11/11/2025,884,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/11/10/crosswords/connections-companion-884.html
+12/11/2025,885,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2025/11/11/crosswords/connections-companion-885.html
+13/11/2025,886,1.7,Today's difficulty is 1.7 out of 5,https://www.nytimes.com/2025/11/12/crosswords/connections-companion-886.html
+14/11/2025,887,2.2,Today's difficulty is 2.2 out of 5,https://www.nytimes.com/2025/11/13/crosswords/connections-companion-887.html
+15/11/2025,888,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/11/14/crosswords/connections-companion-888.html
+16/11/2025,889,1.7,Today's difficulty is 1.7 out of 5,https://www.nytimes.com/2025/11/15/crosswords/connections-companion-889.html
+17/11/2025,890,2.7,Today's difficulty is 2.7 out of 5,https://www.nytimes.com/2025/11/16/crosswords/connections-companion-890.html
+18/11/2025,891,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/11/17/crosswords/connections-companion-891.html
+19/11/2025,892,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2025/11/18/crosswords/connections-companion-892.html
+20/11/2025,893,3,Today's difficulty is 3 out of 5,https://www.nytimes.com/2025/11/19/crosswords/connections-companion-893.html
+21/11/2025,894,3.5,Today's difficulty is 3.5 out of 5,https://www.nytimes.com/2025/11/20/crosswords/connections-companion-894.html
+22/11/2025,895,3,Today's difficulty is 3 out of 5,https://www.nytimes.com/2025/11/21/crosswords/connections-companion-895.html
+23/11/2025,896,3.3,Today's difficulty is 3.3 out of 5,https://www.nytimes.com/2025/11/22/crosswords/connections-companion-896.html
+24/11/2025,897,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2025/11/23/crosswords/connections-companion-897.html
+25/11/2025,898,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/11/24/crosswords/connections-companion-898.html
+26/11/2025,899,2.7,Today's difficulty is 2.7 out of 5,https://www.nytimes.com/2025/11/25/crosswords/connections-companion-899.html
+27/11/2025,900,3.3,Today's difficulty is 3.3 out of 5,https://www.nytimes.com/2025/11/26/crosswords/connections-companion-900.html
+28/11/2025,901,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/11/27/crosswords/connections-companion-901.html
+29/11/2025,902,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/11/28/crosswords/connections-companion-902.html
+30/11/2025,903,2.7,Today's difficulty is 2.7 out of 5,https://www.nytimes.com/2025/11/29/crosswords/connections-companion-903.html
+01/12/2025,904,3.3,Today's difficulty is 3.3 out of 5,https://www.nytimes.com/2025/11/30/crosswords/connections-companion-904.html
+02/12/2025,905,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2025/12/01/crosswords/connections-companion-905.html
+03/12/2025,906,1.7,Today's difficulty is 1.7 out of 5,https://www.nytimes.com/2025/12/02/crosswords/connections-companion-906.html
+04/12/2025,907,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2025/12/03/crosswords/connections-companion-907.html
+05/12/2025,908,1.7,Today's difficulty is 1.7 out of 5,https://www.nytimes.com/2025/12/04/crosswords/connections-companion-908.html
+06/12/2025,909,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2025/12/05/crosswords/connections-companion-909.html
+07/12/2025,910,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2025/12/06/crosswords/connections-companion-910.html
+08/12/2025,911,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/12/07/crosswords/connections-companion-911.html
+09/12/2025,912,2.7,Today's difficulty is 2.7 out of 5,https://www.nytimes.com/2025/12/08/crosswords/connections-companion-912.html
+10/12/2025,913,1.8,Today's difficulty is 1.8 out of 5,https://www.nytimes.com/2025/12/09/crosswords/connections-companion-913.html
+11/12/2025,914,1.5,Today's difficulty is 1.5 out of 5,https://www.nytimes.com/2025/12/10/crosswords/connections-companion-914.html
+12/12/2025,915,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/12/11/crosswords/connections-companion-915.html
+13/12/2025,916,3.3,Today's difficulty is 3.3 out of 5,https://www.nytimes.com/2025/12/12/crosswords/connections-companion-916.html
+14/12/2025,917,3,Today's difficulty is 3 out of 5,https://www.nytimes.com/2025/12/13/crosswords/connections-companion-917.html
+15/12/2025,918,1,Today's difficulty is 1 out of 5,https://www.nytimes.com/2025/12/14/crosswords/connections-companion-918.html
+16/12/2025,919,2.7,Today's difficulty is 2.7 out of 5,https://www.nytimes.com/2025/12/15/crosswords/connections-companion-919.html
+17/12/2025,920,2.7,Today's difficulty is 2.7 out of 5,https://www.nytimes.com/2025/12/16/crosswords/connections-companion-920.html
+18/12/2025,921,1.7,Today's difficulty is 1.7 out of 5,https://www.nytimes.com/2025/12/17/crosswords/connections-companion-921.html
+19/12/2025,922,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2025/12/18/crosswords/connections-companion-922.html
+20/12/2025,923,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/12/19/crosswords/connections-companion-923.html
+21/12/2025,924,1.5,Today's difficulty is 1.5 out of 5,https://www.nytimes.com/2025/12/20/crosswords/connections-companion-924.html
+22/12/2025,925,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2025/12/21/crosswords/connections-companion-925.html
+23/12/2025,926,1,Today's difficulty is 1 out of 5,https://www.nytimes.com/2025/12/22/crosswords/connections-companion-926.html
+24/12/2025,927,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2025/12/23/crosswords/connections-companion-927.html
+25/12/2025,928,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2025/12/24/crosswords/connections-companion-928.html
+26/12/2025,929,2.7,Today's difficulty is 2.7 out of 5,https://www.nytimes.com/2025/12/25/crosswords/connections-companion-929.html
+27/12/2025,930,2.7,Today's difficulty is 2.7 out of 5,https://www.nytimes.com/2025/12/26/crosswords/connections-companion-930.html
+28/12/2025,931,0.5,Today's difficulty is 0.5 out of 5,https://www.nytimes.com/2025/12/27/crosswords/connections-companion-931.html
+29/12/2025,932,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/12/28/crosswords/connections-companion-932.html
+30/12/2025,933,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2025/12/29/crosswords/connections-companion-933.html
+31/12/2025,934,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2025/12/30/crosswords/connections-companion-934.html
+01/01/2026,935,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2025/12/31/crosswords/connections-companion-935.html
+02/01/2026,936,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/01/01/crosswords/connections-companion-936.html
+03/01/2026,937,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2026/01/02/crosswords/connections-companion-937.html
+04/01/2026,938,0.5,Today's difficulty is 0.5 out of 5,https://www.nytimes.com/2026/01/03/crosswords/connections-companion-938.html
+05/01/2026,939,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/01/04/crosswords/connections-companion-939.html
+06/01/2026,940,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/01/05/crosswords/connections-companion-940.html
+07/01/2026,941,1.8,Today's difficulty is 1.8 out of 5,https://www.nytimes.com/2026/01/06/crosswords/connections-companion-941.html
+08/01/2026,942,3,Today's difficulty is 3 out of 5,https://www.nytimes.com/2026/01/07/crosswords/connections-companion-942.html
+09/01/2026,943,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2026/01/08/crosswords/connections-companion-943.html
+10/01/2026,944,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/01/09/crosswords/connections-companion-944.html
+11/01/2026,945,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/01/10/crosswords/connections-companion-945.html
+12/01/2026,946,1.7,Today's difficulty is 1.7 out of 5,https://www.nytimes.com/2026/01/11/crosswords/connections-companion-946.html
+13/01/2026,947,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/01/12/crosswords/connections-companion-947.html
+14/01/2026,948,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/01/13/crosswords/connections-companion-948.html
+15/01/2026,949,1.7,Today's difficulty is 1.7 out of 5,https://www.nytimes.com/2026/01/14/crosswords/connections-companion-949.html
+16/01/2026,950,1.8,Today's difficulty is 1.8 out of 5,https://www.nytimes.com/2026/01/15/crosswords/connections-companion-950.html
+17/01/2026,951,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/01/16/crosswords/connections-companion-951.html
+18/01/2026,952,1.7,Today's difficulty is 1.7 out of 5,https://www.nytimes.com/2026/01/17/crosswords/connections-companion-952.html
+19/01/2026,953,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2026/01/18/crosswords/connections-companion-953.html
+20/01/2026,954,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/01/19/crosswords/connections-companion-954.html
+21/01/2026,955,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/01/20/crosswords/connections-companion-955.html
+22/01/2026,956,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/01/21/crosswords/connections-companion-956.html
+23/01/2026,957,3,Today's difficulty is 3 out of 5,https://www.nytimes.com/2026/01/22/crosswords/connections-companion-957.html
+24/01/2026,958,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2026/01/23/crosswords/connections-companion-958.html
+25/01/2026,959,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/01/24/crosswords/connections-companion-959.html
+26/01/2026,960,3.3,Today's difficulty is 3.3 out of 5,https://www.nytimes.com/2026/01/25/crosswords/connections-companion-960.html
+27/01/2026,961,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2026/01/26/crosswords/connections-companion-961.html
+28/01/2026,962,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/01/27/crosswords/connections-companion-962.html
+29/01/2026,963,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/01/28/crosswords/connections-companion-963.html
+30/01/2026,964,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/01/29/crosswords/connections-companion-964.html
+31/01/2026,965,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2026/01/30/crosswords/connections-companion-965.html
+01/02/2026,966,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2026/01/31/crosswords/connections-companion-966.html
+02/02/2026,967,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2026/02/01/crosswords/connections-companion-967.html
+03/02/2026,968,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2026/02/02/crosswords/connections-companion-968.html
+04/02/2026,969,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/02/03/crosswords/connections-companion-969.html
+05/02/2026,970,1.5,Today's difficulty is 1.5 out of 5,https://www.nytimes.com/2026/02/04/crosswords/connections-companion-970.html
+06/02/2026,971,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2026/02/05/crosswords/connections-companion-971.html
+07/02/2026,972,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/02/06/crosswords/connections-companion-972.html
+08/02/2026,973,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/02/07/crosswords/connections-companion-973.html
+09/02/2026,974,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/02/08/crosswords/connections-companion-974.html
+10/02/2026,975,1.5,Today's difficulty is 1.5 out of 5,https://www.nytimes.com/2026/02/09/crosswords/connections-companion-975.html
+11/02/2026,976,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2026/02/10/crosswords/connections-companion-976.html
+12/02/2026,977,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2026/02/11/crosswords/connections-companion-977.html
+13/02/2026,978,2.4,Today's difficulty is 2.4 out of 5,https://www.nytimes.com/2026/02/12/crosswords/connections-companion-978.html
+14/02/2026,979,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/02/13/crosswords/connections-companion-979.html
+15/02/2026,980,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/02/14/crosswords/connections-companion-980.html
+16/02/2026,981,3,Today's difficulty is 3 out of 5,https://www.nytimes.com/2026/02/15/crosswords/connections-companion-981.html
+17/02/2026,982,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2026/02/16/crosswords/connections-companion-982.html
+18/02/2026,983,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/02/17/crosswords/connections-companion-983.html
+19/02/2026,984,1.5,Today's difficulty is 1.5 out of 5,https://www.nytimes.com/2026/02/18/crosswords/connections-companion-984.html
+20/02/2026,985,3.5,Today's difficulty is 3.5 out of 5,https://www.nytimes.com/2026/02/19/crosswords/connections-companion-985.html
+21/02/2026,986,1.8,Today's difficulty is 1.8 out of 5,https://www.nytimes.com/2026/02/20/crosswords/connections-companion-986.html
+22/02/2026,987,3,Today's difficulty is 3 out of 5,https://www.nytimes.com/2026/02/21/crosswords/connections-companion-987.html
+23/02/2026,988,1.5,Today's difficulty is 1.5 out of 5,https://www.nytimes.com/2026/02/22/crosswords/connections-companion-988.html
+24/02/2026,989,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/02/23/crosswords/connections-companion-989.html
+25/02/2026,990,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/02/24/crosswords/connections-companion-990.html
+26/02/2026,991,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/02/25/crosswords/connections-companion-991.html
+27/02/2026,992,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/02/26/crosswords/connections-companion-992.html
+28/02/2026,993,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2026/02/27/crosswords/connections-companion-993.html
+01/03/2026,994,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/02/28/crosswords/connections-companion-994.html
+02/03/2026,995,1.3,Today's difficulty is 1.3 out of 5,https://www.nytimes.com/2026/03/01/crosswords/connections-companion-995.html
+03/03/2026,996,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/03/02/crosswords/connections-companion-996.html
+04/03/2026,997,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/03/03/crosswords/connections-companion-997.html
+05/03/2026,998,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/03/04/crosswords/connections-companion-998.html
+06/03/2026,999,3.5,Today's difficulty is 3.5 out of 5,https://www.nytimes.com/2026/03/05/crosswords/connections-companion-999.html
+07/03/2026,1000,1.5,Today's difficulty is 1.5 out of 5,https://www.nytimes.com/2026/03/06/crosswords/connections-companion-1000.html
+08/03/2026,1001,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2026/03/07/crosswords/connections-companion-1001.html
+09/03/2026,1002,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/03/08/crosswords/connections-companion-1002.html
+10/03/2026,1003,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2026/03/09/crosswords/connections-companion-1003.html
+11/03/2026,1004,1.8,Today's difficulty is 1.8 out of 5,https://www.nytimes.com/2026/03/10/crosswords/connections-companion-1004.html
+12/03/2026,1005,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/03/11/crosswords/connections-companion-1005.html
+13/03/2026,1006,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/03/12/crosswords/connections-companion-1006.html
+14/03/2026,1007,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/03/13/crosswords/connections-companion-1007.html
+15/03/2026,1008,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/03/14/crosswords/connections-companion-1008.html
+16/03/2026,1009,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/03/15/crosswords/connections-companion-1009.html
+17/03/2026,1010,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2026/03/16/crosswords/connections-companion-1010.html
+18/03/2026,1011,3,Today's difficulty is 3 out of 5,https://www.nytimes.com/2026/03/17/crosswords/connections-companion-1011.html
+19/03/2026,1012,1.5,Today's difficulty is 1.5 out of 5,https://www.nytimes.com/2026/03/18/crosswords/connections-companion-1012.html
+20/03/2026,1013,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2026/03/19/crosswords/connections-companion-1013.html
+21/03/2026,1014,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/03/20/crosswords/connections-companion-1014.html
+22/03/2026,1015,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/03/21/crosswords/connections-companion-1015.html
+23/03/2026,1016,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/03/22/crosswords/connections-companion-1016.html
+24/03/2026,1017,3,Today's difficulty is 3 out of 5,https://www.nytimes.com/2026/03/23/crosswords/connections-companion-1017.html
+25/03/2026,1018,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2026/03/24/crosswords/connections-companion-1018.html
+26/03/2026,1019,3.3,Today's difficulty is 3.3 out of 5,https://www.nytimes.com/2026/03/25/crosswords/connections-companion-1019.html
+27/03/2026,1020,1.8,Today's difficulty is 1.8 out of 5,https://www.nytimes.com/2026/03/26/crosswords/connections-companion-1020.html
+28/03/2026,1021,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2026/03/27/crosswords/connections-companion-1021.html
+29/03/2026,1022,1.5,Today's difficulty is 1.5 out of 5,https://www.nytimes.com/2026/03/28/crosswords/connections-companion-1022.html
+30/03/2026,1023,1.3,Today's difficulty is 1.3 out of 5,https://www.nytimes.com/2026/03/29/crosswords/connections-companion-1023.html
+31/03/2026,1024,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2026/03/30/crosswords/connections-companion-1024.html
+01/04/2026,1025,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/03/31/crosswords/connections-companion-1025.html
+02/04/2026,1026,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/04/01/crosswords/connections-companion-1026.html
+03/04/2026,1027,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/04/02/crosswords/connections-companion-1027.html
+04/04/2026,1028,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/04/03/crosswords/connections-companion-1028.html
+05/04/2026,1029,3.5,Today's difficulty is 3.5 out of 5,https://www.nytimes.com/2026/04/04/crosswords/connections-companion-1029.html
+06/04/2026,1030,3.3,Today's difficulty is 3.3 out of 5,https://www.nytimes.com/2026/04/05/crosswords/connections-companion-1030.html
+07/04/2026,1031,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/04/06/crosswords/connections-companion-1031.html
+08/04/2026,1032,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/04/07/crosswords/connections-companion-1032.html
+09/04/2026,1033,1.8,Today's difficulty is 1.8 out of 5,https://www.nytimes.com/2026/04/08/crosswords/connections-companion-1033.html
+10/04/2026,1034,2.8,Today's difficulty is 2.8 out of 5,https://www.nytimes.com/2026/04/09/crosswords/connections-companion-1034.html
+11/04/2026,1035,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2026/04/10/crosswords/connections-companion-1035.html
+12/04/2026,1036,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/04/11/crosswords/connections-companion-1036.html
+13/04/2026,1037,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/04/12/crosswords/connections-companion-1037.html
+14/04/2026,1038,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/04/13/crosswords/connections-companion-1038.html
+15/04/2026,1039,1.7,Today's difficulty is 1.7 out of 5,https://www.nytimes.com/2026/04/14/crosswords/connections-companion-1039.html
+16/04/2026,1040,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/04/15/crosswords/connections-companion-1040.html
+17/04/2026,1041,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2026/04/16/crosswords/connections-companion-1041.html
+18/04/2026,1042,1.5,Today's difficulty is 1.5 out of 5,https://www.nytimes.com/2026/04/17/crosswords/connections-companion-1042.html
+19/04/2026,1043,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/04/18/crosswords/connections-companion-1043.html
+20/04/2026,1044,1.3,Today's difficulty is 1.3 out of 5,https://www.nytimes.com/2026/04/19/crosswords/connections-companion-1044.html
+21/04/2026,1045,1.5,Today's difficulty is 1.5 out of 5,https://www.nytimes.com/2026/04/20/crosswords/connections-companion-1045.html
+22/04/2026,1046,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/04/21/crosswords/connections-companion-1046.html
+23/04/2026,1047,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/04/22/crosswords/connections-companion-1047.html
+24/04/2026,1048,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/04/23/crosswords/connections-companion-1048.html
+25/04/2026,1049,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/04/24/crosswords/connections-companion-1049.html
+26/04/2026,1050,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/04/25/crosswords/connections-companion-1050.html
+27/04/2026,1051,3,Today's difficulty is 3 out of 5,https://www.nytimes.com/2026/04/26/crosswords/connections-companion-1051.html
+28/04/2026,1052,3,Today's difficulty is 3 out of 5,https://www.nytimes.com/2026/04/27/crosswords/connections-companion-1052.html
+29/04/2026,1053,1.7,Today's difficulty is 1.7 out of 5,https://www.nytimes.com/2026/04/28/crosswords/connections-companion-1053.html
+30/04/2026,1054,1.3,Today's difficulty is 1.3 out of 5,https://www.nytimes.com/2026/04/29/crosswords/connections-companion-1054.html
+01/05/2026,1055,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/04/30/crosswords/connections-companion-1055.html
+02/05/2026,1056,1.3,Today's difficulty is 1.3 out of 5,https://www.nytimes.com/2026/05/01/crosswords/connections-companion-1056.html
+03/05/2026,1057,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/05/02/crosswords/connections-companion-1057.html
+04/05/2026,1058,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/05/03/crosswords/connections-companion-1058.html
+05/05/2026,1059,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2026/05/04/crosswords/connections-companion-1059.html
+06/05/2026,1060,4,Today's difficulty is 4 out of 5,https://www.nytimes.com/2026/05/05/crosswords/connections-companion-1060.html
+07/05/2026,1061,1.7,Today's difficulty is 1.7 out of 5,https://www.nytimes.com/2026/05/06/crosswords/connections-companion-1061.html
+08/05/2026,1062,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/05/07/crosswords/connections-companion-1062.html
+09/05/2026,1063,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/05/08/crosswords/connections-companion-1063.html
+10/05/2026,1064,1.5,Today's difficulty is 1.5 out of 5,https://www.nytimes.com/2026/05/09/crosswords/connections-companion-1064.html
+11/05/2026,1065,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/05/10/crosswords/connections-companion-1065.html
+12/05/2026,1066,3.3,Today's difficulty is 3.3 out of 5,https://www.nytimes.com/2026/05/11/crosswords/connections-companion-1066.html
+13/05/2026,1067,2.2,Today's difficulty is 2.2 out of 5,https://www.nytimes.com/2026/05/12/crosswords/connections-companion-1067.html
+14/05/2026,1068,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/05/13/crosswords/connections-companion-1068.html
+15/05/2026,1069,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/05/14/crosswords/connections-companion-1069.html
+16/05/2026,1070,2,Today's difficulty is 2 out of 5,https://www.nytimes.com/2026/05/15/crosswords/connections-companion-1070.html
+17/05/2026,1071,1.5,Today's difficulty is 1.5 out of 5,https://www.nytimes.com/2026/05/16/crosswords/connections-companion-1071.html
+18/05/2026,1072,2.2,Today's difficulty is 2.2 out of 5,https://www.nytimes.com/2026/05/17/crosswords/connections-companion-1072.html
+19/05/2026,1073,2.3,Today's difficulty is 2.3 out of 5,https://www.nytimes.com/2026/05/18/crosswords/connections-companion-1073.html
+21/05/2026,1075,3,Today's difficulty is 3 out of 5,https://www.nytimes.com/2026/05/20/crosswords/connections-companion-1075.html
+22/05/2026,1076,1.8,Today's difficulty is 1.8 out of 5,https://www.nytimes.com/2026/05/21/crosswords/connections-companion-1076.html
+24/05/2026,1078,2.5,Today's difficulty is 2.5 out of 5,https://www.nytimes.com/2026/05/23/crosswords/connections-companion-1078.html
+25/05/2026,1079,3,Today's difficulty is 3 out of 5,https://www.nytimes.com/2026/05/24/crosswords/connections-companion-1079.html
+26/05/2026,1080,1.8,Today’s difficulty is 1.8 out of 5,https://www.nytimes.com/2026/05/25/crosswords/connections-companion-1080.html
+27/05/2026,1081,2.3,,https://www.nytimes.com/2026/05/26/crosswords/connections-companion-1081.html
+28/05/2026,1082,1.8,,https://www.nytimes.com/2026/05/27/crosswords/connections-companion-1082.html
+29/05/2026,1083,3.3,,https://www.nytimes.com/2026/05/28/crosswords/connections-companion-1083.html
+30/05/2026,1084,2,,https://www.nytimes.com/2026/05/29/crosswords/connections-companion-1084.html
+31/05/2026,1085,2,,https://www.nytimes.com/2026/05/30/crosswords/connections-companion-1085.html
+01/06/2026,1086,3,,https://www.nytimes.com/2026/05/31/crosswords/connections-companion-1086.html
+02/06/2026,1087,2,,https://www.nytimes.com/2026/06/01/crosswords/connections-companion-1087.html
+03/06/2026,1088,2.5,,https://www.nytimes.com/2026/06/02/crosswords/connections-companion-1088.html
+04/06/2026,1089,3.3,,https://www.nytimes.com/2026/06/03/crosswords/connections-companion-1089.html
+05/06/2026,1090,1.8,,https://www.nytimes.com/2026/06/04/crosswords/connections-companion-1090.html
+06/06/2026,1091,2.5,,https://www.nytimes.com/2026/06/05/crosswords/connections-companion-1091.html
+07/06/2026,1092,2.8,,https://www.nytimes.com/2026/06/06/crosswords/connections-companion-1092.html
+08/06/2026,1093,2.8,,https://www.nytimes.com/2026/06/07/crosswords/connections-companion-1093.html
+09/06/2026,1094,2.8,,https://www.nytimes.com/2026/06/08/crosswords/connections-companion-1094.html
+10/06/2026,1095,1.5,,https://www.nytimes.com/2026/06/09/crosswords/connections-companion-1095.html
+11/06/2026,1096,3,,https://www.nytimes.com/2026/06/10/crosswords/connections-companion-1096.html
+12/06/2026,1097,3,,https://www.nytimes.com/2026/06/11/crosswords/connections-companion-1097.html
+13/06/2026,1098,1.8,,https://www.nytimes.com/2026/06/12/crosswords/connections-companion-1098.html
+14/06/2026,1099,2.2,,https://www.nytimes.com/2026/06/13/crosswords/connections-companion-1099.html
+15/06/2026,1100,2,,https://www.nytimes.com/2026/06/14/crosswords/connections-companion-1100.html
+16/06/2026,1101,2,,https://www.nytimes.com/2026/06/15/crosswords/connections-companion-1101.html
+17/06/2026,1102,2,,https://www.nytimes.com/2026/06/16/crosswords/connections-companion-1102.html
+18/06/2026,1103,1.7,,https://www.nytimes.com/2026/06/17/crosswords/connections-companion-1103.html
+19/06/2026,1104,2,,https://www.nytimes.com/2026/06/18/crosswords/connections-companion-1104.html
+20/06/2026,1105,2.3,,https://www.nytimes.com/2026/06/19/crosswords/connections-companion-1105.html
+21/06/2026,1106,1.7,,https://www.nytimes.com/2026/06/20/crosswords/connections-companion-1106.html
+22/06/2026,1107,2,,https://www.nytimes.com/2026/06/21/crosswords/connections-companion-1107.html
+23/06/2026,1108,2.8,,https://www.nytimes.com/2026/06/22/crosswords/connections-companion-1108.html
+24/06/2026,1109,2.5,,https://www.nytimes.com/2026/06/23/crosswords/connections-companion-1109.html
+25/06/2026,1110,1,,https://www.nytimes.com/2026/06/24/crosswords/connections-companion-1110.html
+26/06/2026,1111,2.8,,https://www.nytimes.com/2026/06/25/crosswords/connections-companion-1111.html
+27/06/2026,1112,2.5,,https://www.nytimes.com/2026/06/26/crosswords/connections-companion-1112.html

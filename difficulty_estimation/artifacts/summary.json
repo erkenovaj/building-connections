@@ -1,0 +1,31 @@
+{
+  "puzzle_rows": 743,
+  "category_occurrences": 2972,
+  "item_occurrences": 11888,
+  "expert_labels": 741,
+  "stats_rows": 743,
+  "stats_joined_rows": 743,
+  "image_item_occurrences": 97,
+  "unique_category_titles": 2802,
+  "repeated_category_titles": 144,
+  "category_occurrences_in_repeated_titles": 314,
+  "unique_item_strings": 6562,
+  "repeated_item_strings": 2318,
+  "item_occurrences_of_repeated_strings": 7644,
+  "unique_items_in_non_unique_categories": 885,
+  "item_occurrences_in_non_unique_categories": 1256,
+  "items_under_multiple_category_titles": 2256,
+  "item_occurrences_under_multiple_category_titles": 7518,
+  "date_min": "2024-06-15",
+  "date_max": "2026-06-27",
+  "missing_expert_dates": [
+    "2026-05-20",
+    "2026-05-23"
+  ],
+  "split_counts": {
+    "train": 519,
+    "validation": 111,
+    "test": 111,
+    "unlabeled": 2
+  }
+}
